@@ -1,0 +1,8 @@
+target/
+.idea/
+*.iml
+.vscode/
+
+# Reference books: local only (copyright and size); only the index is versioned
+docs/books/*
+!docs/books/README.md
