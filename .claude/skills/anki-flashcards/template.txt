@@ -1,0 +1,7 @@
+#separator:tab
+#html:true
+#notetype:Basic
+#guid column:1
+#deck column:2
+#tags column:5
+w01-exemplo-01	JAVA::OO	Pergunta conceitual curta, em português?	Resposta curta, um fato só, em português.	semana01 tema
