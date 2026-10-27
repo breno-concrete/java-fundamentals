@@ -1,0 +1,38 @@
+#separator:tab
+#html:true
+#notetype:Basic
+#guid column:1
+#deck column:2
+#tags column:5
+w01-hashmap-o1-01	JAVA::Collection	Por que o <code>get</code> do <code>HashMap</code> é O(1) em média sem percorrer os elementos?	A chave calcula o índice do balde (<i>bucket</i>), e acessar uma posição de array é direto, não importa o tamanho.	semana01 hashmap
+w01-hashmap-bucket-01	DSA::EDA	Num hash map, por que o balde guarda o par chave + valor, e não só o valor?	Várias chaves podem cair no mesmo balde; a chave guardada é o que identifica o valor certo.	semana01 hashmap
+w01-hashmap-indice-01	DSA::EDA	Num hash map com capacidade n, como o <code>hashCode</code> da chave vira o índice do balde?	<code>Math.floorMod(chave.hashCode(), n)</code>, sempre entre 0 e n-1.	semana01 hashmap
+w01-hashmap-indice-02	DSA::EDA	Por que calcular o índice do balde com <code>%</code> pode lançar exceção em Java?	<code>hashCode</code> pode ser negativo e <code>%</code> mantém o sinal (<code>-7 % 4 == -3</code>): <code>ArrayIndexOutOfBoundsException</code>.	semana01 hashmap
+w01-hashmap-mesmobalde-01	JAVA::Collection	Por que o <code>get</code> sempre abre o mesmo balde em que o <code>put</code> guardou a chave?	Chaves iguais pelo <code>equals</code> têm o mesmo <code>hashCode</code>, então a conta do índice dá o mesmo resultado.	semana01 hashmap equals-hashcode
+w01-colisao-01	DSA::EDA	O que é uma colisão num hash map?	Duas chaves <b>diferentes</b> caindo no mesmo balde.	semana01 hashmap colisao
+w01-colisao-02	DSA::EDA	Por que um hash map não consegue evitar colisões?	Há cerca de 4 bilhões de <code>hashCode</code>s possíveis e poucos baldes: algum balde sempre recebe mais de uma chave.	semana01 hashmap colisao
+w01-colisao-03	JAVA::Collection	No <code>HashMap</code>, como um balde guarda várias chaves que colidiram?	Numa lista encadeada de nós; cada nó guarda chave, valor e a referência para o próximo.	semana01 hashmap colisao
+w01-colisao-04	JAVA::Collection	Num <code>get</code> do <code>HashMap</code>, qual é o papel do <code>hashCode</code> e qual é o do <code>equals</code>?	<code>hashCode</code> escolhe o balde; <code>equals</code> escolhe o nó certo dentro dele.	semana01 hashmap colisao equals-hashcode
+w01-colisao-05	JAVA::Collection	Por que o <code>HashMap</code> não pode identificar a chave só pelo <code>hashCode</code> dentro do balde?	Chaves diferentes podem ter o mesmo hash: <code>"Aa".hashCode() == "BB".hashCode()</code> (2112).	semana01 hashmap colisao
+w01-put-sobrescreve-01	JAVA::Collection	O que o <code>put</code> do <code>HashMap</code> faz quando a chave já existe?	Troca o valor do nó existente; não cria nó novo e o <code>size</code> não muda.	semana01 hashmap put
+w01-put-sobrescreve-02	DSA::EDA	Num hash map, o que quebra se o <code>put</code> criar um nó novo para uma chave que já existe?	Ficam dois nós com a mesma chave, e o <code>get</code> devolve o primeiro, com o valor antigo.	semana01 hashmap put
+w01-resize-01	JAVA::Collection	No <code>HashMap</code>, quando acontece o redimensionamento (<i>resize</i>)?	Quando o <code>size</code> fica maior que capacidade × 0.75 (fator de carga, <i>load factor</i>); a capacidade dobra.	semana01 hashmap resize
+w01-resize-02	JAVA::Collection	<code>HashMap</code> com capacidade 4 e 3 chaves (exatamente 75%): já fez resize?	Não. O limite é 4 × 0.75 = 3, e o resize só acontece quando o <code>size</code> é <b>maior</b> que 3.	semana01 hashmap resize
+w01-resize-03	JAVA::Collection	Um <code>put</code> que sobrescreve uma chave pode disparar resize? Por quê?	Não. O resize é conferido depois que o <code>size</code> aumenta, e sobrescrever não aumenta o <code>size</code>.	semana01 hashmap resize put
+w01-resize-04	JAVA::Collection	Com a capacidade inicial padrão (16), na entrada de qual chave o <code>HashMap</code> faz o primeiro resize?	Na 13ª: o limite é 16 × 0.75 = 12.	semana01 hashmap resize
+w01-rehash-01	DSA::EDA	No resize de um hash map, por que não dá para copiar os baldes posição por posição?	O índice depende da capacidade; com a nova, cada chave tem outro índice e o <code>get</code> abriria o balde errado.	semana01 hashmap resize
+w01-rehash-02	JAVA::Collection	No resize do <code>HashMap</code> (capacidade dobrando), para onde pode ir uma chave que estava no balde i?	Fica no balde i ou vai para i + capacidade antiga.	semana01 hashmap resize
+w01-loadfactor-01	JAVA::Collection	Por que o fator de carga padrão do <code>HashMap</code> é 0.75?	É um meio-termo: menor desperdiça memória com baldes vazios; maior aumenta as colisões e o tamanho das listas.	semana01 hashmap resize
+w01-treeify-01	JAVA::Collection	No <code>HashMap</code> do Java 8+, quando a lista de um balde vira árvore?	Quando passa de 8 nós e a tabela tem pelo menos 64 baldes.	semana01 hashmap arvore
+w01-treeify-02	JAVA::Collection	No <code>HashMap</code> do Java 8+, o que acontece se um balde passa de 8 nós mas a tabela tem menos de 64 baldes?	Faz resize em vez de virar árvore: a lista comprida pode ser só falta de baldes.	semana01 hashmap arvore
+w01-treeify-03	JAVA::Collection	Por que o <code>HashMap</code> não usa árvore em todos os baldes desde o começo?	Nó de árvore ocupa cerca de 2× a memória; com 1 ou 2 itens por balde, a lista é mais leve e rápida.	semana01 hashmap arvore
+w01-treeify-04	JAVA::Collection	Por que a árvore de um balde do <code>HashMap</code> só volta a ser lista com 6 nós, e não com 8?	A folga evita ficar trocando lista ↔ árvore a cada <code>put</code> ou <code>remove</code> perto do limite.	semana01 hashmap arvore
+w01-complexidade-01	JAVA::Collection	Complexidade do <code>get</code> no <code>HashMap</code> do Java 8+: média e pior caso?	Média O(1); pior caso O(log n), com o balde virando árvore (com lista era O(n)).	semana01 hashmap complexidade
+w01-hashcode-ruim-01	JAVA::Collection	Se <code>hashCode()</code> sempre devolve 42, por que o resize não ajuda o <code>HashMap</code>?	Todas as chaves continuam no mesmo balde, qualquer que seja a capacidade.	semana01 hashmap equals-hashcode
+w01-hashcode-ruim-02	JAVA::Collection	Se um <code>HashMap</code> está montando árvores nos baldes, onde costuma estar o problema?	No <code>hashCode</code> das chaves, que distribui mal; a árvore é rede de segurança, não a solução.	semana01 hashmap equals-hashcode arvore
+w01-arvore-rn-01	DSA::Trees	Por que o <code>HashMap</code> usa árvore rubro-negra (<i>red-black tree</i>) e não uma árvore binária de busca simples?	Ela se rebalanceia sozinha, então a altura fica O(log n) e não degenera numa "linha".	semana01 hashmap arvore
+w01-bigo-01	DSA	1024 chaves no mesmo balde: no pior caso, quantas comparações faz um <code>get</code> com lista e com árvore?	Lista: até 1024, O(n). Árvore: cerca de 10, porque log₂ 1024 = 10.	semana01 complexidade
+w01-bigo-02	DSA	Quantos passos, aproximadamente, uma busca O(log n) faz com 1 milhão de itens? Por quê?	Cerca de 20, porque 2²⁰ ≈ 1 milhão e cada passo descarta metade.	semana01 complexidade
+w01-get-ausente-01	JAVA::Collection	O que <code>HashMap.get</code> devolve para uma chave que não existe?	<code>null</code>, sem lançar exceção.	semana01 hashmap
+w01-tdd-01	Testes de Software	No TDD, por que ver o teste falhar (vermelho) antes de escrever o código?	Prova que o teste testa alguma coisa; um teste que nunca falhou pode estar passando por acaso.	semana01 tdd
+w01-tdd-02	Testes de Software	No TDD, quanto código se escreve para deixar um teste verde?	O mínimo que faz o teste passar, mesmo parecendo trapaça; o próximo teste força o resto.	semana01 tdd

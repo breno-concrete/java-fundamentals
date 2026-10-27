@@ -1,9 +1,9 @@
 # Progresso
 
 ## Agora
-- **Semana:** 1 de 52 (18–24/out/2026) · Java core
-- **Deslocamento do plano:** 0 semanas
-- **Última atualização:** 2026-10-20
+- **Semana:** 1 de 52 (começou 18/out; recomeçou no dia 2 em 27/out, vai até 01/nov) · Java core
+- **Deslocamento do plano:** 1 semana (semana de 19–24/out perdida, regra 4). Semana 2 começa seg 02/nov.
+- **Última atualização:** 2026-10-27
 
 ## Provas de fase
 
@@ -26,4 +26,4 @@
 
 ## Histórico semanal
 <!-- Uma linha por semana: o que foi feito, o que ficou para trás. -->
-- **Semana 1:**
+- **Semana 1:** dia 1 feito em 18/out (repo, Effective Java Items 10–11, `Member` + teste do HashSet). Resto da semana perdido; recomeço do dia 2 em 27/out.
