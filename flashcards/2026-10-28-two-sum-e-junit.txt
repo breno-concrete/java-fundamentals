@@ -1,0 +1,22 @@
+#separator:tab
+#html:true
+#notetype:Basic
+#guid column:1
+#deck column:2
+#tags column:5
+w01-twosum-02	DSA::ARRAYS	Two Sum (versão de uma passada): o que vai como <b>chave</b> no mapa, e o que se procura nele a cada <code>nums[i]</code>?	Chave = complemento (<code>target - nums[i]</code>) → índice. A cada passo procura o próprio <code>nums[i]</code> nas chaves.	semana01 leetcode arrays-e-hashing two-sum
+w01-twosum-03	DSA::ARRAYS	Two Sum: por que checar o mapa <b>antes</b> de inserir o elemento atual?	Porque o mapa só tem posições anteriores, então um elemento nunca casa consigo mesmo (ex.: 3 + 3 = 6 com um 3 só).	semana01 leetcode arrays-e-hashing two-sum
+w01-twosum-04	DSA::ARRAYS	Two Sum (uma passada): por que o par devolvido já sai com o menor índice primeiro?	O índice tirado do mapa é sempre de uma posição anterior a <code>i</code>.	semana01 leetcode arrays-e-hashing two-sum
+w01-linkedhashmap-01	JAVA::Collection	O que o <code>LinkedHashMap</code> garante que o <code>HashMap</code> não garante?	A ordem de inserção na hora de percorrer o mapa.	semana01 hashmap linkedhashmap
+w01-linkedhashmap-02	JAVA::Collection	Se você só usa <code>get</code>/<code>containsKey</code>, qual é melhor: <code>LinkedHashMap</code> ou <code>HashMap</code>? Por quê?	<code>HashMap</code>: você nunca percorre o mapa, então a lista de ordem do <code>LinkedHashMap</code> é custo à toa.	semana01 hashmap linkedhashmap
+w01-static-01	JAVA::Classes	Por que <code>TwoSum.twoSum(nums, t)</code> não compila quando <code>twoSum</code> não é <code>static</code>?	Método de instância pertence a um objeto: precisa de <code>new TwoSum()</code>. Chamar pelo nome da classe só funciona com <code>static</code>.	semana01 static instancia
+w01-junit-test-01	Testes de Software	O que acontece com um método de teste sem <code>@Test</code> no JUnit 5?	Ele é ignorado em silêncio: nunca roda, então nunca falha.	semana01 junit
+w01-junit-instancia-01	Testes de Software	No JUnit 5, por que um campo <code>TwoSum twoSum = new TwoSum();</code> na classe de teste não vaza estado entre os testes?	O JUnit cria uma instância nova da classe de teste para cada método <code>@Test</code>.	semana01 junit
+w01-junit-aaa-01	Testes de Software	Quais são os três blocos de um teste, em ordem?	Arrange (monta o cenário), Act (chama o que está sendo testado), Assert (confere o resultado).	semana01 junit
+w01-junit-assertequals-01	Testes de Software	Em <code>assertEquals(a, b)</code>, quem vem primeiro, e o que acontece se você inverter?	Primeiro o esperado, depois o obtido. Se inverter, a mensagem de falha sai trocada.	semana01 junit
+w01-array-equals-01	JAVA::OO	Por que <code>assertEquals</code> falha com dois <code>int[]</code> de mesmo conteúdo?	Array não sobrescreve <code>equals</code>: herda o de <code>Object</code>, que compara referência (<code>==</code>).	semana01 equals arrays junit
+w01-array-equals-02	Testes de Software	Qual assert compara dois arrays elemento por elemento no JUnit 5?	<code>assertArrayEquals(expected, actual)</code>, que tem o mesmo efeito de <code>Arrays.equals</code>.	semana01 junit arrays
+w01-mock-quando-01	Testes de Software	Quando faz sentido usar mock / <code>@InjectMocks</code>, e quando basta <code>new</code>?	Mock só quando a classe testada depende de outras (repository, service). Sem dependência, basta <code>new</code>.	semana01 mockito junit
+w01-teste-errado-01	Testes de Software	Teste falhou: <code>expected: &lt;1&gt; but was: &lt;0&gt;</code>. O que conferir antes de mexer no código?	Se o próprio <code>expected</code> está certo (fazer a conta). Um teste errado "prova" a coisa errada.	semana01 junit tdd
+w01-teste-nome-01	Testes de Software	Por que cada teste deve cobrir um comportamento só, com um nome que descreve o caso?	Quando falhar, o nome já diz o que quebrou.	semana01 junit
+w01-convencao-nome-01	JAVA::Classes	Convenção em Java: nome de método começa com maiúscula ou minúscula?	Minúscula (<i>lowerCamelCase</i>, ex.: <code>deveRetornarIndices</code>). Maiúscula fica para classes.	semana01 convencao

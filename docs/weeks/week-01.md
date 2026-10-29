@@ -34,16 +34,17 @@ On weekdays, the HUB block comes first with a hard 25-minute timer, then the 2h 
 
 ### Day 2 · Tuesday, Oct 27 (was Monday) · Fundamentals 2h + HUB 25 min
 
-- [ ] Study how HashMap works inside: hashCode to bucket index, collisions, resize at 75% load, a crowded bucket turning into a tree since Java 8.
-- [ ] Code: your own `SimpleHashMap<K, V>` with an array of buckets, put, get and resize, plus tests for collisions and resize.
+- [x] Study how HashMap works inside: hashCode to bucket index, collisions, resize at 75% load, a crowded bucket turning into a tree since Java 8.
+- [ ] Code (moved to day 4): your own `SimpleHashMap<K, V>` with an array of buckets, put, get and resize, plus tests for collisions and resize.
 
 ### Day 3 · Wednesday, Oct 28 (was Tuesday) · LeetCode 2h + HUB 25 min
 
-- [ ] #1 Two Sum and #217 Contains Duplicate, 30 minutes each with no help. If stuck, read the solution, close it, rewrite from scratch.
+- [ ] #1 Two Sum ✅ (Oct 28, alone, hash map). #217 Contains Duplicate moved to day 6. 30 minutes each with no help. If stuck, read the solution, close it, rewrite from scratch.
 - [ ] Write each one's complexity in the spreadsheet: brute force vs hash map.
 
 ### Day 4 · Thursday, Oct 29 (was Wednesday) · Fundamentals 2h + HUB 25 min
 
+- [ ] **Carried over from day 2, do it first:** `SimpleHashMap` test-first (items 3.1–3.7 in `docs/days/2026-10-27.md`), and the day-2 wrap-up. Must be done before day 6's blank page.
 - [ ] Read *Effective Java* Item 17 (minimize mutability) and the Java docs on records.
 - [ ] Study stack vs heap: where a `new` object lives, where its reference lives, when the GC collects it. Draw it on paper.
 - [ ] Code: rewrite a value type as an immutable record, and write a test that shows a mutable key getting lost inside a HashMap.
@@ -56,6 +57,7 @@ On weekdays, the HUB block comes first with a hard 25-minute timer, then the 2h 
 
 ### Day 6 · Saturday, Oct 31 (was Friday) · LeetCode 1h + Blank page 1h + HUB 25 min
 
+- [ ] **Carried over from day 3, do it first:** Two Sum's 3 open questions (complexity, check-before-insert, why `LinkedHashMap`) and #217 Contains Duplicate (30 min alone).
 - [ ] LeetCode: #242 Valid Anagram, new, plus the day-3 review of day 3's two problems, rewritten from scratch.
 - [ ] Blank page: rewrite `SimpleHashMap` from zero with no lookup. Whatever you can't write, you didn't know yet: note it.
 - [ ] Record 5 minutes in English explaining the equals/hashCode contract.
@@ -67,7 +69,7 @@ On weekdays, the HUB block comes first with a hard 25-minute timer, then the 2h 
 
 ## HUB
 
-25 minutes before the block, days 2 to 6 (Tuesday to Saturday this week). This month is literature review, so it stays light.
+Tracked in its own repo, not here. 25 minutes before the block, days 2 to 6 (Tuesday to Saturday this week). This month is literature review, so it stays light.
 
 - [ ] Day 2 (Tue): set up the HUB backlog
 - [ ] Day 3 (Wed): read Laurentino et al., 2025 (the trial protocol)

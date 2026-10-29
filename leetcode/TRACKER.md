@@ -5,8 +5,8 @@ Revisão no dia 3 e no dia 10: reescrever do zero, sem olhar.
 
 | #   | Problema           | Padrão           | Data       | Sozinho? | Rev. D+3      | Rev. D+10     | Nota                    |
 |-----|--------------------|------------------|------------|----------|---------------|---------------|-------------------------|
-| 1   | Two Sum            | Arrays & Hashing | 2026-10-20 | ❌       | 2026-10-23 ⬜ | 2026-10-30 ⬜ | HashMap valor → índice  |
-| 217 | Contains Duplicate | Arrays & Hashing | 2026-10-20 | ✅       | 2026-10-23 ⬜ | 2026-10-30 ⬜ | HashSet, O(n)           |
+| 1   | Two Sum            | Arrays & Hashing | 2026-10-28 | ✅       | 2026-10-31 ⬜ | 2026-11-07 ⬜ | HashMap complemento → índice, 1 passada |
+| 217 | Contains Duplicate | Arrays & Hashing | ⬜ dia 6   |          |               |               | Pendente (adiado do dia 3) |
 
 ## Resumo do mês
-- Resolvidos: 0 · Sozinho: 0 (0%)
+- Resolvidos: 1 · Sozinho: 1 (100%)
