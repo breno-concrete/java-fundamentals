@@ -44,7 +44,7 @@ On weekdays, the HUB block comes first with a hard 25-minute timer, then the 2h 
 
 ### Day 4 · Thursday, Oct 29 (was Wednesday) · Fundamentals 2h + HUB 25 min
 
-- [ ] **Carried over from day 2, do it first:** `SimpleHashMap` test-first (items 3.1–3.7 in `docs/days/2026-10-27.md`), and the day-2 wrap-up. Must be done before day 6's blank page.
+- [ ] **Carried over from day 2, do it first:** `SimpleHashMap` test-first (items 3.1–3.7 in `docs/days/2026-10-27.md`), and the day-2 wrap-up. Must be done before day 6's blank page. *Oct 29: steps 1.0–1.3 green, 1.4 almost (a bug when overwriting a key in the middle of a chain); 1.5–1.7 and the day-2 wrap-up still open. The rest of day 4 not started: to be rescheduled.*
 - [ ] Read *Effective Java* Item 17 (minimize mutability) and the Java docs on records.
 - [ ] Study stack vs heap: where a `new` object lives, where its reference lives, when the GC collects it. Draw it on paper.
 - [ ] Code: rewrite a value type as an immutable record, and write a test that shows a mutable key getting lost inside a HashMap.

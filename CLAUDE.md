@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What this repo is
 
-A study repo, not a product. It holds the hand-written exercises of a 52-week learning plan ("Caminho das Pedras", Oct 2026 → Oct 2027, goal: gold junior). Each concept is a small class plus a JUnit test that proves its behavior. The learner is Breno; talk to him in Portuguese (technical terms may stay in English).
+A study repo, not a product. It holds the hand-written exercises of a 52-week learning plan ("Caminho das Pedras", Oct 2026 → Oct 2027, goal: gold junior). Each concept is a small class plus a JUnit test that proves its behavior. The learner is Breno; reply in the language he writes in. He's practicing technical English: when he writes in English, follow the `english-coach` skill (short correction block at the end of each reply).
 
 ## Teaching rules (most important)
 
