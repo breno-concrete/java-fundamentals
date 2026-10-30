@@ -33,6 +33,8 @@ public class SimpleHashMap<K, V> {
         if (buckets[idx] == null) {
             buckets[idx] = node;
             size++;
+            resizeIfNeeded();
+
         } else {
             Node<K, V> current = buckets[idx];
 
@@ -44,6 +46,9 @@ public class SimpleHashMap<K, V> {
                 if (current.nextNode == null) {
                     current.nextNode = node;
                     size++;
+                    resizeIfNeeded();
+
+
                     return;
                 }
 
@@ -61,12 +66,39 @@ public class SimpleHashMap<K, V> {
     public int getSize() {
         return size;
     }
+
+    public int getCapacity() {
+        return buckets.length;
+    }
+
     private int bucketIndex(K key) {
         int keyHash = key.hashCode();
 
         return floorMod(keyHash, buckets.length);
 
     }
+
+    private void resizeIfNeeded() {
+        if (size > buckets.length * 0.75) {
+            Node<K, V>[] oldBuckets = buckets;
+            buckets = new Node[buckets.length * 2];
+            size = 0;
+
+            for (int i = 0; i < oldBuckets.length; i++) {
+                Node<K, V> current = oldBuckets[i];
+
+                while (current != null) {
+                    put(current.key, current.value);
+                    current = current.nextNode;
+                }
+
+            }
+
+
+
+        }
+    }
+
 
     private static class Node<K, V> {
 

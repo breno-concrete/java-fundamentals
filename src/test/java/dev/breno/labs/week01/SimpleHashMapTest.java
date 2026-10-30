@@ -55,4 +55,44 @@ class SimpleHashMapTest {
         assertEquals(99, hash.get(16));
         assertEquals(3, hash.getSize());
     }
+
+    @Test
+    void hasToReturnRealCapacity() {
+        hash.put(12, 1);
+        hash.put(16, 2);
+        hash.put(20, 3);
+        hash.put(16, 99);
+
+        assertEquals(4, hash.getCapacity());
+    }
+
+    @Test
+    void hasToReturnRealCapacityWhenResize() {
+        hash.put(12, 1);
+        hash.put(16, 2);
+        hash.put(20, 3);
+        hash.put(21, 4);
+
+
+        assertEquals(8, hash.getCapacity());
+        assertEquals(4, hash.getSize());
+    }
+
+    @Test
+    void hasToChangeBucketsWhenResize() {
+
+        hash.put(12, 1);
+        hash.put(16, 2);
+        hash.put(20, 3);
+        hash.put(24, 4);
+
+        assertEquals(1, hash.get(12));
+        assertEquals(2, hash.get(16));
+        assertEquals(3, hash.get(20));
+        assertEquals(4, hash.get(24));
+
+        assertEquals(8, hash.getCapacity());
+    }
+
+
 }
