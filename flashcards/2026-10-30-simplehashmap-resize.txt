@@ -1,0 +1,30 @@
+#separator:tab
+#html:true
+#notetype:Basic
+#guid column:1
+#deck column:2
+#tags column:5
+w01-put-cabeca-01	DSA::EDA	No laço do <code>put</code>, o que acontece ao comparar sempre com a cabeça da lista (<code>buckets[idx].key</code>) em vez de <code>current.key</code>?	Uma chave fora da cabeça nunca é achada: vira um nó duplicado no fim da lista e o <code>size</code> aumenta.	semana01 hashmap put
+w01-put-cabeca-02	DSA::EDA	Com a chave duplicada na lista <code>12 → 16 → 16</code>, por que o <code>get(16)</code> devolve o valor antigo?	O <code>get</code> para no primeiro nó igual, e o nó com o valor novo fica depois dele.	semana01 hashmap put
+w01-put-cabeca-03	Testes de Software	Por que um teste que sobrescreve só a cabeça da lista não pega um bug no laço do <code>put</code>?	A comparação acerta logo no primeiro nó; o laço nunca precisa avançar, então o caminho com bug não roda.	semana01 tdd hashmap
+w01-int-div-01	JAVA	Em Java, quanto vale <code>(4 / 100) * 75</code>, e por quê?	0: divisão entre <code>int</code> descarta a parte fracionária, então 4 / 100 já dá 0.	semana01 java-base
+w01-int-div-02	JAVA	Por que <code>size &gt; buckets.length * 0.75</code> dispensa cast para <code>double</code>?	Como <code>0.75</code> é <code>double</code>, o Java promove os <code>int</code> da expressão sozinho.	semana01 java-base
+w01-percent-01	DSA::EDA	O que acontece no mapa com o limite <code>(length / 100.0) * 0.75</code>?	A porcentagem é aplicada duas vezes: o limite fica 0.03 com capacidade 4, e cada inserção dispara resize.	semana01 hashmap resize
+w01-percent-02	JAVA	Por que <code>0.75</code> é exato em <code>double</code> e <code>0.04</code> não?	0.75 é soma de potências de 2 (1/2 + 1/4); 0.04 não tem representação binária finita.	semana01 java-base
+w01-resize-caminhos-01	DSA::EDA	Por que a checagem de resize precisa rodar depois de inserir em balde vazio e também depois de anexar na lista?	O resize depende do total de entradas, não de onde a chave caiu.	semana01 hashmap resize
+w01-rehash-ordem-01	DSA::EDA	No rehash, por que guardar o array antigo numa variável local antes de trocar <code>buckets</code>?	Sem outra referência para ele, os nós antigos ficam inalcançáveis e os dados se perdem.	semana01 hashmap resize
+w01-rehash-ordem-02	DSA::EDA	No rehash com <code>put</code>, por que <code>buckets</code> precisa apontar para o array novo antes de reinserir?	<code>put</code> e <code>bucketIndex</code> usam <code>buckets</code>; antes da troca, as entradas voltariam para o array antigo.	semana01 hashmap resize
+w01-rehash-size-01	DSA::EDA	No rehash usando <code>put</code>, por que zerar o <code>size</code> antes de reinserir?	<code>put</code> conta cada entrada de novo; sem zerar, 4 entradas terminariam com <code>size</code> 8.	semana01 hashmap resize
+w01-rehash-laco-01	DSA::EDA	Por que percorrer uma lista com <code>while (current.nextNode != null)</code> erra num rehash?	O laço para antes de processar o último nó, e essa entrada se perde.	semana01 hashmap resize
+w01-rehash-todos-01	DSA::EDA	No rehash, por que uma chave cujo índice não muda (16: balde 0 nas capacidades 4 e 8) também precisa ser movida?	É o balde 0 de outro array, e o novo começa vazio; se não mover, ela se perde.	semana01 hashmap resize
+w01-rehash-aninhado-01	DSA::EDA	Reinserir com <code>put</code> durante o resize pode disparar outro resize? Por quê?	Não: o limite acabou de dobrar, e reinserir nunca leva o <code>size</code> além do valor de antes.	semana01 hashmap resize
+w01-teste-api-01	Testes de Software	Como testar que uma chave foi para o balde certo depois do resize, sem expor <code>buckets</code>?	Chamando <code>get</code>: ele só procura no balde calculado, então achar o valor prova o lugar certo.	semana01 tdd hashmap
+w01-teste-api-02	Testes de Software	Por que testar pela API pública em vez de inspecionar campos internos?	O teste verifica o que a classe promete, não como guarda os dados, e sobrevive a refatorações.	semana01 tdd
+w01-teste-fronteira-01	Testes de Software	Por que testar a capacidade com 3 chaves e também com 4, se o resize acontece na 4ª?	Os dois lados da fronteira pegam tanto um resize cedo demais quanto um tarde demais.	semana01 tdd hashmap
+w01-teste-chaves-01	Testes de Software	Por que testar o resize com chaves 12, 16, 20 e 24 (mesmo balde na capacidade 4)?	Na capacidade 8 elas se dividem em dois baldes, provando que uma lista é separada corretamente.	semana01 tdd hashmap
+w01-teste-nome-01	Testes de Software	Por que um nome como <code>hasToVerifyCurrentNode</code> é ruim para um teste?	Fala de um detalhe da implementação; o nome deve dizer o comportamento, para a falha se explicar sozinha.	semana01 tdd
+w01-refatorar-01	Testes de Software	Por que refatorar só com os testes verdes, e o que esperar ao rodá-los depois?	Refatorar não muda comportamento, então devem continuar verdes; vermelho indica que algo mudou sem querer.	semana01 tdd
+w01-o1-indice-01	DSA::EDA	Por que achar o balde num hash map é O(1), com 10 ou 10 milhões de entradas?	Ler <code>buckets[idx]</code> é acesso direto a um índice de array, sem percorrer nada.	semana01 hashmap complexidade
+w01-equals-get-01	DSA::EDA	Depois de achar o balde, por que o <code>get</code> ainda precisa de <code>equals</code>?	Chaves diferentes podem cair no mesmo balde; <code>equals</code> identifica o nó da chave pedida.	semana01 hashmap equals-hashcode
+w01-resize-encurta-01	DSA::EDA	Chaves 12, 16, 20 e 24 no mesmo balde: quantos <code>equals</code> o <code>get(24)</code> faz, antes e depois de dobrar de 4 para 8?	Antes 4, depois 2: o resize encurta as listas, e a busca fica mais barata.	semana01 hashmap resize complexidade
+w01-lookup-01	DSA	O que significa <i>lookup</i> num hash map, e qual método faz isso?	Encontrar um valor pela chave; é o <code>get</code>.	semana01 hashmap
