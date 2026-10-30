@@ -44,4 +44,15 @@ class SimpleHashMapTest {
         assertEquals(2, hash.get(16));
         assertEquals(3, hash.get(20));
     }
+
+    @Test
+    void hasToOverwriteNonHeadKeyAndKeepsSizeWhenUpdatesItsValue () {
+        hash.put(12, 1);
+        hash.put(16, 2);
+        hash.put(20, 3);
+        hash.put(16, 99);
+
+        assertEquals(99, hash.get(16));
+        assertEquals(3, hash.getSize());
+    }
 }

@@ -37,8 +37,8 @@ public class SimpleHashMap<K, V> {
             Node<K, V> current = buckets[idx];
 
             while(current != null){
-                if ((buckets[idx].key).equals(node.key)) {
-                    buckets[idx].value = node.value;
+                if ((current.key).equals(node.key)) {
+                    current.value = node.value;
                     return;
                 }
                 if (current.nextNode == null) {
