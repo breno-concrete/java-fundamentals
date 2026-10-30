@@ -17,8 +17,8 @@ Week 1 of 52 in [Caminho das Pedras](../ROADMAP.md) starts today: Java core. Eve
 By Sunday, Nov 1 you have written all of this by hand, with no AI writing the code:
 
 - [x] A `Member` class with a correct equals/hashCode, and a test that shows a HashSet breaking when only equals is overridden
-- [ ] Your own small hash map: buckets, put, get, resize at 75% load, with tests
-- [ ] 3 LeetCode problems solved and logged, plus their first review
+- [x] Your own small hash map: buckets, put, get, resize at 75% load, with tests
+- [ ] 2 LeetCode problems solved and logged (#1, #217), plus Two Sum's first review. #242, the third, moved to week 2.
 - [ ] Jansenbot's new repo with the domain model (Member, Event, Attendance) and the points rule, covered by unit tests
 - [ ] You can explain the equals/hashCode contract and how HashMap works out loud, with no notes
 
@@ -35,7 +35,7 @@ On weekdays, the HUB block comes first with a hard 25-minute timer, then the 2h 
 ### Day 2 · Tuesday, Oct 27 (was Monday) · Fundamentals 2h + HUB 25 min
 
 - [x] Study how HashMap works inside: hashCode to bucket index, collisions, resize at 75% load, a crowded bucket turning into a tree since Java 8.
-- [ ] Code (moved to day 4): your own `SimpleHashMap<K, V>` with an array of buckets, put, get and resize, plus tests for collisions and resize.
+- [x] Code (moved to day 5): your own `SimpleHashMap<K, V>` with an array of buckets, put, get and resize, plus tests for collisions and resize.
 
 ### Day 3 · Wednesday, Oct 28 (was Tuesday) · LeetCode 2h + HUB 25 min
 
@@ -44,28 +44,28 @@ On weekdays, the HUB block comes first with a hard 25-minute timer, then the 2h 
 
 ### Day 4 · Thursday, Oct 29 (was Wednesday) · Fundamentals 2h + HUB 25 min
 
-- [ ] **Carried over from day 2, do it first:** `SimpleHashMap` test-first (items 3.1–3.7 in `docs/days/2026-10-27.md`), and the day-2 wrap-up. Must be done before day 6's blank page. *Oct 29: steps 1.0–1.3 green, 1.4 almost (a bug when overwriting a key in the middle of a chain); 1.5–1.7 and the day-2 wrap-up still open. The rest of day 4 not started: to be rescheduled.*
-- [ ] Read *Effective Java* Item 17 (minimize mutability) and the Java docs on records.
-- [ ] Study stack vs heap: where a `new` object lives, where its reference lives, when the GC collects it. Draw it on paper.
-- [ ] Code: rewrite a value type as an immutable record, and write a test that shows a mutable key getting lost inside a HashMap.
+- [x] `SimpleHashMap` test-first, carried over from day 2. *Oct 29: steps 1.0–1.3 green, 1.4 almost (a bug when overwriting a key in the middle of a chain). The rest moved to day 5.*
+- Moved to week 2's first Fundamentals block (see Next week): Item 17 and records, stack vs heap, the immutable record and the mutable key test.
 
 ### Day 5 · Friday, Oct 30 (was Thursday) · Jansenbot 2h + HUB 25 min
 
-- [ ] Create the new Jansenbot repo: plain Java 21, JUnit 5, no Spring yet. The old vibecoded version stays only as a reference for behavior.
+- [ ] **Carried over, do it first (~55 min):** `SimpleHashMap` steps 1.4–1.7 ✅ (Oct 30, 8 tests green) and the day-2 wrap-up (`docs/days/2026-10-30.md`). It must be done before day 6's blank page, so it takes priority over Jansenbot if it runs long.
+- [ ] Jansenbot, in the time left (~65 min): create the new repo: plain Java 21, JUnit 5, no Spring yet. The old vibecoded version stays only as a reference for behavior.
 - [ ] Code the domain model by hand: `Member`, `Event` (type: ensaio, culto, show), `Attendance` (confirmed, arrived, minutes late). Entities compare by id.
-- [ ] Unit tests for the model.
+- [ ] Unit tests for the model. Whatever doesn't fit moves to the start of day 7.
 
 ### Day 6 · Saturday, Oct 31 (was Friday) · LeetCode 1h + Blank page 1h + HUB 25 min
 
-- [ ] **Carried over from day 3, do it first:** Two Sum's 3 open questions (complexity, check-before-insert, why `LinkedHashMap`) and #217 Contains Duplicate (30 min alone).
-- [ ] LeetCode: #242 Valid Anagram, new, plus the day-3 review of day 3's two problems, rewritten from scratch.
-- [ ] Blank page: rewrite `SimpleHashMap` from zero with no lookup. Whatever you can't write, you didn't know yet: note it.
+- [ ] **LeetCode 1h, carried over from day 3:** Two Sum's 3 open questions (complexity, check-before-insert, why `LinkedHashMap`) and #217 Contains Duplicate (30 min alone).
+- [ ] LeetCode: Two Sum's day-3 review, rewritten from scratch. #217's review is due Nov 3, and #242 Valid Anagram moves to week 2.
+- [ ] Blank page 1h: rewrite `SimpleHashMap` from zero with no lookup. Whatever you can't write, you didn't know yet: note it.
 - [ ] Record 5 minutes in English explaining the equals/hashCode contract.
 
 ### Day 7 · Sunday, Nov 1 (was Saturday) · Jansenbot 2h
 
+- [ ] First, anything left of day 5's domain model and tests.
 - [ ] Code the points rule test-first: ensaio 2 points (1 if more than 20 minutes late), culto 3, show 4.
-- [ ] Code the monthly total per member with streams written by hand: group by member, sum points. The tie-breaks come next week.
+- [ ] If there's time, code the monthly total per member with streams written by hand: group by member, sum points. If not, it moves to week 2's Jansenbot block, before the tie-breaks.
 
 ## HUB
 
@@ -80,3 +80,9 @@ Tracked in its own repo, not here. 25 minutes before the block, days 2 to 6 (Tue
 ## Next week
 
 Week 2, starting Monday, Nov 2 (shifted from Oct 25–31): Collections and their costs. Read *Effective Java* Item 14, build your own DynamicArray, solve LeetCode #49, #347 and #238, and code the Funcionário do Mês ranking with every tie-break in Jansenbot. Every week's details are in [Caminho das Pedras](../ROADMAP.md).
+
+Carried over from this week, to go in first when week 2's plan is written:
+
+- First Fundamentals block: *Effective Java* Item 17 and records, stack vs heap on paper, an immutable record, and the mutable key test (~50 min).
+- First LeetCode block: #242 Valid Anagram, plus #217's review if it's due (Nov 3).
+- First Jansenbot block: the monthly total, if it didn't fit on day 7.
