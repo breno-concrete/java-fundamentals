@@ -1,0 +1,16 @@
+#separator:tab
+#html:true
+#notetype:Basic
+#guid column:1
+#deck column:2
+#tags column:5
+w01-espaco-constante-01	DSA	A força bruta do Two Sum usa as variáveis <code>i</code> e <code>j</code>. Por que o espaço dela é O(1), e não zero?	O(1) é espaço constante: usa memória, mas a quantidade não cresce com a entrada.	semana01 complexidade two-sum
+w01-twosum-tempo-01	DSA::ARRAYS	Two Sum com hash map: por que o tempo é O(n), e não O(log n)?	O laço roda n vezes e cada operação no mapa custa O(1) em média: n × O(1) = O(n).	semana01 leetcode arrays-e-hashing two-sum complexidade
+w01-twosum-troca-01	DSA::ARRAYS	Two Sum: o que o hash map troca em relação à força bruta?	Gasta O(n) de espaço extra para baixar o tempo de O(n²) para O(n).	semana01 leetcode arrays-e-hashing two-sum complexidade
+w01-twosum-inserir-antes-01	DSA::ARRAYS	Two Sum com <code>nums = [3, 2, 4]</code> e <code>target = 6</code>: o que devolve se inserir no mapa antes de checar? Por quê?	<code>[0, 0]</code>: o 3 encontra a si mesmo, usando o mesmo elemento duas vezes.	semana01 leetcode arrays-e-hashing two-sum
+w01-hashmap-ordem-01	JAVA::Collection	Por que não se pode contar com a ordem ao percorrer um <code>HashMap</code>?	Ela segue os baldes (<i>buckets</i>), definidos pelo hash, e um resize pode mudá-la.	semana01 hashmap
+w01-linkedhashmap-03	JAVA::Collection	Como o <code>LinkedHashMap</code> lembra a ordem de inserção mantendo <code>get</code> e <code>put</code> em O(1) em média?	Mantém os baldes e liga as entradas numa lista, com referências para a anterior e a seguinte.	semana01 hashmap linkedhashmap
+w01-map-vs-set-01	DSA::ARRAYS	Por que o Contains Duplicate resolve com <code>Set</code>, mas o Two Sum precisa de <code>Map</code>?	O primeiro só precisa saber <b>se</b> viu o valor; o segundo precisa saber <b>onde</b>, porque devolve o índice.	semana01 leetcode arrays-e-hashing contains-duplicate two-sum
+w01-contains-duplicate-01	DSA::ARRAYS	Contains Duplicate: o que o <code>HashSet</code> troca em relação a comparar todos os pares?	Gasta O(n) de espaço para baixar o tempo de O(n²) para O(n).	semana01 leetcode arrays-e-hashing contains-duplicate complexidade
+w01-declarar-interface-01	JAVA::Collection	Por que escrever <code>Map&lt;K, V&gt; m = new HashMap&lt;&gt;()</code> em vez de declarar como <code>HashMap</code>?	O código depende só do contrato de <code>Map</code>, então trocar a implementação muda uma palavra só.	semana01 collections interface
+w01-set-add-01	JAVA::Collection	O que o <code>boolean</code> devolvido por <code>Set.add</code> informa?	<code>true</code> se o elemento entrou; <code>false</code> se já estava no conjunto.	semana01 set
