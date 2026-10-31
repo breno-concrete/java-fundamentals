@@ -18,7 +18,7 @@ By Sunday, Nov 1 you have written all of this by hand, with no AI writing the co
 
 - [x] A `Member` class with a correct equals/hashCode, and a test that shows a HashSet breaking when only equals is overridden
 - [x] Your own small hash map: buckets, put, get, resize at 75% load, with tests
-- [ ] 2 LeetCode problems solved and logged (#1, #217), plus Two Sum's first review. #242, the third, moved to week 2.
+- [x] 2 LeetCode problems solved and logged (#1, #217), plus Two Sum's first review. #242, the third, moved to week 2.
 - [ ] Jansenbot's new repo with the domain model (Member, Event, Attendance) and the points rule, covered by unit tests
 - [ ] You can explain the equals/hashCode contract and how HashMap works out loud, with no notes
 
@@ -39,8 +39,8 @@ On weekdays, the HUB block comes first with a hard 25-minute timer, then the 2h 
 
 ### Day 3 · Wednesday, Oct 28 (was Tuesday) · LeetCode 2h + HUB 25 min
 
-- [ ] #1 Two Sum ✅ (Oct 28, alone, hash map). #217 Contains Duplicate moved to day 6. 30 minutes each with no help. If stuck, read the solution, close it, rewrite from scratch.
-- [ ] Write each one's complexity in the spreadsheet: brute force vs hash map.
+- [x] #1 Two Sum ✅ (Oct 28, alone, hash map). #217 Contains Duplicate moved to day 6 ✅ (Oct 31, alone). 30 minutes each with no help. If stuck, read the solution, close it, rewrite from scratch.
+- [x] Write each one's complexity in the spreadsheet: brute force vs hash map.
 
 ### Day 4 · Thursday, Oct 29 (was Wednesday) · Fundamentals 2h + HUB 25 min
 
@@ -56,16 +56,16 @@ On weekdays, the HUB block comes first with a hard 25-minute timer, then the 2h 
 
 ### Day 6 · Saturday, Oct 31 (was Friday) · LeetCode 1h + Blank page 1h + HUB 25 min
 
-- [ ] **LeetCode 1h, carried over from day 3:** Two Sum's 3 open questions (complexity, check-before-insert, why `LinkedHashMap`) and #217 Contains Duplicate (30 min alone).
-- [ ] LeetCode: Two Sum's day-3 review, rewritten from scratch. #217's review is due Nov 3, and #242 Valid Anagram moves to week 2.
-- [ ] Blank page 1h: rewrite `SimpleHashMap` from zero with no lookup. Whatever you can't write, you didn't know yet: note it.
-- [ ] Record 5 minutes in English explaining the equals/hashCode contract.
+- [x] **LeetCode 1h, carried over from day 3:** Two Sum's 3 open questions (complexity, check-before-insert, why `LinkedHashMap`) and #217 Contains Duplicate (30 min alone).
+- [x] LeetCode: Two Sum's day-3 review, rewritten from scratch. #217's review is due Nov 3, and #242 Valid Anagram moves to week 2.
+- Moved to day 7, ran out of time on Oct 31: the blank page and the English recording.
 
 ### Day 7 · Sunday, Nov 1 (was Saturday) · Jansenbot 2h
 
-- [ ] First, anything left of day 5's domain model and tests.
-- [ ] Code the points rule test-first: ensaio 2 points (1 if more than 20 minutes late), culto 3, show 4.
-- [ ] If there's time, code the monthly total per member with streams written by hand: group by member, sum points. If not, it moves to week 2's Jansenbot block, before the tie-breaks.
+- [ ] **Carried over from day 6, do it first (~1h15):** blank page: rewrite `SimpleHashMap` from zero with no lookup (`SimpleHashMapBlank`, plan in `docs/days/2026-10-31.md`). Whatever you can't write, you didn't know yet: note it. Then explain HashMap out loud with no help, and record 5 minutes in English on the equals/hashCode contract.
+- [ ] Jansenbot, in the time left (~45 min): anything left of day 5's domain model and tests. Whatever doesn't fit moves to week 2's first Jansenbot block.
+- [ ] If there's time, code the points rule test-first: ensaio 2 points (1 if more than 20 minutes late), culto 3, show 4. If not, it moves to week 2's first Jansenbot block.
+- [ ] Moved to week 2's Jansenbot block, before the tie-breaks: the monthly total per member with streams written by hand (group by member, sum points).
 
 ## HUB
 
@@ -85,4 +85,4 @@ Carried over from this week, to go in first when week 2's plan is written:
 
 - First Fundamentals block: *Effective Java* Item 17 and records, stack vs heap on paper, an immutable record, and the mutable key test (~50 min).
 - First LeetCode block: #242 Valid Anagram, plus #217's review if it's due (Nov 3).
-- First Jansenbot block: the monthly total, if it didn't fit on day 7.
+- First Jansenbot block: whatever is left of the domain model and the points rule, then the monthly total.
