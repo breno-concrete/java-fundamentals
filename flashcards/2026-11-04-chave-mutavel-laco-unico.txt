@@ -1,0 +1,18 @@
+#separator:tab
+#html:true
+#notetype:Basic
+#guid column:1
+#deck column:2
+#tags column:5
+w01-laco-unico-01	DSA::EDA	No <code>put</code> de um hash map, como um só <code>while (current != null)</code> compara todos os nós e ainda anexa no fim?	Dentro do laço: se a chave bate, sobrescreve e <code>return</code>; se <code>current.nextNode == null</code>, anexa e <code>return</code>; senão avança.	semana01 hashmap laco
+w01-laco-unico-02	DSA::EDA	Num laço em que todo caminho termina em <code>return</code> ou avança para um nó não nulo, o que é o código depois dele?	Código morto: o laço nunca termina normalmente. Se rodasse, <code>current</code> seria <code>null</code> → NPE.	semana01 laco
+w02-hashmap-o1-01	JAVA::Collection	Por que o <code>get</code> do <code>HashMap</code> é O(1)? (Não é porque a chave é única.)	Porque o índice do balde é <b>calculado</b> a partir do <code>hashCode</code>, sem procurar.	semana02 hashmap complexidade
+w02-array-o1-01	DSA::EDA	Por que acessar <code>array[idx]</code> é O(1), tenha o array 4 ou 4 milhões de posições?	O array é um bloco contínuo: endereço = início + idx × tamanho do elemento. É uma conta, não uma busca.	semana02 array complexidade
+w02-resize-media-01	JAVA::Collection	Com fator de carga 0.75, quantos nós um balde do <code>HashMap</code> tem em média, e por que isso garante O(1)?	Menos de 1. Esse número é constante e não cresce com n.	semana02 hashmap resize
+w02-resize-media-02	JAVA::Collection	Num hash map de capacidade fixa (sem resize), qual é o tamanho médio de cada balde?	n / capacidade: cresce com n, e a busca vira O(n).	semana02 hashmap resize
+w02-chave-mutavel-01	JAVA::Collection	Chave com <code>hashCode</code> baseado em <code>name</code>: depois de <code>put(m, 10)</code> e <code>m.setName("Bia")</code>, por que <code>get(m)</code> dá <code>null</code>?	O <code>get</code> calcula o índice com o hash novo e olha outro balde; o nó continua no balde antigo.	semana02 chave-mutavel hashmap
+w02-chave-mutavel-02	JAVA::Collection	Depois de mudar o nome da chave de "Ana" para "Bia", por que <code>get(new Member("Ana"))</code> também dá <code>null</code>?	O hash leva ao balde certo, mas o <code>equals</code> compara "Ana" com a chave guardada, que agora é "Bia".	semana02 chave-mutavel equals
+w02-chave-mutavel-03	JAVA::Collection	O que acontece com uma entrada do <code>HashMap</code> cuja chave foi alterada depois do <code>put</code>?	Fica perdida: conta no <code>size()</code>, mas nenhuma chave a lê nem a remove (vazamento de memória).	semana02 chave-mutavel
+w02-hash-guardado-01	JAVA::Collection	Chave alterada, mas o hash novo cai no mesmo balde: por que o <code>HashMap</code> do Java ainda não acha?	Cada nó guarda o hash do <code>put</code>, e ele é comparado antes do <code>equals</code>. O hash guardado é o antigo.	semana02 chave-mutavel hashmap
+w02-chave-imutavel-01	JAVA::Classes	Por que um <code>record</code> é uma boa chave de <code>Map</code>?	Os campos são <code>final</code>, então o <code>hashCode</code> não muda depois do <code>put</code>; e <code>equals</code>/<code>hashCode</code> já vêm prontos.	semana02 record imutabilidade
+w01-teste-meio-01	Testes de Software	Testando o <code>put</code> de um hash map, por que sobrescrever a chave do <b>meio</b> de uma cadeia (8, 12, 16 → 12)?	É o caso em que o laço precisa passar por um nó, achar o seguinte e parar antes do último. Pega o bug de comparar o nó errado.	semana01 hashmap testes

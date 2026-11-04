@@ -1,0 +1,17 @@
+#separator:tab
+#html:true
+#notetype:Basic
+#guid column:1
+#deck column:2
+#tags column:5
+w01-teste-alvo-01	Testes de Software	Um teste copiado de outra classe fica verde. O que conferir antes de confiar nele?	Qual classe ele instancia. Se cria a classe antiga, o verde não prova nada sobre o código novo.	semana01 junit pagina-em-branco
+w01-teste-ramo-01	Testes de Software	Ao escrever um teste, que pergunta revela o caso que falta?	"Que ramo do meu código este teste exercita?" Ramo sem teste é bug escondido.	semana01 junit cobertura
+w01-teste-colisao-01	DSA::EDA	Num hash map de capacidade 4 com índice <code>floorMod(hash, 4)</code>, que duas chaves <code>Integer</code> testam colisão de chave nova?	0 e 4 (ou 1 e 5): mesmo resto, mesmo balde (<i>bucket</i>), chaves diferentes.	semana01 hashmap junit
+w01-junit-timeout-01	Testes de Software	No JUnit 5, como fazer um teste que pode entrar em loop infinito falhar rápido?	Anotar com <code>@Timeout(1)</code> (de <code>org.junit.jupiter.api</code>): falha após 1 segundo em vez de travar o Maven.	semana01 junit
+w01-array-null-01	JAVA::Classes	Por que <code>buckets[idx].key = key;</code> lança NPE num balde vazio?	Array de objetos começa com <code>null</code> em cada posição; é preciso criar o nó com <code>new</code> e atribuir ao slot.	semana01 null pagina-em-branco
+w01-laco-fim-01	DSA::Linked Lists	Depois de <code>while (current != null) {...}</code> sem achar a chave, por que <code>current.nextNode = novo;</code> dá NPE?	O laço só termina quando <code>current</code> vira <code>null</code>; não sobra referência ao último nó.	semana01 lista-encadeada pagina-em-branco
+w01-laco-fim-02	DSA::Linked Lists	Procurar a chave e anexar no fim no mesmo laço: solução com uma segunda referência?	Guardar o nó anterior (<code>prev</code>) a cada passo; ao sair com <code>current == null</code>, anexar em <code>prev.nextNode</code>.	semana01 lista-encadeada
+w01-laco-fim-03	DSA::Linked Lists	Procurar a chave e anexar no fim: solução sem referência extra?	Laço com <code>current.nextNode != null</code> para parar no último nó, e depois comparar a chave desse último antes de anexar.	semana01 lista-encadeada
+w01-laco-termina-01	DSA::Linked Lists	Por que <code>while (current != null) { if (current.nextNode != null) current = current.nextNode; }</code> trava no último nó?	No último nó o passo não roda: <code>current</code> não muda e nunca vira <code>null</code>. Loop infinito.	semana01 lista-encadeada pagina-em-branco
+w01-laco-termina-02	DSA::Linked Lists	Regra para todo laço terminar?	O passo do laço precisa, cedo ou tarde, tornar a condição falsa. Se o passo é condicional, a condição tem de bater com ele.	semana01 lacos
+w01-resize-ramos-01	DSA::EDA	No <code>put</code> de um hash map com dois ramos (balde vazio e colisão), onde chamar o resize?	Depois de todo <code>size++</code>, nos dois ramos: o resize depende do tamanho, não de onde o nó entrou.	semana01 hashmap resize
