@@ -4,7 +4,7 @@
 - **Semana:** 2 de 52 (sáb 07/nov – sex 13/nov) · Java core: Collections and their costs. Plano em `docs/weeks/week-02.md`
 - **Deslocamento do plano:** ~2 semanas. A semana 1 do ROADMAP (18–24/out) perdeu 19–26/out (regra 4) e o Fundamentos dela foi até 06/nov (passou 2 a 3 dias do previsto).
 - **Última atualização:** 2026-11-06
-- **Semana 1 fechada em 06/nov:** chave mutável (`Person` + `PersonTest` verdes), `equals` no `get` e stack vs heap no papel. **Retomar no dia 1 da semana 2 (sáb 07/nov):** revisão do Two Sum, depois Collections (tabela de Big-O) e início do `DynamicArray`.
+- **Semana 1 fechada em 06/nov:** chave mutável (`Person` + `PersonTest` verdes), `equals` no `get` e stack vs heap no papel. Bloco extra de 1h à noite: teoria e tabela de Big-O do dia 1 da semana 2 adiantadas. **Retomar no dia 1 (sáb 07/nov):** aquecimento "por que `TreeMap`", o porquê de cada célula da tabela (5 min), revisão do Two Sum e o `DynamicArray` test-first.
 - **Pendências carregadas:** `notes/week01.md` (Breno) ainda sem o fechamento do dia 2. Jansenbot fica com ~45 min no dia 7: conferir se o `Member` terminou no outro chat, depois `Event` e `Attendance`. O que não couber, a regra de pontos e o total mensal vão para o primeiro bloco de Jansenbot da semana 2.
 - **Próximas revisões de LeetCode:** Two Sum em 07/nov; #217 em 10/nov.
 - **Remarcado para a semana 2:** #242 no dia 3 (09/nov); Jansenbot inteiro da semana 1 (repo, modelo, regra de pontos, total mensal) nos dias 5 e 7, antes do ranking.
@@ -30,6 +30,7 @@
 <!-- O que errei na página em branco / prova e ainda não fechei. Remova quando fechar. -->
 - Explicação do HashMap sem ajuda (30/out): árvore do Java 8 fechada em 04/nov (red-black, O(log n), sozinho). Ainda aberto: o papel do `equals` no `get` (por que o hash sozinho não basta) e por que o acesso ao array é O(1). Pulou a versão corrida em 04/nov. Em 06/nov acertou as duas, mas com ajuda (pergunta reformulada; dica de memória contígua) e sem a conta do endereço (início + idx × tamanho). Fecha se explicar sozinho numa próxima checagem, sem dica.
 - Referências e stack vs heap (06/nov): contou campos (`name`, `age`) como setas que chegam no objeto e disse que o nó aponta para a variável `person`. Entendeu com 3 perguntas-guia. Fecha se desenhar sozinho, com as setas certas, um caso novo (ex.: duas variáveis e uma lista).
+- Big-O das coleções (06/nov): 12 de 16 chutando. Não sabia o `TreeMap` (O(log n) pela altura da árvore) nem por que usá-lo; achou `HashMap.remove` O(n); confundiu `ArrayDeque` com lista ligada. Fecha se refizer a tabela sozinho, com o porquê de cada célula.
 - `LinkedHashMap` (31/out): não soube o que garante, apesar do card de 28/out. Sabe agora só depois de explicado; revisar pelos flashcards de 31/out.
 - Base de Java que apareceu no `SimpleHashMap` (29/out): generics (parâmetro de tipo vs campo, raw type), referência como "ponteiro", `static` vs `private` em classe aninhada, `==` vs `equals` (cache de `Integer`), ler campo de `null`. Revisar pelos flashcards de 29/out.
 

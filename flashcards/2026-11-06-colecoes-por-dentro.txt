@@ -1,0 +1,18 @@
+#separator:tab
+#html:true
+#notetype:Basic
+#guid column:1
+#deck column:2
+#tags column:5
+w02-colecoes-dentro-01	JAVA::Collection	Que estrutura há dentro de um <code>ArrayList</code>?	Um array que cresce: cheio, cria um array ~1,5× maior e copia tudo.	semana02 colecoes arraylist
+w02-colecoes-dentro-02	JAVA::Collection	Que estrutura há dentro de um <code>LinkedList</code>?	Nós duplamente ligados (<code>next</code> e <code>prev</code>), com referência para o primeiro e o último.	semana02 colecoes linkedlist
+w02-colecoes-dentro-03	JAVA::Collection	Que estrutura há dentro de um <code>HashSet</code>?	Um <code>HashMap</code>: cada elemento vira chave, e o valor é um objeto fixo de enfeite. Por isso tem os mesmos custos.	semana02 colecoes hashset
+w02-colecoes-dentro-04	JAVA::Collection	Que estrutura há dentro de um <code>TreeMap</code>?	Uma árvore red-black (balanceada), ordenada pela chave.	semana02 colecoes treemap
+w02-colecoes-dentro-05	JAVA::Collection	Que estrutura há dentro de um <code>ArrayDeque</code>? (Não é lista ligada.)	Um array circular que cresce: os índices <code>head</code> e <code>tail</code> dão a volta no fim do array. Nenhum nó.	semana02 colecoes arraydeque
+w02-deque-frente-01	JAVA::Collection	Os dois têm array por dentro: por que <code>ArrayDeque.addFirst</code> é O(1) e <code>ArrayList.add(0, x)</code> é O(n)?	O <code>ArrayDeque</code> só move o índice <code>head</code>; o <code>ArrayList</code> desloca todos os elementos uma posição para a direita.	semana02 colecoes complexidade
+w02-arraylist-add-01	JAVA::Collection	Qual o custo de <code>ArrayList.add(x)</code> no fim, e por que tem um adjetivo?	O(1) amortizado: quase sempre é O(1), mas às vezes o array enche e a cópia custa O(n).	semana02 colecoes complexidade amortizado
+w02-deque-api-01	JAVA::Collection	O array circular do <code>ArrayDeque</code> permitiria <code>get(i)</code> em O(1). Por que a tabela de Big-O põe "—"?	Porque a API do <code>ArrayDeque</code> não tem <code>get(i)</code>: só mexe nas pontas. Estrutura e API são perguntas diferentes.	semana02 colecoes arraydeque
+w02-hashmap-remove-01	JAVA::Collection	Qual o custo médio de <code>HashMap.remove(chave)</code>, e por quê?	O(1): mesmo caminho do <code>get</code> (achar o balde, andar nele) mais desligar o nó.	semana02 hashmap complexidade
+w02-treemap-custo-01	JAVA::Collection	Por que <code>get</code>, <code>put</code> e <code>remove</code> do <code>TreeMap</code> custam O(log n)?	A árvore é balanceada, com altura ~log₂ n, e cada operação desce da raiz até um nó.	semana02 treemap complexidade
+w02-treemap-porque-01	JAVA::Collection	Se o <code>TreeMap</code> é O(log n) e o <code>HashMap</code> é O(1), quando usar o <code>TreeMap</code>?	Quando a ordem das chaves importa: percorrer ordenado, menor/maior chave, "a próxima depois de X" (<code>ceilingKey</code>), intervalos.	semana02 treemap
+w02-treemap-ceiling-01	JAVA::Collection	Eventos guardados por data: como achar o primeiro evento a partir de hoje num <code>TreeMap</code>, e quanto custa num <code>HashMap</code>?	<code>TreeMap.ceilingKey(hoje)</code>: O(log n). No <code>HashMap</code> as chaves não têm ordem: percorrer tudo, O(n).	semana02 treemap

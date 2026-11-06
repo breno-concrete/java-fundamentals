@@ -25,9 +25,10 @@ By Friday, Nov 13 you have written all of this by hand, with no AI writing the c
 
 ### Day 1 · Saturday, Nov 7 · Fundamentals 2h
 
+- [ ] Warm-up (~5 min), carried from the extra block on Nov 6: if `TreeMap` is O(log n) and `HashMap` is O(1), why use `TreeMap`? (Answer with an example from Jansenbot: events by date)
 - [ ] Two Sum's day-10 review first (~15 min), rewritten from scratch with no lookup
-- [ ] Theory: the List, Set, Map and Deque implementations: what each one is inside (array, linked nodes, hash table, red-black tree, circular array)
-- [ ] Paper: the Big-O table from the week goals. Fill in what you can alone first, then check it against the javadocs of `ArrayList`, `HashMap`, `TreeMap` and `ArrayDeque`
+- [x] Theory: the List, Set, Map and Deque implementations: what each one is inside (array, linked nodes, hash table, red-black tree, circular array). *Moved up to an extra 1h block on Fri, Nov 6, see `docs/days/2026-11-06.md`* Done: 3 of 6 alone, `ArrayDeque` wrong.
+- [x] Paper (moved up to Nov 6 with the theory): the Big-O table from the week goals. Fill in what you can alone first, then check it against the javadocs of `ArrayList`, `HashMap`, `TreeMap` and `ArrayDeque` *Done: 12 of 16 alone, checked against the javadocs. Still to do: write the one-line "why" for each cell (5 min, today after the warm-up).*
 - [ ] Code: start `DynamicArray` test-first: `add`, `get`, `size`, with a fixed capacity for now
 
 ### Day 2 · Sunday, Nov 8 · Fundamentals 2h
