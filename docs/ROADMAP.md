@@ -498,6 +498,7 @@ HUB: 25 minutes before the block, Monday to Friday, outside the 14 hours.
 - **Topics:** Immutable classes and defensive copies · records and compact constructors · enums with behavior · value objects
 - **Read:** Effective Java Items 17, 34, 50
 - **Lab:** A TimeWindow record that validates itself · an EventType enum that carries its points
+- **Carried from week 1 (Nov 6):** the `record` version of the mutable key (`Person`) with a test that `get` still finds it · predict: a `record` with a `List<String>` component, `add` after `put`: is the key lost, and what would a compact constructor do about it?
 - **LeetCode:** #125 Valid Palindrome · #167 Two Sum II · #15 3Sum
 - **Jansenbot:** EventType carries the points · attentive window as an immutable value (30 min before until 3h after or EVENTO_ENCERRADO) · CHEGUEI accepted only inside it
 - [ ] Week done

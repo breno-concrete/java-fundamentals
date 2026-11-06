@@ -1,13 +1,15 @@
 # Progresso
 
 ## Agora
-- **Semana:** 1 de 52 (começou 18/out; recomeçou no dia 2 em 27/out, vai até 01/nov) · Java core
-- **Deslocamento do plano:** 1 semana (semana de 19–24/out perdida, regra 4). Semana 2 começa seg 02/nov.
-- **Última atualização:** 2026-11-04
-- **Semana 2 começou em 04/nov (qua):** dia 7 da semana 1 fechado hoje (página em branco verde 3/3, explicação em voz alta, gravação em inglês). Parou na Fase 4 de `docs/days/2026-11-04.md`: chave mutável num HashMap. Teoria feita e as 4 previsões corrigidas → **retomar escrevendo a classe com setter em `labs/week02` e o teste** (e responder: sem `hashCode`, qual asserção muda?). Depois: fechar `week-01.md` e escrever `week-02.md` (tutor).
+- **Semana:** 2 de 52 (sáb 07/nov – sex 13/nov) · Java core: Collections and their costs. Plano em `docs/weeks/week-02.md`
+- **Deslocamento do plano:** ~2 semanas. A semana 1 do ROADMAP (18–24/out) perdeu 19–26/out (regra 4) e o Fundamentos dela foi até 06/nov (passou 2 a 3 dias do previsto).
+- **Última atualização:** 2026-11-06
+- **Semana 1 fechada em 06/nov:** chave mutável (`Person` + `PersonTest` verdes), `equals` no `get` e stack vs heap no papel. **Retomar no dia 1 da semana 2 (sáb 07/nov):** revisão do Two Sum, depois Collections (tabela de Big-O) e início do `DynamicArray`.
 - **Pendências carregadas:** `notes/week01.md` (Breno) ainda sem o fechamento do dia 2. Jansenbot fica com ~45 min no dia 7: conferir se o `Member` terminou no outro chat, depois `Event` e `Attendance`. O que não couber, a regra de pontos e o total mensal vão para o primeiro bloco de Jansenbot da semana 2.
 - **Próximas revisões de LeetCode:** Two Sum em 07/nov; #217 em 10/nov.
-- **Remarcado para a semana 2:** conteúdo do dia 4 (Item 17, records, stack vs heap, chave mutável) no primeiro bloco de Fundamentos; #242 no primeiro de LeetCode. Exceção à regra 4 (bloco perdido fica na mesma semana): não cabia nos 6h restantes.
+- **Remarcado para a semana 2:** #242 no dia 3 (09/nov); Jansenbot inteiro da semana 1 (repo, modelo, regra de pontos, total mensal) nos dias 5 e 7, antes do ranking.
+- **Movido para a semana 4 do ROADMAP** (*Immutability, records and enums*, que já lê o Item 17): leitura do Item 17, versão `record` da chave com teste, previsão do `record` com `List<String>` + construtor compacto, e por que com `record` a chave não se perde. Decidido em 06/nov para não estudar duas vezes; anotado na semana 4 do `ROADMAP.md`.
+- **Cortado:** teste extra com `containsKey` / `entrySet()` da chave mutável (só reforçava o teste principal).
 
 ## Provas de fase
 
@@ -26,10 +28,11 @@
 
 ## Lacunas abertas
 <!-- O que errei na página em branco / prova e ainda não fechei. Remova quando fechar. -->
-- Explicação do HashMap sem ajuda (30/out): árvore do Java 8 fechada em 04/nov (red-black, O(log n), sozinho). Ainda aberto: o papel do `equals` no `get` (por que o hash sozinho não basta) e por que o acesso ao array é O(1). Pulou a versão corrida em 04/nov. Fecha se explicar sozinho.
+- Explicação do HashMap sem ajuda (30/out): árvore do Java 8 fechada em 04/nov (red-black, O(log n), sozinho). Ainda aberto: o papel do `equals` no `get` (por que o hash sozinho não basta) e por que o acesso ao array é O(1). Pulou a versão corrida em 04/nov. Em 06/nov acertou as duas, mas com ajuda (pergunta reformulada; dica de memória contígua) e sem a conta do endereço (início + idx × tamanho). Fecha se explicar sozinho numa próxima checagem, sem dica.
+- Referências e stack vs heap (06/nov): contou campos (`name`, `age`) como setas que chegam no objeto e disse que o nó aponta para a variável `person`. Entendeu com 3 perguntas-guia. Fecha se desenhar sozinho, com as setas certas, um caso novo (ex.: duas variáveis e uma lista).
 - `LinkedHashMap` (31/out): não soube o que garante, apesar do card de 28/out. Sabe agora só depois de explicado; revisar pelos flashcards de 31/out.
 - Base de Java que apareceu no `SimpleHashMap` (29/out): generics (parâmetro de tipo vs campo, raw type), referência como "ponteiro", `static` vs `private` em classe aninhada, `==` vs `equals` (cache de `Integer`), ler campo de `null`. Revisar pelos flashcards de 29/out.
 
 ## Histórico semanal
 <!-- Uma linha por semana: o que foi feito, o que ficou para trás. -->
-- **Semana 1:** dia 1 feito em 18/out (repo, Effective Java Items 10–11, `Member` + teste do HashSet). Resto da semana perdido; recomeço do dia 2 em 27/out. Dia 2 (27/out): teoria + papel do HashMap feitos; código (Fase 3) adiado para o dia 4. Dia 3 (28/out): Two Sum sozinho, hash map, 3 testes verdes; #217 adiado para o dia 6. Dia 4 (29/out): 3h no `SimpleHashMap` test-first, 1.0–1.3 verdes e 1.4 quase; conteúdo do dia 4 não começou. Dia 5 (30/out): `SimpleHashMap` pronto, 8 testes verdes. Dia 6 (31/out): 3 perguntas e revisão do Two Sum, #217 sozinho; página em branco e gravação foram para o dia 7. Dia 7 (03 e 04/nov): revisão do #217 sozinho; página em branco com 6 bugs, todos consertados sozinho, 3/3 verdes; lacuna de sobrescrita/`size` fechada; gravação em inglês feita.
+- **Semana 1:** dia 1 feito em 18/out (repo, Effective Java Items 10–11, `Member` + teste do HashSet). Resto da semana perdido; recomeço do dia 2 em 27/out. Dia 2 (27/out): teoria + papel do HashMap feitos; código (Fase 3) adiado para o dia 4. Dia 3 (28/out): Two Sum sozinho, hash map, 3 testes verdes; #217 adiado para o dia 6. Dia 4 (29/out): 3h no `SimpleHashMap` test-first, 1.0–1.3 verdes e 1.4 quase; conteúdo do dia 4 não começou. Dia 5 (30/out): `SimpleHashMap` pronto, 8 testes verdes. Dia 6 (31/out): 3 perguntas e revisão do Two Sum, #217 sozinho; página em branco e gravação foram para o dia 7. Dia 7 (03 e 04/nov): revisão do #217 sozinho; página em branco com 6 bugs, todos consertados sozinho, 3/3 verdes; lacuna de sobrescrita/`size` fechada; gravação em inglês feita. Fechamento (05 e 06/nov): chave mutável test-first (`Person` + `PersonTest`), `equals` no `get` e array O(1) (com ajuda), stack vs heap no papel. Item 17 e records foram para a semana 4. Jansenbot não começou: foi para a semana 2. Semana fechada em 06/nov.

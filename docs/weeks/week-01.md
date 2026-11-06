@@ -19,8 +19,11 @@ By Sunday, Nov 1 you have written all of this by hand, with no AI writing the co
 - [x] A `Member` class with a correct equals/hashCode, and a test that shows a HashSet breaking when only equals is overridden
 - [x] Your own small hash map: buckets, put, get, resize at 75% load, with tests
 - [x] 2 LeetCode problems solved and logged (#1, #217), plus Two Sum's first review. #242, the third, moved to week 2.
-- [ ] Jansenbot's new repo with the domain model (Member, Event, Attendance) and the points rule, covered by unit tests
-- [ ] You can explain the equals/hashCode contract and how HashMap works out loud, with no notes
+- [ ] Jansenbot's new repo with the domain model (Member, Event, Attendance) and the points rule, covered by unit tests. *Not started: moved to week 2's first Jansenbot block.*
+- [ ] You can explain the equals/hashCode contract and how HashMap works out loud, with no notes. *Almost: recording done Nov 4; the role of `equals` in `get` and why array access is O(1) still came out with help on Nov 6.*
+- [x] A test that loses a mutable key (`PersonTest`, Nov 6) and stack vs heap drawn on paper (Nov 6)
+
+**Week closed on Nov 6.** The Fundamentals part took about 2–3 days longer than planned (`SimpleHashMap` 2 days, blank page over 2 days). Week 2 (Collections) starts Saturday, Nov 7: see [week-02.md](week-02.md).
 
 ## Day by day
 
@@ -45,7 +48,7 @@ On weekdays, the HUB block comes first with a hard 25-minute timer, then the 2h 
 ### Day 4 · Thursday, Oct 29 (was Wednesday) · Fundamentals 2h + HUB 25 min
 
 - [x] `SimpleHashMap` test-first, carried over from day 2. *Oct 29: steps 1.0–1.3 green, 1.4 almost (a bug when overwriting a key in the middle of a chain). The rest moved to day 5.*
-- Moved to week 2's first Fundamentals block (see Next week): Item 17 and records, stack vs heap, the immutable record and the mutable key test.
+- Moved to week 2's first Fundamentals block (see Next week): Item 17 and records, stack vs heap, the immutable record and the mutable key test. *Done Nov 5–6: the mutable key test (`Person` + `PersonTest`) and stack vs heap on paper. Item 17, records and the immutable record moved to week 4 of the ROADMAP (Immutability, records and enums), which already covers them.*
 
 ### Day 5 · Friday, Oct 30 (was Thursday) · Jansenbot 2h + HUB 25 min
 
