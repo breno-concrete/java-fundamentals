@@ -59,4 +59,5 @@ Testes de Software
 Assuntos sem baralho que sirva (ex.: memória da JVM e GC, exceções, sistemas operacionais, concorrência, redes, CI/CD, IA aplicada).
 
 ```
+JAVA::JVM          (2026-11-06: stack vs heap; depois GC e afins)
 ```
