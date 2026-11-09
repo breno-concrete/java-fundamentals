@@ -1,0 +1,20 @@
+#separator:tab
+#html:true
+#notetype:Basic
+#guid column:1
+#deck column:2
+#tags column:5
+w02-ceiling-caminho-01	JAVA::Collection	Na descida do <code>TreeMap.ceilingKey(d)</code>, o que fazer num nó com chave ≥ d?	Guardar como candidato e ir para a <b>esquerda</b>, procurando uma chave menor que ainda seja ≥ d.	semana02 treemap
+w02-ceiling-caminho-02	JAVA::Collection	Por que o <code>ceilingKey</code> visita só ~log₂ n nós?	Desce da raiz com um nó por nível, e a árvore balanceada tem altura ~log₂ n.	semana02 treemap
+w02-floor-lower-01	JAVA::Collection	<code>TreeMap</code>: qual a diferença entre <code>floorKey(d)</code> e <code>lowerKey(d)</code>?	<code>floorKey</code>: maior chave ≤ d (aceita d). <code>lowerKey</code>: maior chave &lt; d (estritamente antes).	semana02 treemap
+w02-linkedlist-addlast-01	JAVA::Collection	Por que <code>LinkedList.addLast</code> é O(1), e não O(n)?	A lista guarda um campo <code>last</code> apontando para o último nó: não precisa andar desde o primeiro.	semana02 linkedlist
+w02-lista-contains-01	JAVA::Collection	Por que <code>contains</code> é O(n) em <code>ArrayList</code> e <code>LinkedList</code>?	Lista não tem hash nem ordem: compara com <code>equals</code> elemento por elemento.	semana02 big-o
+w02-dynarray-campos-01	DSA::EDA	Num array dinâmico, por que não precisa de um campo <code>capacity</code>?	A capacidade é o próprio <code>array.length</code>; o único campo extra é o <code>size</code>.	semana02 dynamicarray
+w02-dynarray-size-01	DSA::EDA	Num array dinâmico, além de quantos elementos há, o que o <code>size</code> indica?	O índice onde entra o próximo <code>add</code>: <code>array[size] = x</code>, depois <code>size++</code>.	semana02 dynamicarray
+w02-dynarray-resize-01	DSA::EDA	Em Java, por que "redimensionar" um array é alocar outro e copiar?	Um array Java tem tamanho fixo: não dá para aumentar o bloco existente.	semana02 dynamicarray
+w02-dynarray-resize-02	DSA::EDA	Os 3 passos para crescer um array dinâmico sem perder os elementos?	Alocar um array maior; copiar cada elemento para o mesmo índice; apontar o campo para o novo array.	semana02 dynamicarray
+w02-dynarray-resize-03	DSA::EDA	O que acontece se o <code>add</code> faz <code>array = new int[size + 1]</code> sem copiar?	O array novo vem zerado e o antigo é descartado: só o último elemento sobra.	semana02 dynamicarray
+w02-dynarray-cresce-01	DSA::EDA	Num array dinâmico, quando crescer e para quanto?	Só quando está cheio (<code>size == array.length</code>), dobrando a capacidade.	semana02 dynamicarray
+w02-dynarray-zero-01	DSA::EDA	Array dinâmico com capacidade inicial 0: por que fazer <code>size = 1</code> para conseguir dobrar está errado?	<code>size</code> conta elementos, não capacidade: passa a mentir e o <code>add</code> grava no índice errado.	semana02 dynamicarray
+w02-dynarray-copia-01	DSA::EDA	O resize do array dinâmico e o do <code>SimpleHashMap</code>: o que muda na cópia?	No array cada elemento mantém o índice; no hash map cada entrada recalcula o balde (<i>bucket</i>).	semana02 dynamicarray hashmap
+w02-teste-valores-01	Testes de Software	Por que um teste que faz <code>add(i)</code> e confere <code>get(i) == i</code> é fraco?	Valor igual ao índice esconde um <code>get</code> que devolve o índice em vez de <code>array[index]</code>.	semana02 junit

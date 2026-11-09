@@ -23,21 +23,27 @@ By Friday, Nov 13 you have written all of this by hand, with no AI writing the c
 
 ## Day by day
 
-### Day 1 · Saturday, Nov 7 · Fundamentals 2h
+### Day 1 · Saturday, Nov 7 → done Monday, Nov 9 · Fundamentals 2h
 
-- [ ] Warm-up (~5 min), carried from the extra block on Nov 6: if `TreeMap` is O(log n) and `HashMap` is O(1), why use `TreeMap`? (Answer with an example from Jansenbot: events by date)
-- [ ] Two Sum's day-10 review first (~15 min), rewritten from scratch with no lookup
+*Nov 7 and 8 had no study. Day 1 ran on Nov 9, so every day below moves one day later: day 2 on Tue, Nov 10; LeetCode (day 3) on Wed, Nov 11; and so on. See `docs/days/2026-11-09.md`.*
+
+- [x] Warm-up (~5 min), carried from the extra block on Nov 6: if `TreeMap` is O(log n) and `HashMap` is O(1), why use `TreeMap`? (Answer with an example from Jansenbot: events by date) *"Sorted, balanced red-black", but not what the order is for. After the explanation, the `ceilingKey` and `floorKey` walks came out right on his own.*
+- [x] Two Sum's day-10 review first (~15 min), rewritten from scratch with no lookup *Done Nov 9. Logic right; first created outside `src` with no package or imports.*
 - [x] Theory: the List, Set, Map and Deque implementations: what each one is inside (array, linked nodes, hash table, red-black tree, circular array). *Moved up to an extra 1h block on Fri, Nov 6, see `docs/days/2026-11-06.md`* Done: 3 of 6 alone, `ArrayDeque` wrong.
-- [x] Paper (moved up to Nov 6 with the theory): the Big-O table from the week goals. Fill in what you can alone first, then check it against the javadocs of `ArrayList`, `HashMap`, `TreeMap` and `ArrayDeque` *Done: 12 of 16 alone, checked against the javadocs. Still to do: write the one-line "why" for each cell (5 min, today after the warm-up).*
-- [ ] Code: start `DynamicArray` test-first: `add`, `get`, `size`, with a fixed capacity for now
+- [x] Paper (moved up to Nov 6 with the theory): the Big-O table from the week goals. Fill in what you can alone first, then check it against the javadocs of `ArrayList`, `HashMap`, `TreeMap` and `ArrayDeque` *Done: 12 of 16 alone, checked against the javadocs. Nov 9: the "why" for `ArrayList` and `LinkedList` (8 of 8, alone); the other 4 rows move to day 2's warm-up.*
+- [x] Code: start `DynamicArray` test-first: `add`, `get`, `size`, with a fixed capacity for now *Went further: growth (double when full, copy with a `for`) is done too, 5 tests green, including 100 adds.*
 
-### Day 2 · Sunday, Nov 8 · Fundamentals 2h
+### Day 2 · Sunday, Nov 8 → Tuesday, Nov 10 · Fundamentals 2h
 
-- [ ] `DynamicArray` growth: when it's full, allocate a bigger array (double it) and copy. Tests for growth, and for `get` out of bounds
+- [ ] Warm-up (5 min): the "why" for the `HashMap`, `HashSet`, `TreeMap` and `ArrayDeque` rows of the Big-O table (carried from day 1)
+- [ ] #217's day-10 review (~15 min), from scratch (moved here from day 4)
+- [x] `DynamicArray` growth: when it's full, allocate a bigger array (double it) and copy. *Done on Nov 9.* Still to do: in the 100-element test, assert `size() == 100` and use values different from the index; compute `newCapacity` once instead of allocating `int[1]` first
+- [ ] Tests for `get` out of bounds (negative index, index ≥ `size`): why `get(size)` must fail even if the array has room
+- [ ] `int[]` vs `DynamicArray<T>`: why `new T[10]` doesn't compile, and what `ArrayList` does instead (`Object[]` + cast)
 - [ ] On paper: why doubling makes `add` amortized O(1), and why growing by a fixed +1 would make it O(n)
 - [ ] Compare with your `SimpleHashMap` resize: what's the same idea, and what's different
 
-### Day 3 · Monday, Nov 9 · LeetCode 2h + HUB 25 min
+### Day 3 · Monday, Nov 9 → Wednesday, Nov 11 · LeetCode 2h + HUB 25 min
 
 - [ ] #242 Valid Anagram (carried from week 1), 30 min alone
 - [ ] #49 Group Anagrams, 30 min alone. If stuck: read a solution, close it, rewrite from scratch
@@ -45,7 +51,7 @@ By Friday, Nov 13 you have written all of this by hand, with no AI writing the c
 
 ### Day 4 · Tuesday, Nov 10 · Fundamentals 2h + HUB 25 min
 
-- [ ] #217's day-10 review first (~15 min), from scratch
+- [ ] ~~#217's day-10 review first (~15 min), from scratch~~ *Moved to day 2 (Nov 10), its due date.*
 - [ ] Lab: time 100k inserts in `ArrayList` vs `LinkedList` (at the end, at the start, in the middle). Predict first, then measure, then explain the result with the Big-O table and memory (contiguous vs nodes)
 - [ ] Read *Effective Java* Item 14 (`Comparable`), then `Comparator` chains (`comparing`, `thenComparing`, `reversed`), with a small test
 
