@@ -37,8 +37,8 @@ By Friday, Nov 13 you have written all of this by hand, with no AI writing the c
 
 - [ ] Warm-up (5 min): the "why" for the `HashMap`, `HashSet`, `TreeMap` and `ArrayDeque` rows of the Big-O table (carried from day 1)
 - [ ] #217's day-10 review (~15 min), from scratch (moved here from day 4)
-- [x] `DynamicArray` growth: when it's full, allocate a bigger array (double it) and copy. *Done on Nov 9.* Still to do: in the 100-element test, assert `size() == 100` and use values different from the index; compute `newCapacity` once instead of allocating `int[1]` first
-- [ ] Tests for `get` out of bounds (negative index, index ≥ `size`): why `get(size)` must fail even if the array has room
+- [x] `DynamicArray` growth: when it's full, allocate a bigger array (double it) and copy. *Done on Nov 9.* Still to do: compute `newCapacity` once instead of allocating `int[1]` first
+- [x] Tests for `get` out of bounds (negative index, index ≥ `size`): why `get(size)` must fail even if the array has room *Done Nov 9 in an extra 30-min block. Optional cleanup: simplify the condition to `index < 0 || index >= size`.*
 - [ ] `int[]` vs `DynamicArray<T>`: why `new T[10]` doesn't compile, and what `ArrayList` does instead (`Object[]` + cast)
 - [ ] On paper: why doubling makes `add` amortized O(1), and why growing by a fixed +1 would make it O(n)
 - [ ] Compare with your `SimpleHashMap` resize: what's the same idea, and what's different

@@ -40,7 +40,7 @@ class DynamicArrayTest {
     }
 
     @Test
-    void hasToReturnRightGetsWhenAdds100Elements() {
+    void keepsAllValuesAfterManyGrows() {
         for(int i = 0; i < 100; i++) {
             dynamicArray.add(i * 10);
         }
@@ -51,5 +51,18 @@ class DynamicArrayTest {
 
         assertEquals(100, dynamicArray.size());
     }
+
+    @Test
+    void hasToReturnIndexOutOfBoundsWhenIdxNotPopulated() {
+        dynamicArray.add(2);
+        dynamicArray.add(3);
+        dynamicArray.add(1);
+
+        assertThrows(IndexOutOfBoundsException.class,() -> dynamicArray.get(3));
+        assertThrows(IndexOutOfBoundsException.class,() -> dynamicArray.get(-1));
+        assertThrows(IndexOutOfBoundsException.class,() -> dynamicArray.get(10));
+
+    }
+
 
 }
