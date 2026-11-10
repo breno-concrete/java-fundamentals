@@ -489,6 +489,7 @@ HUB: 25 minutes before the block, Monday to Friday, outside the 14 hours.
 - **Lab:** A generic InMemoryRepository<T, ID> · a copy method that only compiles with the right wildcards
 - **LeetCode:** #36 Valid Sudoku · #128 Longest Consecutive Sequence · review #49
 - **Jansenbot:** Event flow in plain Java: only the admin marks events, members confirm sim/não, silence becomes “não vai” · generic in-memory repositories
+- **Carried from week 2 (Nov 10):** convert `DynamicArray` from `int[]` to `DynamicArray<T>` with an `Object[]` + `(T)` cast, tests on `DynamicArray<Integer>` and `DynamicArray<String>`. The why (no `new T[]`: arrays keep their type at runtime, `T` is erased) was covered on Nov 10
 - [ ] Week done
 
 #### Week 4 · Nov 8 – 14 · Java core

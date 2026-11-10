@@ -35,13 +35,15 @@ By Friday, Nov 13 you have written all of this by hand, with no AI writing the c
 
 ### Day 2 · Sunday, Nov 8 → Tuesday, Nov 10 · Fundamentals 2h
 
-- [ ] Warm-up (5 min): the "why" for the `HashMap`, `HashSet`, `TreeMap` and `ArrayDeque` rows of the Big-O table (carried from day 1)
-- [ ] #217's day-10 review (~15 min), from scratch (moved here from day 4)
-- [x] `DynamicArray` growth: when it's full, allocate a bigger array (double it) and copy. *Done on Nov 9.* Still to do: compute `newCapacity` once instead of allocating `int[1]` first
-- [x] Tests for `get` out of bounds (negative index, index ≥ `size`): why `get(size)` must fail even if the array has room *Done Nov 9 in an extra 30-min block. Optional cleanup: simplify the condition to `index < 0 || index >= size`.*
-- [ ] `int[]` vs `DynamicArray<T>`: why `new T[10]` doesn't compile, and what `ArrayList` does instead (`Object[]` + cast)
-- [ ] On paper: why doubling makes `add` amortized O(1), and why growing by a fixed +1 would make it O(n)
-- [ ] Compare with your `SimpleHashMap` resize: what's the same idea, and what's different
+*Done Nov 10. See `docs/days/2026-11-10.md`.*
+
+- [x] Warm-up (5 min): the "why" for the `HashMap`, `HashSet`, `TreeMap` and `ArrayDeque` rows of the Big-O table (carried from day 1) *11 of 14 alone. `HashMap.containsKey` and `HashSet` `remove`/`contains` called O(n) (same mistake as Nov 6). Didn't remember a `HashSet` is a `HashMap` inside: explained with the JDK source (`PRESENT`).*
+- [x] #217's day-10 review (~15 min), from scratch (moved here from day 4) *Alone, in the right package, 3/3 green. Time O(n) with the why after one question (n × O(1); O(n²) with an `ArrayList`).*
+- [x] `DynamicArray` growth: when it's full, allocate a bigger array (double it) and copy. *Done on Nov 9. Nov 10: removed the duplicate write; the single growth path (`newCapacity` once) moves to day 6's blank page.*
+- [x] Tests for `get` out of bounds (negative index, index ≥ `size`): why `get(size)` must fail even if the array has room *Done Nov 9 in an extra 30-min block, condition simplified.*
+- [x] `int[]` vs `DynamicArray<T>`: why `new T[10]` doesn't compile, and what `ArrayList` does instead (`Object[]` + cast) *The why was explained (arrays keep their type at runtime + erasure); why the cast is safe came out alone. The code conversion moves to week 3 (Generics).*
+- [x] On paper: why doubling makes `add` amortized O(1), and why growing by a fixed +1 would make it O(n) *First counted resizes instead of copies; with the loop drawn, doubling = 14 copies alone. The +1 total (120) and the n = 1,000,000 picture were closed by the tutor.*
+- [x] Compare with your `SimpleHashMap` resize: what's the same idea, and what's different *Trigger (75%) and rehash (index depends on capacity) right alone. "Same idea" was vague: `oldArray = array` copies the reference, not the array.*
 
 ### Day 3 · Monday, Nov 9 → Wednesday, Nov 11 · LeetCode 2h + HUB 25 min
 
@@ -63,8 +65,8 @@ By Friday, Nov 13 you have written all of this by hand, with no AI writing the c
 ### Day 6 · Thursday, Nov 12 · LeetCode 1h + Blank page 1h + HUB 25 min
 
 - [ ] #242's day-3 review (~10 min), then #347 Top K Frequent Elements, 30 min alone. #238 moves to week 3 if it doesn't fit
-- [ ] Blank page: `DynamicArray` from zero with no lookup, plus its tests. Whatever you can't write, you didn't know yet: note it
-- [ ] Out loud, with no notes: why `ArrayList.add` is amortized O(1), and when `LinkedList` actually wins
+- [ ] Blank page: `DynamicArray` from zero with no lookup, plus its tests. Whatever you can't write, you didn't know yet: note it. Write the growth as a single path this time (`newCapacity` computed once, one allocation, one copy loop; carried from Nov 10). Also from Nov 10: say what's inside a `HashSet` and why `add`/`remove`/`contains` are O(1)
+- [ ] Out loud, with no notes: why `ArrayList.add` is amortized O(1), and when `LinkedList` actually wins *On Nov 10 the order of the steps came out right, but the amortized half didn't: this is where it closes.*
 
 ### Day 7 · Friday, Nov 13 · Jansenbot 2h + HUB 25 min
 

@@ -18,7 +18,6 @@ public class DynamicArray {
 
             if (array.length == 0) {
                 array = new int[2];
-                array[0] = number;
 
             } else {
 
