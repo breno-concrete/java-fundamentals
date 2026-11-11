@@ -38,6 +38,17 @@
   - Gatilho: o array enche de verdade; o hash map nunca enche, só fica lento (baldes longos), por isso cresce a 75%
   - Movimento: o array copia para o mesmo índice; o hash map refaz o `put` (rehash), porque o índice depende da capacidade (`floorMod`)
   - `oldArray = array` copia a **referência**, não o array
+- LeetCode #242 Valid Anagram (11/nov), sozinho em ~29 min
+  - Tamanhos diferentes → `false`. Conta as letras de `s` num `HashMap<Character, Integer>`, desconta as de `t`; se a contagem já é 0, `false`
+  - O `return true` no fim é seguro por causa do teste de tamanho: soma n, desconta n, nenhuma negativa → todas 0. Sem ele, `("aab", "ab")` daria `true`
+  - `s.toLowerCase()` dentro do laço: `String` é imutável, cada chamada copia n letras → O(n²). Contar o custo das chamadas no laço
+  - Espaço O(1): o mapa tem uma chave por letra distinta (no máximo 26), não cresce com n. Com qualquer Unicode, O(k)
+  - Final: O(n) tempo, O(1) espaço. Ordenar as duas strings seria O(n log n)
+- `getOrDefault(chave, padrao)` (11/nov): devolve o valor, ou o padrão se a chave não existe, sem inserir nada. `map.put(c, map.getOrDefault(c, 0) + 1)` troca o `if/else` com `containsKey`. Sem ele, `get` devolve `null` e `null + 1` lança NPE
+- Testes (11/nov)
+  - Teste que só espera `true` passa com `return true;`: precisa de um caso `false`
+  - Vermelho depois de refatorar: o código quebrou, ou o contrato mudou (tirar o `toLowerCase()` fez `'B'` ≠ `'b'`; seguir o enunciado, só minúsculas, e trocar o teste)
+  - Saída sem ordem (#49): normalizar os dois lados com um helper. Ordenar uma **cópia** de cada grupo (`List.of` é imutável) e pôr os grupos num `HashSet` (`List` tem `equals`/`hashCode` pelo conteúdo). Grupo não vira `Set`: `["", ""]` perderia o repetido
 
 ## Consigo explicar sem consultar (perguntas do diagnóstico)
 - [x] Por que `array[i]` é O(1) *09/nov: memória contígua sem dica e a conta do endereço sozinho.*
@@ -56,6 +67,8 @@
 - Two Sum D+10 criado em `leetcode/arrayshashing/` (fora do `src`), sem `package` nem imports
 - (aquecimento, 10/nov) `HashMap.containsKey` O(n); `HashSet.remove` e `contains` O(n): de novo o erro de 06/nov, achar que remover/procurar precisa varrer
 - (papel, 10/nov) Contou redimensionamentos como custo 1, em vez das `size` cópias de cada um
+- (#242, 11/nov) 1º teste só com o caso `true`; `toLowerCase()` no laço chamado de O(n) (era O(n²)); espaço O(n) (era O(1)); não sabia usar `getOrDefault`
+- (#49, 11/nov) Não sabia escrever um assert que ignora a ordem (normalizar)
 - (checagem, 10/nov) Explicou o `equals` pelo `put` (sobrescrever) quando a pergunta era o `get` (achar o nó certo entre chaves que dividem o balde)
 
 ## Dúvidas para levar ao tutor (IA)

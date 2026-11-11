@@ -18,7 +18,7 @@ By Sunday, Nov 15 you have written all of this by hand, with no AI writing the c
 - [ ] Your own `DynamicArray` that grows, with tests, and you can explain why `add` is amortized O(1)
 - [ ] 100k inserts timed in `ArrayList` vs `LinkedList`, with the result explained
 - [ ] `Comparable` vs `Comparator` (*Effective Java* Item 14), used in Jansenbot's ranking tie-breaks
-- [ ] LeetCode #242 (carried from week 1), #49, #347 logged in `leetcode/TRACKER.md`. #238 if it fits
+- [ ] LeetCode #242 (carried from week 1), #49, #347 logged in `leetcode/TRACKER.md`. #238 if it fits *#242 done Nov 11; #49 moved to day 6; #347 and #238 move to week 3.*
 - [ ] Jansenbot: what was carried from week 1 (domain model, points rule, monthly total), then the ranking
 
 ## Day by day
@@ -47,9 +47,11 @@ By Sunday, Nov 15 you have written all of this by hand, with no AI writing the c
 
 ### Day 3 · Monday, Nov 9 → Wednesday, Nov 11 · LeetCode 2h + HUB 25 min
 
-- [ ] #242 Valid Anagram (carried from week 1), 30 min alone
-- [ ] #49 Group Anagrams, 30 min alone. If stuck: read a solution, close it, rewrite from scratch
-- [ ] Log both in `leetcode/TRACKER.md` with brute force vs best complexity
+*Done Nov 11, stopped early (tired) in the middle of #49. See `docs/days/2026-11-11.md`.*
+
+- [x] #242 Valid Anagram (carried from week 1), 30 min alone *Alone in ~29 min: length check, count `s`, subtract `t`. Guessed O(n), but `toLowerCase()` inside the loop made it O(n²) (found the why with one question). Space called O(n); it's O(1) (at most 26 keys). Refactored with `getOrDefault` (API explained); removing `toLowerCase()` turned a test red that expected the old behavior, so he fixed the test to follow the problem's contract. Final: O(n) time, O(1) space, 3/3 green.*
+- [ ] #49 Group Anagrams, 30 min alone. If stuck: read a solution, close it, rewrite from scratch *Paper done; stuck on the order-free assertion (normalizing explained); the 30 min didn't start. Moved to day 6.*
+- [x] Log both in `leetcode/TRACKER.md` with brute force vs best complexity *#242 logged. #49 gets logged when it's solved.*
 
 ### Day 4 · Tuesday, Nov 10 → Thursday, Nov 12 · Fundamentals 2h + HUB 25 min
 
@@ -64,7 +66,9 @@ By Sunday, Nov 15 you have written all of this by hand, with no AI writing the c
 
 ### Day 6 · Thursday, Nov 12 → Saturday, Nov 14 · LeetCode 1h + Blank page 1h + HUB 25 min
 
-- [ ] #242's day-3 review (~10 min), then #347 Top K Frequent Elements, 30 min alone. #238 moves to week 3 if it doesn't fit
+- [ ] #242's day-3 review (~10 min), from scratch. This time: the `"aab"` / `"abb"` test, the problem URL as a comment, and no `Diferent` typo (carried from Nov 11)
+- [ ] #49 Group Anagrams (carried from day 3): first the `normalize` helper in `GroupAnagramsTest` (sort a copy of each group, put the groups in a `HashSet`), red, then 30 min alone. If stuck: read a solution, close it, rewrite from scratch
+- [ ] ~~#347 Top K Frequent Elements~~ *Moves to week 3: #49 took its slot. #238 too.*
 - [ ] Blank page: `DynamicArray` from zero with no lookup, plus its tests. Whatever you can't write, you didn't know yet: note it. Write the growth as a single path this time (`newCapacity` computed once, one allocation, one copy loop; carried from Nov 10). Also from Nov 10: say what's inside a `HashSet` and why `add`/`remove`/`contains` are O(1)
 - [ ] Out loud, with no notes: why `ArrayList.add` is amortized O(1), and when `LinkedList` actually wins *On Nov 10 the order of the steps came out right, but the amortized half didn't: this is where it closes.*
 
