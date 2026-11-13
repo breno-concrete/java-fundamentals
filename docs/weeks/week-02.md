@@ -7,8 +7,8 @@ Nov 7 – 15, 2026 (shifted 2 days: Nov 9 – 15) (ROADMAP dates: Oct 25 – 31)
 Week 2 of 52 in [Caminho das Pedras](../ROADMAP.md): Java core, collections and their costs.
 
 - **Week:** Saturday, Nov 7 – Friday, Nov 13, 2026, now running Monday, Nov 9 – Sunday, Nov 15 (see day 1). Week 1's Fundamentals ran until Nov 6 (see [week-01.md](week-01.md)), so the plan is now shifted by about 2 weeks. Like week 1, the days keep the template's order of blocks; only the weekdays move.
-- **Blocks:** Fundamentals days 1, 2, 4 · LeetCode day 3 · LeetCode 1h + Blank page 1h day 6 · Jansenbot days 5, 7 · HUB +25 min on weekdays (tracked in its own repo)
-- **Where the code goes:** `src/main/java/dev/breno/labs/week02/` (tests mirrored in `src/test/...`), LeetCode in `src/main/java/dev/breno/leetcode/arrayshashing/`, Jansenbot in its own repo
+- **Blocks:** Fundamentals days 1, 2, 4 · LeetCode day 3 · LeetCode 1h + Blank page 1h day 6 · Project days 5, 7 (you pick the project; tracked in its own repo) · HUB +25 min on weekdays (tracked in its own repo)
+- **Where the code goes:** `src/main/java/dev/breno/labs/week02/` (tests mirrored in `src/test/...`), LeetCode in `src/main/java/dev/breno/leetcode/arrayshashing/`
 
 ## Week goals
 
@@ -17,9 +17,8 @@ By Sunday, Nov 15 you have written all of this by hand, with no AI writing the c
 - [ ] A table on paper with the Big-O of `get`, `add`, `remove` and `contains` for `ArrayList`, `LinkedList`, `HashSet`, `HashMap`, `TreeMap` and `ArrayDeque`, and you can justify each line
 - [ ] Your own `DynamicArray` that grows, with tests, and you can explain why `add` is amortized O(1)
 - [ ] 100k inserts timed in `ArrayList` vs `LinkedList`, with the result explained
-- [ ] `Comparable` vs `Comparator` (*Effective Java* Item 14), used in Jansenbot's ranking tie-breaks
+- [ ] `Comparable` vs `Comparator` (*Effective Java* Item 14), with a `Comparator` chain and one test per tie-break *Moves to the start of week 3, day 1 (Nov 13: day 7 became a project day).*
 - [ ] LeetCode #242 (carried from week 1), #49, #347 logged in `leetcode/TRACKER.md`. #238 if it fits *#242 done Nov 11; #49 moved to day 6; #347 and #238 move to week 3.*
-- [ ] Jansenbot: what was carried from week 1 (domain model, points rule, monthly total), then the ranking
 
 ## Day by day
 
@@ -59,12 +58,13 @@ By Sunday, Nov 15 you have written all of this by hand, with no AI writing the c
 
 - [ ] ~~#217's day-10 review first (~15 min), from scratch~~ *Moved to day 2 (Nov 10), its due date.*
 - [x] Lab: time 100k inserts in `ArrayList` vs `LinkedList` (at the end, at the start, in the middle). Predict first, then measure, then explain the result with the Big-O table and memory (contiguous vs nodes) *`InsertLab`, written alone. Start row predicted right; end and middle wrong (assumed 1 ms per insert, it's ~20 ns; `LinkedList` middle was ~22× slower, not faster). Guessed "array on the stack"; both are on the heap. After the cache explanation: "LinkedList jumps around memory, ArrayList copies one contiguous block".*
-- [ ] Read *Effective Java* Item 14 (`Comparable`), then `Comparator` chains (`comparing`, `thenComparing`, `reversed`), with a small test *Not started: moves to the start of day 7, right before the ranking that uses it.*
+- [ ] Read *Effective Java* Item 14 (`Comparable`), then `Comparator` chains (`comparing`, `thenComparing`, `reversed`), with a small test *Not started: moved to day 7, then (Nov 13) to the start of week 3, day 1.*
 
-### Day 5 · Wednesday, Nov 11 → Friday, Nov 13 · Jansenbot 2h + HUB 25 min
+### Day 5 · Wednesday, Nov 11 → Friday, Nov 13 · Project day 2h + HUB 25 min
 
-- [ ] Carried from week 1: create the new repo (plain Java 21, JUnit 5, no Spring), then the domain model `Member`, `Event` (ensaio, culto, show), `Attendance` (confirmed, arrived, minutes late). Entities compare by id
-- [ ] Carried from week 1: the points rule test-first: ensaio 2 points (1 if more than 20 minutes late), culto 3, show 4
+*Nov 13: projects left this plan. A project day only says how long; Breno picks the project and tracks it in its own repo. The Jansenbot work carried from week 1 is no longer planned here.*
+
+- [ ] Project day (2h)
 
 ### Day 6 · Thursday, Nov 12 → Saturday, Nov 14 · LeetCode 1h + Blank page 1h + HUB 25 min
 
@@ -72,13 +72,13 @@ By Sunday, Nov 15 you have written all of this by hand, with no AI writing the c
 - [ ] #49 Group Anagrams (carried from day 3): first the `normalize` helper in `GroupAnagramsTest` (sort a copy of each group, put the groups in a `HashSet`), red, then 30 min alone. If stuck: read a solution, close it, rewrite from scratch
 - [ ] ~~#347 Top K Frequent Elements~~ *Moves to week 3: #49 took its slot. #238 too.*
 - [ ] Blank page: `DynamicArray` from zero with no lookup, plus its tests. Whatever you can't write, you didn't know yet: note it. Write the growth as a single path this time (`newCapacity` computed once, one allocation, one copy loop; carried from Nov 10). Also from Nov 10: say what's inside a `HashSet` and why `add`/`remove`/`contains` are O(1)
-- [ ] Out loud, with no notes: why `ArrayList.add` is amortized O(1), and when `LinkedList` actually wins *On Nov 10 the order of the steps came out right, but the amortized half didn't: this is where it closes.*
+- [ ] Out loud, with no notes: why `ArrayList.add` is amortized O(1), when `LinkedList` actually wins, and why it was ~22× slower in the middle on Nov 12 (carried from day 5's warm-up) *On Nov 10 the order of the steps came out right, but the amortized half didn't: this is where it closes.*
 
-### Day 7 · Friday, Nov 13 → Sunday, Nov 15 · Jansenbot 2h + HUB 25 min
+### Day 7 · Friday, Nov 13 → Sunday, Nov 15 · Project day 2h
 
-- [ ] **First, carried from day 4 (~45 min):** *Effective Java* Item 14 (PDF pages 88–95), `Comparable` vs `Comparator` in one sentence each, a small test-first `Comparator` chain on `Person` (age, then name, then `reversed()`), and the `TreeSet` prediction (comparator by age only, two people with the same age). Phase 3 of `docs/days/2026-11-12.md` has the details
-- [ ] Carried from week 1: the monthly total per member with streams written by hand (group by member, sum points)
-- [ ] Funcionário do Mês ranking: every tie-break as a `Comparator` chain, one test per tie-break. Whatever doesn't fit moves to week 3's first Jansenbot block *(with Item 14 first, the ranking will likely only start today)*
+- [ ] Project day (2h)
+
+*Item 14 + `Comparator` (carried from day 4) moves to the start of week 3, day 1 (Mon, Nov 16): Item 14 (PDF pages 88–95), `Comparable` vs `Comparator` in one sentence each, a test-first `Comparator` chain on `Person` (age, then name, then `reversed()`) with one test per tie-break, and the `TreeSet` prediction. Phase 3 of `docs/days/2026-11-12.md` has the details.*
 
 ## HUB
 
@@ -86,4 +86,4 @@ Tracked in its own repo, not here.
 
 ## Next week
 
-Week 3: Generics. Read *Effective Java* Items 26–31, build a generic `InMemoryRepository<T, ID>`, solve #36 and #128 and review #49. Every week's details are in [Caminho das Pedras](../ROADMAP.md).
+Week 3: Generics. Start with Item 14 + `Comparator` (carried from this week). Read *Effective Java* Items 26–31, build a generic `InMemoryRepository<T, ID>`, solve #36 and #128 and review #49. Every week's details are in [Caminho das Pedras](../ROADMAP.md).

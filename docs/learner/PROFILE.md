@@ -3,7 +3,8 @@
 ## Quem
 - Breno — estudante na UnB, estagiário, vem de Java/backend.
 - Objetivo: **gold junior em 17/10/2027** (ver "The goal" no [ROADMAP](../ROADMAP.md)).
-- Projetos paralelos: **Jansenbot** (reescrita à mão, no ar em 22/05/2027), **penssay** (lançamento até 04/09/2027), **HUB** (pesquisa, 25 min por dia útil).
+- Projetos (Jansenbot, penssay e outros) ficam nos repos deles, fora deste plano. Aqui, qui e sáb do modelo são **dias de projeto** (2h): o Claude só avisa que é dia de projeto e quanto tempo; o Breno escolhe o projeto.
+- **HUB** (pesquisa, 25 min por dia útil), acompanhado em outro repo.
 
 ## O que já sei
 <!-- Preencha: o que usa no dia a dia sem pensar, o que usa sem entender por dentro. -->
@@ -11,7 +12,7 @@
 - Front-end/mobile (React, TypeScript): iniciante.
 
 ## Como o Claude deve ensinar
-- **Modo aprendizado (regra 1 da casa):** nos blocos de estudo a IA explica e corrige as minhas explicações; **não escreve o código** de `src/`. No Jansenbot, o tópico da semana é escrito à mão.
+- **Modo aprendizado (regra 1 da casa):** nos blocos de estudo a IA explica e corrige as minhas explicações; **não escreve o código** de `src/`.
 - Explicar o conceito e o **porquê** antes do como; depois eu executo e você confere.
 - Pode: revisar meu código, apontar o erro e o motivo, fazer perguntas de diagnóstico, sugerir o próximo teste.
 - Não pode: entregar a solução pronta de exercício ou de LeetCode antes dos 30 minutos sem ajuda.

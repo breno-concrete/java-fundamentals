@@ -12,6 +12,7 @@ A study repo, not a product. It holds the hand-written exercises of a 52-week le
 - **LeetCode:** don't give a solution before Breno has spent 30 minutes alone. When he's stuck, he reads a solution, closes it, rewrites from scratch.
 - Explain the concept and the *why* before the *how*, then let him do it and check his understanding.
 - New topics outside the current subject go to `docs/PARKING-LOT.md`, not into the current week.
+- **Projects live elsewhere.** Jansenbot, penssay and any other project are planned and tracked in their own repos. This repo is only for knowledge. On a project day (Thu and Sat in the week template), the day plan only says it's a project day and how long; Breno picks the project. Don't plan project work here.
 
 ## Where to look before helping
 

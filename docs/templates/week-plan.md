@@ -7,7 +7,7 @@
 Week N of 52 in [Caminho das Pedras](../ROADMAP.md): <matéria>.
 
 - **Week:**
-- **Blocks:** Fundamentals Sun, Mon, Wed · LeetCode Tue, Fri · Jansenbot Thu, Sat · Blank page Fri · HUB +25 min Mon–Fri
+- **Blocks:** Fundamentals Sun, Mon, Wed · LeetCode Tue, Fri · Project day Thu, Sat (you pick the project; tracked in its own repo) · Blank page Fri · HUB +25 min Mon–Fri
 
 ## Week goals
 
@@ -27,13 +27,13 @@ Week N of 52 in [Caminho das Pedras](../ROADMAP.md): <matéria>.
 ### Wednesday · Fundamentals 2h + HUB 25 min
 - [ ]
 
-### Thursday · Jansenbot 2h + HUB 25 min
+### Thursday · Project day 2h + HUB 25 min
 - [ ]
 
 ### Friday · LeetCode 1h + Blank page 1h + HUB 25 min
 - [ ]
 
-### Saturday · Jansenbot 2h
+### Saturday · Project day 2h
 - [ ]
 
 ## HUB
