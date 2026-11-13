@@ -49,9 +49,20 @@
   - Teste que só espera `true` passa com `return true;`: precisa de um caso `false`
   - Vermelho depois de refatorar: o código quebrou, ou o contrato mudou (tirar o `toLowerCase()` fez `'B'` ≠ `'b'`; seguir o enunciado, só minúsculas, e trocar o teste)
   - Saída sem ordem (#49): normalizar os dois lados com um helper. Ordenar uma **cópia** de cada grupo (`List.of` é imutável) e pôr os grupos num `HashSet` (`List` tem `equals`/`hashCode` pelo conteúdo). Grupo não vira `Set`: `["", ""]` perderia o repetido
+- Lab das 100k inserções (12/nov), `InsertLab` em `dev.breno.labs.week02`. 2ª rodada: fim `ArrayList` 5 ms / `LinkedList` 2 ms; começo 408 ms / 5 ms; meio 195 ms / 4.330 ms
+  - Medir: `System.nanoTime()` antes e depois (feito para durações; `currentTimeMillis()` é relógio de parede e pode pular), dividir por 1.000.000 para ms
+  - Aquecer antes (a JVM começa interpretando; o JIT compila o código quente depois) e usar o resultado (imprimir o `size()`), senão o JIT pode jogar o laço fora
+  - `LinkedList.add` no meio é O(n): religar é O(1), mas antes precisa chegar no nó (o JDK anda da ponta mais perto, ~n/2). É duplamente ligada (`next` + `prev`)
+  - `ArrayList` no meio ~metade do começo: desloca n/2 em vez de n
+  - Mesmo Big-O, constante diferente: os dois fizeram ~2,5 bi de passos; `ArrayList` ~0,08 ns por elemento (cópia de bloco contíguo), `LinkedList` ~1,7 ns por nó (salta pela memória)
+  - Por quê: a CPU lê 64 bytes por vez (linha de cache) e pré-carrega a próxima; cache ~1 ns, RAM ~100 ns. Na lista ligada só se sabe o próximo endereço depois de ler o nó atual (perseguir ponteiros)
+  - Array do `ArrayList` e nós da `LinkedList`: os dois no heap. A diferença é contíguo vs espalhado
+  - Escala: uma inserção simples custa dezenas de ns, não ms
 
 ## Consigo explicar sem consultar (perguntas do diagnóstico)
 - [x] Por que `array[i]` é O(1) *09/nov: memória contígua sem dica e a conta do endereço sozinho.*
+- [x] Por que o `HashMap.get` precisa do `equals` *12/nov: sozinho, pelo `get`: colisões dividem o balde, compara cada chave com `equals` (`==` compara referência).*
+- [ ] Por que `LinkedList` perde do `ArrayList` no meio, sendo os dois O(n) *12/nov: "anda nó por nó"; o porquê da memória só depois de explicado.*
 - [ ] Por que usar `TreeMap` se ele é O(log n) *09/nov: "ordenado, red-black balanceada", mas não disse para que serve a ordem. Os caminhos de `ceilingKey` e `floorKey` saíram certos depois de explicado.*
 - [ ] O que acontece no `add` quando o `DynamicArray` está cheio *09/nov: "cria um novo com o dobro da capacidade e copia os itens", mas na ordem trocada (disse copiar antes de criar) e sem a troca da referência. 10/nov: ordem certa e com a troca da referência ("não uma cópia"), sem dizer "o dobro".*
 - [ ] Por que o `add` é O(1) amortizado *10/nov: não saiu na explicação final. No papel, contou redimensionamentos em vez de cópias; com o desenho do laço, fez a conta do dobrar sozinho. Fecha no "em voz alta" do dia 6.*
@@ -70,6 +81,8 @@
 - (#242, 11/nov) 1º teste só com o caso `true`; `toLowerCase()` no laço chamado de O(n) (era O(n²)); espaço O(n) (era O(1)); não sabia usar `getOrDefault`
 - (#49, 11/nov) Não sabia escrever um assert que ignora a ordem (normalizar)
 - (checagem, 10/nov) Explicou o `equals` pelo `put` (sobrescrever) quando a pergunta era o `get` (achar o nó certo entre chaves que dividem o balde)
+- (revisão, 12/nov) `LinkedList.add` no meio O(1): só contou a troca de ponteiros
+- (lab, 12/nov) Previu 1 ms por inserção (é ~20 ns); previu `LinkedList` mais rápida no meio (foi ~22× mais lenta); disse "array na stack, lista no heap" (os dois no heap)
 
 ## Dúvidas para levar ao tutor (IA)
 - ~~`int[]` ou `DynamicArray<T>`? Por que `new T[10]` não compila~~ *Respondida em 10/nov; a conversão do código fica para a semana 3.*

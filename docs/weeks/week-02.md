@@ -55,9 +55,11 @@ By Sunday, Nov 15 you have written all of this by hand, with no AI writing the c
 
 ### Day 4 · Tuesday, Nov 10 → Thursday, Nov 12 · Fundamentals 2h + HUB 25 min
 
+*Done Nov 12, stopped at midnight at the start of Item 14. See `docs/days/2026-11-12.md`. The `equals`-in-`get` gap closed in the warm-up.*
+
 - [ ] ~~#217's day-10 review first (~15 min), from scratch~~ *Moved to day 2 (Nov 10), its due date.*
-- [ ] Lab: time 100k inserts in `ArrayList` vs `LinkedList` (at the end, at the start, in the middle). Predict first, then measure, then explain the result with the Big-O table and memory (contiguous vs nodes)
-- [ ] Read *Effective Java* Item 14 (`Comparable`), then `Comparator` chains (`comparing`, `thenComparing`, `reversed`), with a small test
+- [x] Lab: time 100k inserts in `ArrayList` vs `LinkedList` (at the end, at the start, in the middle). Predict first, then measure, then explain the result with the Big-O table and memory (contiguous vs nodes) *`InsertLab`, written alone. Start row predicted right; end and middle wrong (assumed 1 ms per insert, it's ~20 ns; `LinkedList` middle was ~22× slower, not faster). Guessed "array on the stack"; both are on the heap. After the cache explanation: "LinkedList jumps around memory, ArrayList copies one contiguous block".*
+- [ ] Read *Effective Java* Item 14 (`Comparable`), then `Comparator` chains (`comparing`, `thenComparing`, `reversed`), with a small test *Not started: moves to the start of day 7, right before the ranking that uses it.*
 
 ### Day 5 · Wednesday, Nov 11 → Friday, Nov 13 · Jansenbot 2h + HUB 25 min
 
@@ -74,8 +76,9 @@ By Sunday, Nov 15 you have written all of this by hand, with no AI writing the c
 
 ### Day 7 · Friday, Nov 13 → Sunday, Nov 15 · Jansenbot 2h + HUB 25 min
 
+- [ ] **First, carried from day 4 (~45 min):** *Effective Java* Item 14 (PDF pages 88–95), `Comparable` vs `Comparator` in one sentence each, a small test-first `Comparator` chain on `Person` (age, then name, then `reversed()`), and the `TreeSet` prediction (comparator by age only, two people with the same age). Phase 3 of `docs/days/2026-11-12.md` has the details
 - [ ] Carried from week 1: the monthly total per member with streams written by hand (group by member, sum points)
-- [ ] Funcionário do Mês ranking: every tie-break as a `Comparator` chain, one test per tie-break. Whatever doesn't fit moves to week 3's first Jansenbot block
+- [ ] Funcionário do Mês ranking: every tie-break as a `Comparator` chain, one test per tie-break. Whatever doesn't fit moves to week 3's first Jansenbot block *(with Item 14 first, the ranking will likely only start today)*
 
 ## HUB
 

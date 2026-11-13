@@ -1,0 +1,20 @@
+#separator:tab
+#html:true
+#notetype:Basic
+#guid column:1
+#deck column:2
+#tags column:5
+w02-linkedlist-meio-01	JAVA::Collection	Por que <code>LinkedList.add(i, x)</code> no meio é O(n), se religar os nós é O(1)?	Antes de religar, ela precisa <b>chegar</b> ao nó i andando nó a nó: só tem <code>first</code> e <code>last</code>.	semana02 linkedlist big-o
+w02-linkedlist-meio-02	JAVA::Collection	Para achar o índice i, de onde a <code>LinkedList</code> do JDK começa a andar?	Da ponta mais perto: <code>first</code> se i &lt; size/2, senão <code>last</code>. No máximo ~n/2 passos, ainda O(n).	semana02 linkedlist
+w02-linkedlist-dupla-01	JAVA::Collection	A <code>LinkedList</code> do Java é simples ou duplamente ligada?	Duplamente: cada nó tem <code>next</code> e <code>prev</code>. Inserir ajusta 4 referências, ainda O(1).	semana02 linkedlist
+w02-arraylist-comeco-meio-01	JAVA::Collection	100k <code>add</code>s no <code>ArrayList</code>: por que no meio leva ~metade do tempo do começo?	No começo cada <code>add</code> desloca todos os n elementos; no meio, só ~n/2.	semana02 arraylist lab
+w02-lab-meio-01	JAVA::Collection	100k inserções no meio: <code>ArrayList</code> ~195 ms, <code>LinkedList</code> ~4.300 ms. Os dois são O(n) por inserção. Por que a diferença?	<code>ArrayList</code> desloca um bloco contíguo; <code>LinkedList</code> salta pela memória seguindo ponteiros.	semana02 arraylist linkedlist lab
+w02-heap-lista-01	JAVA::JVM	O array interno do <code>ArrayList</code> e os nós da <code>LinkedList</code> ficam na stack ou no heap?	Os dois no heap (tudo que nasce com <code>new</code>). A diferença é o arranjo: contíguo vs espalhado.	semana02 stack-heap
+w02-cache-linha-01	JAVA::JVM	Por que ler um array em sequência é tão rápido para a CPU?	Ela carrega 64 bytes por vez (linha de cache, <i>cache line</i>) e pré-carrega a próxima (<i>prefetch</i>).	semana02 memoria cache
+w02-cache-ponteiros-01	JAVA::JVM	O que é perseguir ponteiros (<i>pointer chasing</i>), e por que é lento?	Só se sabe o endereço do próximo nó depois de ler o atual: a CPU não prevê o salto e erra o cache.	semana02 memoria cache linkedlist
+w02-cache-custo-01	JAVA::JVM	Ordem de grandeza: ler do cache da CPU vs ler da RAM?	Cache ~1 ns; RAM ~100 ns.	semana02 memoria cache
+w02-bigo-constante-01	JAVA::Collection	Se dois algoritmos têm o mesmo Big-O, eles levam o mesmo tempo?	Não. Big-O conta passos, não o custo de cada passo (a constante): memória e cache mudam isso.	semana02 big-o
+w02-escala-01	JAVA::JVM	Ordem de grandeza: quanto custa uma inserção simples numa lista em Java (ex.: <code>add</code> no fim)?	Dezenas de nanossegundos (~20 ns no lab), não milissegundos. A CPU faz bilhões de operações simples por segundo.	semana02 lab escala
+w02-nanotime-01	JAVA::JVM	Para medir quanto tempo um trecho leva, <code>System.nanoTime()</code> ou <code>currentTimeMillis()</code>? Por quê?	<code>nanoTime()</code>: feito para durações. <code>currentTimeMillis()</code> é o relógio de parede e pode pular.	semana02 lab medicao
+w02-jit-aquecimento-01	JAVA::JVM	Num microbenchmark em Java, por que rodar uma vez de aquecimento antes de medir?	A JVM começa interpretando; o JIT só compila o código quente depois de muitas execuções.	semana02 lab jit
+w02-jit-resultado-01	JAVA::JVM	Num microbenchmark, por que usar o resultado (ex.: imprimir o <code>size()</code>)?	Se ninguém lê o resultado, o JIT pode eliminar o laço e você mede nada.	semana02 lab jit
