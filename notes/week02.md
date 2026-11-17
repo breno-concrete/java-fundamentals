@@ -58,6 +58,22 @@
   - Por quê: a CPU lê 64 bytes por vez (linha de cache) e pré-carrega a próxima; cache ~1 ns, RAM ~100 ns. Na lista ligada só se sabe o próximo endereço depois de ler o nó atual (perseguir ponteiros)
   - Array do `ArrayList` e nós da `LinkedList`: os dois no heap. A diferença é contíguo vs espalhado
   - Escala: uma inserção simples custa dezenas de ns, não ms
+- #242 D+3 (16/nov, em outra máquina) e o `int[26]` (17/nov)
+  - Refeito sozinho com o `HashMap`. Depois o tutor mostrou a versão com `int[26]`: `count[c - 'a']++`
+  - `c - 'a'` funciona porque `char` é um número (o código do caractere) e as letras de `a` a `z` têm códigos seguidos (97–122): dá 0–25. Fora disso (maiúscula, acento), o índice estoura
+  - Mesmo Big-O (O(n) tempo, O(1) espaço), constante menor: índice direto, sem hash, sem boxing de `Character`/`Integer`, memória contígua
+- Item 14 lido em 16/nov: `Comparable` vs `Comparator`, e por que o `compareTo` deve concordar com o `equals`. O código (cadeia de `Comparator` no `Person`) fica para a semana 3
+- LeetCode #49 Group Anagrams (17/nov), força bruta
+  - Copia `strs` numa lista. Enquanto a cópia tiver palavras: abre um grupo com a do índice 0, guarda essa palavra numa variável, tira da cópia, e testa as que sobram com o `isAnagram` do #242, tirando quem entra
+  - Remover de um `ArrayList` enquanto anda por índice: os da direita escorregam uma casa para a esquerda e o `i++` pula um. Regra: removeu, não anda; não removeu, anda. Se cada volta tira o primeiro, o próximo está sempre no índice 0
+  - `strs[i]` e `copy.get(i)` deixam de ser a mesma palavra quando a cópia encolhe: uma fonte só para a palavra do grupo
+  - Tempo O(n² · k): dois laços aninhados nas palavras (~n²/2 comparações no pior caso, nenhum anagrama) × O(k) por `isAnagram`. Laços aninhados multiplicam. Espaço O(n) (referências na cópia e no resultado)
+  - Para o D+3: com um `HashMap`, que chave junta todos os anagramas no mesmo grupo?
+- Testes (17/nov)
+  - O `normalize` vai no teste, não em `src/main`: ele diz como comparar, não como resolver
+  - Teste sem `assert` sempre passa: verde com um stub vazio quer dizer que o teste não testa nada
+  - Verde não prova que o código está certo, só os casos cobertos. O 1º teste do #49 passou por sorte; o exemplo 1 do LeetCode pegou o bug
+  - `List.of("ate, eat, tea")` é 1 string. O `toString` imprime igual a 3 strings, e a mensagem de erro parece igual dos dois lados: aí desconfie de tipo ou aspas, não de ordem
 
 ## Consigo explicar sem consultar (perguntas do diagnóstico)
 - [x] Por que `array[i]` é O(1) *09/nov: memória contígua sem dica e a conta do endereço sozinho.*
@@ -65,7 +81,7 @@
 - [ ] Por que `LinkedList` perde do `ArrayList` no meio, sendo os dois O(n) *12/nov: "anda nó por nó"; o porquê da memória só depois de explicado.*
 - [ ] Por que usar `TreeMap` se ele é O(log n) *09/nov: "ordenado, red-black balanceada", mas não disse para que serve a ordem. Os caminhos de `ceilingKey` e `floorKey` saíram certos depois de explicado.*
 - [ ] O que acontece no `add` quando o `DynamicArray` está cheio *09/nov: "cria um novo com o dobro da capacidade e copia os itens", mas na ordem trocada (disse copiar antes de criar) e sem a troca da referência. 10/nov: ordem certa e com a troca da referência ("não uma cópia"), sem dizer "o dobro".*
-- [ ] Por que o `add` é O(1) amortizado *10/nov: não saiu na explicação final. No papel, contou redimensionamentos em vez de cópias; com o desenho do laço, fez a conta do dobrar sozinho. Fecha no "em voz alta" do dia 6.*
+- [x] Por que o `add` é O(1) amortizado *10/nov: não saiu na explicação final. No papel, contou redimensionamentos em vez de cópias; com o desenho do laço, fez a conta do dobrar sozinho. 16/nov: em voz alta, sem notas, no aquecimento (relato do Breno, em outra máquina).*
 - [ ] O que há dentro do `HashSet` *10/nov: "um array em que os números não se repetem". Explicado (`HashMap` + `PRESENT`); a checagem rápida saiu certa.*
 - [x] Por que `new T[10]` não compila *10/nov: explicado; o porquê do cast seguro no `ArrayList` saiu sozinho.*
 
@@ -83,6 +99,8 @@
 - (checagem, 10/nov) Explicou o `equals` pelo `put` (sobrescrever) quando a pergunta era o `get` (achar o nó certo entre chaves que dividem o balde)
 - (revisão, 12/nov) `LinkedList.add` no meio O(1): só contou a troca de ponteiros
 - (lab, 12/nov) Previu 1 ms por inserção (é ~20 ns); previu `LinkedList` mais rápida no meio (foi ~22× mais lenta); disse "array na stack, lista no heap" (os dois no heap)
+- (aquecimento, 17/nov) `c - 'a'`: não disse que os códigos de `a`–`z` são seguidos; chamou os códigos de "alfanuméricos"
+- (#49, 17/nov) `normalize` escrito em `src/main`; teste sem esperado nem assert, verde com o stub; `i++` e `j++` pulando quem escorregou depois do `remove`; `isAnagram(strs[i], ...)` comparando com a palavra errada; `List.of("ate, eat, tea")` como 1 string (achou que era ordem); tempo O(n · k) em vez de O(n² · k)
 
 ## Dúvidas para levar ao tutor (IA)
 - ~~`int[]` ou `DynamicArray<T>`? Por que `new T[10]` não compila~~ *Respondida em 10/nov; a conversão do código fica para a semana 3.*

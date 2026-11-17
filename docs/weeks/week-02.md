@@ -17,8 +17,8 @@ By Sunday, Nov 15 you have written all of this by hand, with no AI writing the c
 - [ ] A table on paper with the Big-O of `get`, `add`, `remove` and `contains` for `ArrayList`, `LinkedList`, `HashSet`, `HashMap`, `TreeMap` and `ArrayDeque`, and you can justify each line
 - [ ] Your own `DynamicArray` that grows, with tests, and you can explain why `add` is amortized O(1)
 - [ ] 100k inserts timed in `ArrayList` vs `LinkedList`, with the result explained
-- [ ] `Comparable` vs `Comparator` (*Effective Java* Item 14), with a `Comparator` chain and one test per tie-break *Moves to the start of week 3, day 1 (Nov 13: day 7 became a project day).*
-- [ ] LeetCode #242 (carried from week 1), #49, #347 logged in `leetcode/TRACKER.md`. #238 if it fits *#242 done Nov 11; #49 moved to day 6; #347 and #238 move to week 3.*
+- [ ] `Comparable` vs `Comparator` (*Effective Java* Item 14), with a `Comparator` chain and one test per tie-break *Moves to the start of week 3, day 1 (Nov 13: day 7 became a project day). Item 14 read on Nov 16; the chain and its tests are still to do.*
+- [ ] LeetCode #242 (carried from week 1), #49, #347 logged in `leetcode/TRACKER.md`. #238 if it fits *#242 done Nov 11 (day-3 review Nov 16); #49 done Nov 17; #347 and #238 move to week 3.*
 
 ## Day by day
 
@@ -66,19 +66,21 @@ By Sunday, Nov 15 you have written all of this by hand, with no AI writing the c
 
 - [ ] Project day (2h)
 
-### Day 6 · Thursday, Nov 12 → Saturday, Nov 14 · LeetCode 1h + Blank page 1h + HUB 25 min
+### Day 6 · Thursday, Nov 12 → Saturday, Nov 14 → Monday, Nov 16 – Tuesday, Nov 17 · LeetCode 1h + Blank page 1h + HUB 25 min
 
-- [ ] #242's day-3 review (~10 min), from scratch. This time: the `"aab"` / `"abb"` test, the problem URL as a comment, and no `Diferent` typo (carried from Nov 11)
-- [ ] #49 Group Anagrams (carried from day 3): first the `normalize` helper in `GroupAnagramsTest` (sort a copy of each group, put the groups in a `HashSet`), red, then 30 min alone. If stuck: read a solution, close it, rewrite from scratch
+*Nov 14 and 15 had no study. Day 6 started on Nov 16 (on another machine; that code isn't committed yet) and went on Nov 17. See `docs/days/2026-11-17.md`.*
+
+- [x] #242's day-3 review (~10 min), from scratch. This time: the `"aab"` / `"abb"` test, the problem URL as a comment, and no `Diferent` typo (carried from Nov 11) *Nov 16: alone with the `HashMap`; then the tutor showed the `int[26]` version (`c - 'a'`). Nov 17, no notes: O(n) time, O(1) space, and "it changes the constant, not the Big-O". Whether the 3 leftovers went in: check when the code arrives.*
+- [x] #49 Group Anagrams (carried from day 3): first the `normalize` helper in `GroupAnagramsTest` (sort a copy of each group, put the groups in a `HashSet`), red, then 30 min alone. If stuck: read a solution, close it, rewrite from scratch *Nov 17. `normalize` right alone (first written in `src/main`, then moved to the test). 30 min alone: brute force with #242's `isAnagram`, red with 2 bugs (removing from a list while walking it by index; `strs[i]` vs `copy.get(i)`). Green with help, ~20 min more. The first green was luck; LeetCode's example 1 as a 2nd test caught the `i++`. Time guessed O(n · k), it's O(n² · k).*
 - [ ] ~~#347 Top K Frequent Elements~~ *Moves to week 3: #49 took its slot. #238 too.*
-- [ ] Blank page: `DynamicArray` from zero with no lookup, plus its tests. Whatever you can't write, you didn't know yet: note it. Write the growth as a single path this time (`newCapacity` computed once, one allocation, one copy loop; carried from Nov 10). Also from Nov 10: say what's inside a `HashSet` and why `add`/`remove`/`contains` are O(1)
-- [ ] Out loud, with no notes: why `ArrayList.add` is amortized O(1), when `LinkedList` actually wins, and why it was ~22× slower in the middle on Nov 12 (carried from day 5's warm-up) *On Nov 10 the order of the steps came out right, but the amortized half didn't: this is where it closes.*
+- [ ] Blank page: `DynamicArray` from zero with no lookup, plus its tests. Whatever you can't write, you didn't know yet: note it. Write the growth as a single path this time (`newCapacity` computed once, one allocation, one copy loop; carried from Nov 10). Also from Nov 10: say what's inside a `HashSet` and why `add`/`remove`/`contains` are O(1) *Breno had to leave before it started: later today (Nov 17), ~30 min + 5 min.*
+- [x] Out loud, with no notes: why `ArrayList.add` is amortized O(1), when `LinkedList` actually wins, and why it was ~22× slower in the middle on Nov 12 (carried from day 5's warm-up) *Nov 16, in the warm-up, with no notes (Breno's report): the amortized gap is closed.*
 
-### Day 7 · Friday, Nov 13 → Sunday, Nov 15 · Project day 2h
+### Day 7 · Friday, Nov 13 → Sunday, Nov 15 → after day 6 · Project day 2h
 
 - [ ] Project day (2h)
 
-*Item 14 + `Comparator` (carried from day 4) moves to the start of week 3, day 1 (Mon, Nov 16): Item 14 (PDF pages 88–95), `Comparable` vs `Comparator` in one sentence each, a test-first `Comparator` chain on `Person` (age, then name, then `reversed()`) with one test per tie-break, and the `TreeSet` prediction. Phase 3 of `docs/days/2026-11-12.md` has the details.*
+*Item 14 + `Comparator` (carried from day 4) moves to the start of week 3, day 1. Item 14 (PDF pages 88–95) was read on Nov 16. Still left: `Comparable` vs `Comparator` in one sentence each, a test-first `Comparator` chain on `Person` (age, then name, then `reversed()`) with one test per tie-break, and the `TreeSet` prediction. Phase 3 of `docs/days/2026-11-12.md` has the details.*
 
 ## HUB
 
@@ -86,4 +88,4 @@ Tracked in its own repo, not here.
 
 ## Next week
 
-Week 3: Generics. Start with Item 14 + `Comparator` (carried from this week). Read *Effective Java* Items 26–31, build a generic `InMemoryRepository<T, ID>`, solve #36 and #128 and review #49. Every week's details are in [Caminho das Pedras](../ROADMAP.md).
+Week 3: Generics. Start with the `Comparator` chain from Item 14 (carried from this week; the reading was done Nov 16). Read *Effective Java* Items 26–31, build a generic `InMemoryRepository<T, ID>`, solve #36 and #128 and review #49. Every week's details are in [Caminho das Pedras](../ROADMAP.md).
