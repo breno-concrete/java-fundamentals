@@ -1,33 +1,29 @@
 package dev.breno.leetcode.arrayshashing;
 
-import java.util.HashMap;
-import java.util.Map;
-
 public class ValidAnagram {
 
     public boolean isAnagram(String s, String t) {
 
 
-        if(s.length() != t.length()){
+        if(s.length() != t.length()) {
             return false;
         }
 
-        Map<Character, Integer> map = new HashMap<>();
+        int[] counts = new int[26];
 
-        for (int i = 0; i < s.length(); i++) {
-            char letter = s.charAt(i);
+        for(int i = 0; i < s.length(); i++){
 
-            map.put(letter, map.getOrDefault(letter, 0) + 1);
+            counts[s.charAt(i) - 'a']++;
         }
 
-        for (int i = 0; i < t.length(); i++) {
-            char letter = t.charAt(i);
+        for (int j = 0; j < t.length(); j++) {
 
-            if (map.getOrDefault(letter, 0)> 0) {
-                map.put(letter, map.get(letter) - 1);
-            } else {
+            if (counts[t.charAt(j) - 'a'] == 0) {
                 return false;
             }
+
+            counts[t.charAt(j) - 'a']--;
+
         }
 
         return true;

@@ -28,11 +28,20 @@ class ValidAnagramTest {
     }
 
     @Test
-    void hasToReturnFalseWhenDiferentSize() {
+    void hasToReturnFalseWhenDifferentSize() {
         String a = "abacate";
         String b = "abanO";
 
         assertFalse(validAnagram.isAnagram(a, b));
+    }
+
+    @Test
+    void hasToReturnFalseWhenDifferentLetters() {
+        String a = "aab";
+        String b = "abb";
+
+        assertFalse(validAnagram.isAnagram(a, b));
+
     }
 
 }
