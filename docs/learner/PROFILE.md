@@ -2,7 +2,7 @@
 
 ## Quem
 - Breno — estudante na UnB, estagiário, vem de Java/backend.
-- Objetivo: **gold junior em 17/10/2027** (ver "The goal" no [ROADMAP](../ROADMAP.md)).
+- Objetivo: **gold junior, previsto para ~06/05/2028** (era 17/10/2027; o plano foi esticado em 21/nov/2026, quando o estudo caiu para 1h por dia, sem cortar conteúdo) (ver "The goal" no [ROADMAP](../ROADMAP.md)).
 - Projetos (Jansenbot, penssay e outros) ficam nos repos deles, fora deste plano. Desde 20/nov/2026, todo dia é **1h de estudo aqui + 1h de projeto**: o plano do dia cobre só a hora de estudo e fecha com uma linha para a hora de projeto; o Breno escolhe o projeto.
 - **HUB** (pesquisa, 25 min por dia útil), acompanhado em outro repo.
 

@@ -11,8 +11,8 @@ Na ordem em que aparecem no [ROADMAP](../ROADMAP.md). Marque ✅ quando o arquiv
 
 | Livro | Arquivo | Semanas | Matéria | Tenho? |
 |---|---|---|---|---|
-| *Effective Java*, 3ª ed. (Bloch) | `effective-java-3e.pdf` | 1–6, 32 | Java core | ⬜ |
-| *Use The Index, Luke!* (Winand), grátis online | `use-the-index-luke.pdf` | 9 | Databases | ⬜ |
+| *Effective Java*, 3ª ed. (Bloch) | `effective-java-3e.pdf` | 1–5, 8, 32 | Java core | ⬜ |
+| *Use The Index, Luke!* (Winand), grátis online | `use-the-index-luke.pdf` | 11 | Databases | ⬜ |
 | *Operating Systems: Three Easy Pieces* (OSTEP), grátis online | `ostep/` (um PDF por capítulo) | 18–20, 22 | Operating systems, Concurrency | ⬜ |
 | *Java Concurrency in Practice* (Goetz) | `java-concurrency-in-practice.pdf` | 21–23 | Concurrency | ⬜ |
 | *Designing Data-Intensive Applications*, 1ª ed. (Kleppmann) | `ddia-1e.pdf` | 24, 38, 40, 41 | Concurrency, System design | ⬜ |

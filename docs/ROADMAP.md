@@ -1,11 +1,13 @@
 # Caminho das Pedras
 
-**Gold junior in 52 weeks** · Oct 18, 2026 → Oct 17, 2027
+**Gold junior in 52 plan weeks** · Oct 18, 2026 → May 6, 2028
 
-The whole year in the order you learn it: the subject map, what each month covers, the monthly goals and the exact work for every week. Open it every Sunday to plan the week ahead.
+The whole plan in the order you learn it: the subject map, what each month covers, the monthly goals and the exact work for every plan week. Open it on the first day of each plan week to plan it.
 
 - **Load:** 14h a week (2h every day): 1h of study here + 1h of project every day (7h + 7h; you pick the project, planned in its own repo) + HUB 25 min each weekday. Since Nov 20, 2026; before that it was 10h of study + 4h of project days (Thu, Sat)
-- **Checkpoints:** Apr 17, 2027 (6 months) · Oct 17, 2027 (the goal)
+- **Pace:** a plan week is 10h of study, so at 1h a day it takes 10 or 11 days and starts on a Sunday or a Wednesday. Every 3 calendar weeks hold 2 plan weeks: 21h, that is 12h of Fundamentals, 6h of LeetCode and 3h of blank page, so the 2 plan weeks plus 1 spare hour. Nothing is cut. Weeks 1–2 ran at the old pace; from week 3 (Nov 22, 2026) on, the dates follow the new one
+- **Re-dated on Nov 21, 2026:** the Christmas weeks moved to where Christmas falls and are now weeks 6–7 (they were 10–11), so the old weeks 6–9 are now 8–11. From week 12 on, the numbers didn't change. Christmas 2027 is a break between weeks 40 and 41, not a plan week
+- **Checkpoints:** halfway, week 26 (Jul 14 – 24, 2027) · the goal, May 6, 2028 (it was Oct 17, 2027 before the stretch)
 - **Live version with trackers:** [Caminho das Pedras](https://claude.ai/artifact/KFTaScYYXn8mx3Tv4XRu3N)
 
 ## Contents
@@ -24,350 +26,462 @@ Each subject builds on the ones before it.
 
 ```mermaid
 flowchart LR
-  A[1 · Java core<br/>Oct 18 – Nov 28] --> B[2 · Databases<br/>Nov 29 – Jan 16]
-  B --> C[3 · Spring internals + JPA<br/>Jan 17 – Feb 13]
-  C --> D[4 · Operating systems<br/>Feb 14 – Mar 6]
-  D --> E[5 · Concurrency<br/>Mar 7 – Apr 3]
-  E --> F[6 · Networks<br/>Apr 4 – Apr 24]
-  F --> G[7 · Docker, CI/CD, deploy<br/>Apr 25 – May 22]
-  G --> H[8 · Design + architecture<br/>May 23 – Jul 3]
-  H --> I[9 · System design<br/>Jul 4 – Jul 31]
-  I --> J[10 · Applied AI<br/>Aug 1 – Sep 18]
-  J --> K[11 · Interview sprint<br/>Sep 19 – Oct 16]
-  K --> Z((Gold junior<br/>Oct 17, 2027))
+  A[1 · Java core<br/>Oct 18, 2026 – Jan 16, 2027] --> B[2 · Databases<br/>Jan 17, 2027 – Mar 9, 2027]
+  B --> C[3 · Spring internals + JPA<br/>Mar 10, 2027 – Apr 20, 2027]
+  C --> D[4 · Operating systems<br/>Apr 21, 2027 – May 22, 2027]
+  D --> E[5 · Concurrency<br/>May 23, 2027 – Jul 3, 2027]
+  E --> F[6 · Networks<br/>Jul 4, 2027 – Aug 3, 2027]
+  F --> G[7 · Docker, CI/CD, deploy<br/>Aug 4, 2027 – Sep 14, 2027]
+  G --> H[8 · Design + architecture<br/>Sep 15, 2027 – Nov 16, 2027]
+  H --> I[9 · System design<br/>Nov 17, 2027 – Jan 11, 2028]
+  I --> J[10 · Applied AI<br/>Jan 12, 2028 – Mar 25, 2028]
+  J --> K[11 · Interview sprint<br/>Mar 26, 2028 – May 6, 2028]
+  K --> Z((Gold junior<br/>May 6, 2028))
 ```
 
 | # | Subject | When | Builds on | Topics |
 |---|---|---|---|---|
-| 1 | Java core | Oct 18 – Nov 28 · 6 wk | What you already use | Object contracts · collections and costs · generics · immutability, records, enums · exceptions, Optional · streams, JVM memory |
-| 2 | Databases | Nov 29 – Jan 16 · 5 wk + holidays | Java core | SQL joins, aggregates, window functions · modeling · indexes, B-trees, EXPLAIN · transactions, isolation, MVCC · JDBC, pools, pagination |
-| 3 | Spring internals and JPA | Jan 17 – Feb 13 · 4 wk | Java core, Databases | IoC and auto-configuration · proxies, AOP, @Transactional · request path, Spring Security · JPA, N+1, @Version |
-| 4 | Operating systems | Feb 14 – Mar 6 · 3 wk | Java core (JVM memory) | Processes, syscalls, signals · scheduling, OS threads · virtual memory, paging · files, descriptors, I/O |
-| 5 | Concurrency | Mar 7 – Apr 3 · 4 wk | OS, Java core, Databases | Races, JMM, happens-before · locks, deadlock · executors, CompletableFuture, virtual threads · DB locking, idempotency |
-| 6 | Networks | Apr 4 – Apr 24 · 2 wk + checkpoint | OS (sockets, I/O) | TCP/IP, TCP vs UDP · DNS · HTTP/1.1, HTTP/2, REST · TLS, certificates |
-| 7 | Docker, CI/CD and deploy | Apr 25 – May 22 · 4 wk | OS, Networks | Namespaces, cgroups, layers · Dockerfile, Compose · Git beyond basics · CI pipelines · AWS deploy (ECS, RDS), HTTPS, backups |
-| 8 | Design and architecture | May 23 – Jul 3 · 6 wk | Java, Spring, code in production | SOLID · design patterns · refactoring · hexagonal · DDD-lite, test strategy · ADRs, C4 |
-| 9 | System design | Jul 4 – Jul 31 · 4 wk | DB, Concurrency, Networks, Design | Scaling, estimation · caching with Redis · queues, outbox · replication, partitioning |
-| 10 | Applied AI | Aug 1 – Sep 18 · 7 wk | Spring, DB (pgvector), System design | LLM basics, prompting · embeddings · RAG · evals · AI in production · tool calling, agents |
-| 11 | Interview sprint | Sep 19 – Oct 16 · 4 wk | Everything | System design interviews · mock interviews in English · project stories · CV, applications |
+| 1 | Java core | Oct 18, 2026 – Jan 16, 2027 · 6 wk + holidays | What you already use | Object contracts · collections and costs · generics · immutability, records, enums · exceptions, Optional · streams, JVM memory |
+| 2 | Databases | Jan 17, 2027 – Mar 9, 2027 · 5 wk | Java core | SQL joins, aggregates, window functions · modeling · indexes, B-trees, EXPLAIN · transactions, isolation, MVCC · JDBC, pools, pagination |
+| 3 | Spring internals and JPA | Mar 10, 2027 – Apr 20, 2027 · 4 wk | Java core, Databases | IoC and auto-configuration · proxies, AOP, @Transactional · request path, Spring Security · JPA, N+1, @Version |
+| 4 | Operating systems | Apr 21, 2027 – May 22, 2027 · 3 wk | Java core (JVM memory) | Processes, syscalls, signals · scheduling, OS threads · virtual memory, paging · files, descriptors, I/O |
+| 5 | Concurrency | May 23, 2027 – Jul 3, 2027 · 4 wk | OS, Java core, Databases | Races, JMM, happens-before · locks, deadlock · executors, CompletableFuture, virtual threads · DB locking, idempotency |
+| 6 | Networks | Jul 4, 2027 – Aug 3, 2027 · 2 wk + checkpoint | OS (sockets, I/O) | TCP/IP, TCP vs UDP · DNS · HTTP/1.1, HTTP/2, REST · TLS, certificates |
+| 7 | Docker, CI/CD and deploy | Aug 4, 2027 – Sep 14, 2027 · 4 wk | OS, Networks | Namespaces, cgroups, layers · Dockerfile, Compose · Git beyond basics · CI pipelines · AWS deploy (ECS, RDS), HTTPS, backups |
+| 8 | Design and architecture | Sep 15, 2027 – Nov 16, 2027 · 6 wk | Java, Spring, code in production | SOLID · design patterns · refactoring · hexagonal · DDD-lite, test strategy · ADRs, C4 |
+| 9 | System design | Nov 17, 2027 – Jan 11, 2028 · 4 wk + holidays | DB, Concurrency, Networks, Design | Scaling, estimation · caching with Redis · queues, outbox · replication, partitioning |
+| 10 | Applied AI | Jan 12, 2028 – Mar 25, 2028 · 7 wk | Spring, DB (pgvector), System design | LLM basics, prompting · embeddings · RAG · evals · AI in production · tool calling, agents |
+| 11 | Interview sprint | Mar 26, 2028 – May 6, 2028 · 4 wk | Everything | System design interviews · mock interviews in English · project stories · CV, applications |
 
 ## Month by month
 
-A week belongs to the month its Wednesday falls in.
+A plan week belongs to the month it starts in.
 
 | Month | Fundamentals | LeetCode | HUB · 25 min/day |
 |---|---|---|---|
-| Oct 2026 | Java core (W1–W2) | Arrays & Hashing | Literature review, questions for the professor |
-| Nov 2026 | Java core (W3–W6), phase exam | Hashing, Two Pointers, Sliding Window | Literature review, equipment training |
-| Dec 2026 | Databases (W7–W9), holidays (W10–W11) | Sliding Window, Stack | Training; collection starts, patient names removed first |
-| Jan 2027 | Databases (W12–W13), Spring and JPA (W14–W15) | Binary Search, Linked List | Collection: file readers |
-| Feb 2027 | Spring and JPA (W16–W17), OS (W18–W19) | Trees | Collection; sync routine v1 starts |
-| Mar 2027 | OS (W20), Concurrency (W21–W24) | Heap, Backtracking, Tries | Collection ends; sync routine v1 |
-| Apr 2027 | Networks (W25, W27), checkpoint (W26), Docker (W28) | Graphs | Data analysis |
-| May 2027 | Docker, CI/CD, deploy (W29–W31), Design (W32) | Advanced graphs, 1-D DP | Analysis; product testing |
-| Jun 2027 | Design and architecture (W33–W37) | 1-D DP, 2-D DP, Greedy | Product testing |
-| Jul 2027 | System design (W38–W41) | Intervals, Bit manipulation | Write-up, innovation registration |
-| Aug 2027 | Applied AI (W42–W45) | Mixed review, mocks | Final report and SEMUNI (crunch) |
-| Sep 2027 | Applied AI (W46–W48), Interview sprint (W49–W50) | Mock interviews | Final report and SEMUNI; ends Sep 30 |
-| Oct 2027 | Interview sprint (W51–W52), goal Oct 17 | Mock interviews | Done |
+| Oct 2026 | Java core (W1) | Arrays & Hashing | Literature review, questions for the professor |
+| Nov 2026 | Java core (W2–W3) | Arrays & Hashing | Literature review, equipment training |
+| Dec 2026 | Java core (W4–W5), holidays (W6–W7) | Two Pointers | Training; collection starts, patient names removed first |
+| Jan 2027 | Java core (W8, phase exam), Databases (W9–W10) | Sliding Window, Stack | Collection: file readers |
+| Feb 2027 | Databases (W11–W13, phase exam) | Stack, Binary Search | Collection; sync routine v1 starts |
+| Mar 2027 | Spring and JPA (W14–W16) | Linked List, Trees | Collection ends; sync routine v1 |
+| Apr 2027 | Spring and JPA (W17, phase exam), Operating systems (W18) | Trees | Data analysis |
+| May 2027 | Operating systems (W19–W20, phase exam), Concurrency (W21) | Trees, Heap | Analysis; product testing |
+| Jun 2027 | Concurrency (W22–W24, phase exam) | Backtracking, Tries | Product testing |
+| Jul 2027 | Networks (W25–W27, phase exam), halfway checkpoint (W26) | Graphs | Write-up, innovation registration |
+| Aug 2027 | Docker, CI/CD, deploy (W28–W30) | Graphs, Advanced graphs, 1-D DP | Final report and SEMUNI (crunch) |
+| Sep 2027 | Docker, CI/CD, deploy (W31, phase exam), Design and architecture (W32–W33) | 1-D DP | Final report and SEMUNI; ends Sep 30 |
+| Oct 2027 | Design and architecture (W34–W36) | 2-D DP, Greedy | Done |
+| Nov 2027 | Design and architecture (W37, phase exam), System design (W38–W39) | Greedy, Intervals, Bit manipulation | — |
+| Dec 2027 | System design (W40), holiday break (Dec 19 – Jan 1) | Bit manipulation, Math | — |
+| Jan 2028 | System design (W41, phase exam), Applied AI (W42–W43) | Mixed review, mocks | — |
+| Feb 2028 | Applied AI (W44–W46) | Mixed review, mocks | — |
+| Mar 2028 | Applied AI (W47–W48, phase exam), Interview sprint (W49) | Mixed review, mock interviews | — |
+| Apr 2028 | Interview sprint (W50–W52), goal on May 6 | Mock interviews | — |
 
 ## Monthly goals
 
-Six goals, measured the same way every month. Fill them on the month's last Sunday, after the quiz.
+Six goals, measured the same way every month. Fill them on the month's last Sunday, after the quiz. Codes like **W8** are questions from that plan week, not from the diagnostic.
 
 **How a month is judged:** 5–6 goals hit = on track. 3–4 = at risk: the first week of next month goes to the gaps. 0–2 = off track: the plan shifts by one week. Targets sit at about 80% of the plan.
 
 | Goal | Rule |
 |---|---|
-| Blocks done | ≥ 85% of planned blocks (holiday weeks = 2 blocks) |
+| Blocks done | ≥ 85% of planned blocks (one per study day; holiday weeks = 2 blocks) |
 | Month quiz | ≥ 8/10, no lookup (the phase exam counts in months that have one) |
 | Explained with no lookup | All of the month's diagnostic questions, out loud in 2 min |
 | Deliverables shipped | ≥ 80% of the month's list |
 | LeetCode solved | The month's target |
 | Solved alone | The month's % target, no hints |
 
-### October 2026 · Weeks 1–2
+### October 2026 · Week 1
 
-**Write Java's core contracts and collections by hand.**
+**Write Java's core contracts by hand.**
 
 | Goal | Target | Result |
 |---|---|---|
-| Blocks done | 12 of 14 | |
+| Blocks done | 6 of 7 | |
 | Month quiz, or the phase exam if the month has one | 8/10 | |
-| Explained with no lookup | all 4 | |
-| Deliverables | 3 of 4 | |
-| LeetCode solved | 5 | |
+| Explained with no lookup | all 3 | |
+| Deliverables | 2 of 2 | |
+| LeetCode solved | 2 | |
 | Solved alone | 30% | |
 
 Explain with no lookup:
 - [ ] **4.1a** Why HashMap lookup is O(1) and what breaks it
-- [ ] **4.1b** ArrayList vs LinkedList in practice
 - [ ] **4.2a** The equals/hashCode contract
 - [ ] **4.2c** Stack vs heap: where objects and references live
 
 Deliverables:
 - [ ] Member with equals/hashCode and a test that breaks a HashSet
 - [ ] SimpleHashMap with resize, tested
-- [ ] DynamicArray and the ArrayList vs LinkedList timing
-- [ ] A Comparator chain with one test per tie-break
 
-### November 2026 · Weeks 3–6
+### November 2026 · Weeks 2–3
 
-**Finish Java core: generics, immutability, exceptions, streams and memory.**
+**Know what each collection costs and start generics.**
 
 | Goal | Target | Result |
 |---|---|---|
-| Blocks done | 24 of 28 | |
+| Blocks done | 15 of 17 | |
 | Month quiz, or the phase exam if the month has one | 8/10 | |
-| Explained with no lookup | all 3 | |
-| Deliverables | 3 of 4 | |
-| LeetCode solved | 8 | |
-| Solved alone | 40% | |
+| Explained with no lookup | all 2 | |
+| Deliverables | 2 of 3 | |
+| LeetCode solved | 4 | |
+| Solved alone | 30% | |
 
 Explain with no lookup:
+- [ ] **4.1b** ArrayList vs LinkedList in practice
 - [ ] **4.1f** Sort plus binary search vs sequential search
-- [ ] **4.2b** Why String is immutable
-- [ ] **4.2e** Checked vs unchecked exceptions
 
 Deliverables:
+- [ ] DynamicArray and the ArrayList vs LinkedList timing
+- [ ] A Comparator chain with one test per tie-break
 - [ ] Generic InMemoryRepository
-- [ ] TimeWindow record and EventType enum
-- [ ] Domain exceptions and Optional, failure paths tested
-- [ ] Loops rewritten as streams and back
 
-### December 2026 · Weeks 7–11
+### December 2026 · Weeks 4–7
 
-**Write real SQL and read query plans with confidence.**
+**Write immutable types and domain exceptions, then rest over the holidays.**
 
 | Goal | Target | Result |
 |---|---|---|
 | Blocks done | 22 of 25 | |
 | Month quiz, or the phase exam if the month has one | 8/10 | |
 | Explained with no lookup | all 2 | |
-| Deliverables | 3 of 4 | |
+| Deliverables | 2 of 2 | |
+| LeetCode solved | 4 | |
+| Solved alone | 40% | |
+
+Explain with no lookup:
+- [ ] **4.2b** Why String is immutable
+- [ ] **4.2e** Checked vs unchecked exceptions
+
+Deliverables:
+- [ ] TimeWindow record and EventType enum
+- [ ] Domain exceptions and Optional, failure paths tested
+
+### January 2027 · Weeks 8–10
+
+**Close Java core with the phase exam and start real SQL.**
+
+| Goal | Target | Result |
+|---|---|---|
+| Blocks done | 28 of 32 | |
+| Month quiz, or the phase exam if the month has one | 8/10 | |
+| Explained with no lookup | all 2 | |
+| Deliverables | 2 of 3 | |
 | LeetCode solved | 6 | |
+| Solved alone | 40% | |
+
+Explain with no lookup:
+- [ ] **W8** What garbage collection does with young and old objects, at a high level
+- [ ] **W9** Inner vs left vs anti join, with an example of each
+
+Deliverables:
+- [ ] Loops rewritten as streams and back
+- [ ] pgexercises: joins, aggregates and window functions
+- [ ] Library schema with migrations V1 to V3
+
+### February 2027 · Weeks 11–13
+
+**Read query plans, master transactions and use the database from Java.**
+
+| Goal | Target | Result |
+|---|---|---|
+| Blocks done | 27 of 31 | |
+| Month quiz, or the phase exam if the month has one | 8/10 | |
+| Explained with no lookup | all 4 | |
+| Deliverables | 3 of 4 | |
+| LeetCode solved | 7 | |
 | Solved alone | 40% | |
 
 Explain with no lookup:
 - [ ] **4.5a** How a B-tree index speeds a query and when it hurts
 - [ ] **4.5d** What EXPLAIN ANALYZE shows
+- [ ] **4.5b** ACID
+- [ ] **4.5c** Isolation levels and their anomalies
 
 Deliverables:
-- [ ] pgexercises: joins, aggregates and window functions
-- [ ] Library schema with migrations V1 to V3
 - [ ] 1M-row index experiment, plans compared
 - [ ] Ranking with RANK() OVER, EXPLAIN ANALYZE before and after
+- [ ] Lost update reproduced and fixed in psql
+- [ ] SQL injection exploited and fixed
 
-### January 2027 · Weeks 12–15
+### March 2027 · Weeks 14–16
 
-**Master transactions and see how Spring works inside.**
+**See how Spring works inside.**
 
 | Goal | Target | Result |
 |---|---|---|
-| Blocks done | 24 of 28 | |
+| Blocks done | 28 of 32 | |
 | Month quiz, or the phase exam if the month has one | 8/10 | |
-| Explained with no lookup | all 4 | |
-| Deliverables | 3 of 4 | |
-| LeetCode solved | 10 | |
+| Explained with no lookup | all 3 | |
+| Deliverables | 2 of 3 | |
+| LeetCode solved | 7 | |
 | Solved alone | 50% | |
 
 Explain with no lookup:
-- [ ] **4.5b** ACID
-- [ ] **4.5c** Isolation levels and their anomalies
 - [ ] **4.4a** IoC and dependency injection
 - [ ] **4.4b** Why @Transactional fails on self-invocation
+- [ ] **4.4d** The request path inside Spring
 
 Deliverables:
-- [ ] Lost update reproduced and fixed in psql
-- [ ] SQL injection exploited and fixed
 - [ ] Tiny DI container with reflection
 - [ ] JDK proxy and the self-invocation test
+- [ ] Filter and interceptor order logged, request path drawn
 
-### February 2027 · Weeks 16–19
+### April 2027 · Weeks 17–18
 
 **Finish Spring and JPA, then start operating systems.**
 
 | Goal | Target | Result |
 |---|---|---|
-| Blocks done | 24 of 28 | |
+| Blocks done | 18 of 21 | |
 | Month quiz, or the phase exam if the month has one | 8/10 | |
-| Explained with no lookup | all 3 | |
-| Deliverables | 3 of 4 | |
-| LeetCode solved | 10 | |
+| Explained with no lookup | all 2 | |
+| Deliverables | 2 of 2 | |
+| LeetCode solved | 5 | |
 | Solved alone | 50% | |
 
 Explain with no lookup:
 - [ ] **4.4c** The N+1 problem and its fixes
-- [ ] **4.4d** The request path inside Spring
 - [ ] **4.6a** Process vs thread
 
 Deliverables:
-- [ ] Filter and interceptor order logged, request path drawn
 - [ ] N+1 reproduced and fixed by query count
 - [ ] Graceful shutdown on SIGTERM
-- [ ] Scheduler simulator with tests
 
-### March 2027 · Weeks 20–24
+### May 2027 · Weeks 19–21
 
-**Understand memory and write code that is safe under concurrency.**
+**Understand scheduling and memory, then start concurrency.**
 
 | Goal | Target | Result |
 |---|---|---|
-| Blocks done | 30 of 35 | |
+| Blocks done | 27 of 31 | |
 | Month quiz, or the phase exam if the month has one | 8/10 | |
-| Explained with no lookup | all 5 | |
-| Deliverables | 4 of 5 | |
-| LeetCode solved | 11 | |
-| Solved alone | 55% | |
+| Explained with no lookup | all 2 | |
+| Deliverables | 2 of 3 | |
+| LeetCode solved | 7 | |
+| Solved alone | 50% | |
 
 Explain with no lookup:
 - [ ] **4.1c** When to use a heap
-- [ ] **4.2d** Virtual threads
 - [ ] **4.3a** Race conditions
-- [ ] **4.3b** Optimistic vs pessimistic locking
-- [ ] **4.3c** Deadlock and how to avoid it
 
 Deliverables:
+- [ ] Scheduler simulator with tests
 - [ ] OutOfMemoryError caused and heap dump read
 - [ ] Counter fixed 3 ways, each proven by a test
+
+### June 2027 · Weeks 22–24
+
+**Write code that is safe under concurrency.**
+
+| Goal | Target | Result |
+|---|---|---|
+| Blocks done | 28 of 32 | |
+| Month quiz, or the phase exam if the month has one | 8/10 | |
+| Explained with no lookup | all 3 | |
+| Deliverables | 2 of 3 | |
+| LeetCode solved | 6 | |
+| Solved alone | 55% | |
+
+Explain with no lookup:
+- [ ] **4.3c** Deadlock and how to avoid it
+- [ ] **4.2d** Virtual threads
+- [ ] **4.3b** Optimistic vs pessimistic locking
+
+Deliverables:
 - [ ] Deadlock found with jstack and fixed
 - [ ] Fixed pool vs virtual threads measured
 - [ ] Optimistic lock conflict reproduced, with a retry
 
-### April 2027 · Weeks 25–28
+### July 2027 · Weeks 25–27
 
-**Pass the 6-month checkpoint and understand the network under your code.**
+**Pass the halfway checkpoint and understand the network under your code.**
 
 | Goal | Target | Result |
 |---|---|---|
-| Blocks done | 24 of 28 | |
-| Month quiz plus the 6-month checkpoint | 8/10 | |
-| Explained with no lookup | all 5 | |
-| Deliverables | 3 of 4 | |
-| LeetCode solved | 6 | |
+| Blocks done | 27 of 31 | |
+| Month quiz plus the halfway checkpoint | 8/10 | |
+| Explained with no lookup | all 4 | |
+| Deliverables | 2 of 3 | |
+| LeetCode solved | 5 | |
 | Solved alone | 60% | |
 
 Explain with no lookup:
 - [ ] **4.1d** BFS vs DFS
-- [ ] **4.6b** What happens when you open https://google.com
 - [ ] **4.6c** TCP vs UDP
+- [ ] **4.6b** What happens when you open https://google.com
 - [ ] **4.6d** What HTTPS adds
-- [ ] **4.8a** Image vs container
 
 Deliverables:
 - [ ] TCP echo server and client
 - [ ] Handshake watched in Wireshark
 - [ ] HTTP request sent over a raw socket
-- [ ] Shell in its own namespace with unshare
 
-### May 2027 · Weeks 29–32
+### August 2027 · Weeks 28–30
 
-**Ship with containers, Git, CI and a real deploy.**
+**Containers, Compose, Git and CI, by hand.**
 
 | Goal | Target | Result |
 |---|---|---|
-| Blocks done | 24 of 28 | |
+| Blocks done | 28 of 32 | |
 | Month quiz, or the phase exam if the month has one | 8/10 | |
-| Explained with no lookup | all 3 | |
-| Deliverables | 4 of 5 | |
-| LeetCode solved | 10 | |
+| Explained with no lookup | all 2 | |
+| Deliverables | 3 of 4 | |
+| LeetCode solved | 6 | |
 | Solved alone | 60% | |
 
 Explain with no lookup:
+- [ ] **4.8a** Image vs container
 - [ ] **4.8b** What a CI pipeline must do before production
-- [ ] **4.8c** How to put a Spring + Postgres API online
-- [ ] **4.7b** A SOLID principle with a real example
 
 Deliverables:
+- [ ] Shell in its own namespace with unshare
 - [ ] Compose with healthcheck
 - [ ] Bad commit found with git bisect
 - [ ] CI blocks a failing merge
-- [ ] Backup restored into a fresh database
-- [ ] Two SOLID violations fixed in a real class
 
-### June 2027 · Weeks 33–37
+### September 2027 · Weeks 31–33
 
-**Write well-designed code: patterns, refactoring, hexagonal, ADRs.**
+**Deploy to AWS and start software design.**
 
 | Goal | Target | Result |
 |---|---|---|
-| Blocks done | 30 of 35 | |
+| Blocks done | 27 of 31 | |
 | Month quiz, or the phase exam if the month has one | 8/10 | |
 | Explained with no lookup | all 3 | |
-| Deliverables | 3 of 4 | |
-| LeetCode solved | 12 | |
+| Deliverables | 2 of 3 | |
+| LeetCode solved | 7 | |
+| Solved alone | 60% | |
+
+Explain with no lookup:
+- [ ] **4.8c** How to put a Spring + Postgres API online
+- [ ] **4.7b** A SOLID principle with a real example
+- [ ] **4.1e** Dynamic programming
+
+Deliverables:
+- [ ] Backup restored into a fresh database
+- [ ] Two SOLID violations fixed in a real class
+- [ ] 7 pattern examples with tests
+
+### October 2027 · Weeks 34–36
+
+**Refactor safely and structure code with hexagonal architecture.**
+
+| Goal | Target | Result |
+|---|---|---|
+| Blocks done | 28 of 32 | |
+| Month quiz, or the phase exam if the month has one | 8/10 | |
+| Explained with no lookup | all 2 | |
+| Deliverables | 2 of 2 | |
+| LeetCode solved | 7 | |
 | Solved alone | 50% | |
 
 Explain with no lookup:
-- [ ] **4.1e** Dynamic programming
-- [ ] **4.7a** Unit vs integration tests
 - [ ] **4.7c** Hexagonal architecture
+- [ ] **4.7a** Unit vs integration tests
 
 Deliverables:
-- [ ] 7 pattern examples with tests
 - [ ] Gilded Rose refactored under tests
 - [ ] Console adapter that drives the use cases from tests
-- [ ] 3 ADRs and C4 diagrams
 
-### July 2027 · Weeks 38–41
+### November 2027 · Weeks 37–39
 
-**Design systems out loud.**
+**Document decisions and start system design.**
 
 | Goal | Target | Result |
 |---|---|---|
-| Blocks done | 24 of 28 | |
+| Blocks done | 27 of 31 | |
 | Month quiz, or the phase exam if the month has one | 8/10 | |
-| Explained with no lookup | all 3 | |
-| Deliverables | 3 of 4 | |
-| LeetCode solved | 9 | |
-| Solved alone | 65% | |
+| Explained with no lookup | all 1 | |
+| Deliverables | 2 of 3 | |
+| LeetCode solved | 7 | |
+| Solved alone | 50% | |
 
 Explain with no lookup:
 - [ ] **4.7d** The main risk of a Redis cache
-- [ ] **SD1** Design a URL shortener out loud in 30 minutes
-- [ ] **SD2** Design a rate limiter out loud in 30 minutes
 
 Deliverables:
+- [ ] 3 ADRs and C4 diagrams
 - [ ] Back-of-the-envelope estimate for 10,000 groups
 - [ ] Cache measured with and without
-- [ ] Kafka producer, consumer and outbox; SQS dead-letter queue
-- [ ] 2 recorded designs
 
-### August 2027 · Weeks 42–45
+### December 2027 · Week 40
 
-**Learn applied AI: LLM APIs, embeddings, RAG and evals.**
+**Queues and async messaging, then rest over the holidays.**
 
 | Goal | Target | Result |
 |---|---|---|
-| Blocks done | 24 of 28 | |
+| Blocks done | 10 of 11 | |
 | Month quiz, or the phase exam if the month has one | 8/10 | |
-| Explained with no lookup | all 4 | |
-| Deliverables | 3 of 4 | |
-| LeetCode solved | 6 | |
+| Explained with no lookup | all 1 | |
+| Deliverables | 1 of 1 | |
+| LeetCode solved | 2 | |
 | Solved alone | 65% | |
 
 Explain with no lookup:
+- [ ] **W40** Queue vs log: when you pick SQS and when Kafka
+
+Deliverables:
+- [ ] Kafka producer, consumer and outbox; SQS dead-letter queue
+
+### January 2028 · Weeks 41–43
+
+**Design systems out loud and start applied AI.**
+
+| Goal | Target | Result |
+|---|---|---|
+| Blocks done | 27 of 31 | |
+| Month quiz, or the phase exam if the month has one | 8/10 | |
+| Explained with no lookup | all 4 | |
+| Deliverables | 2 of 3 | |
+| LeetCode solved | 5 | |
+| Solved alone | 65% | |
+
+Explain with no lookup:
+- [ ] **SD1** Design a URL shortener out loud in 30 minutes
+- [ ] **SD2** Design a rate limiter out loud in 30 minutes
 - [ ] **4.9a** Tokens and context windows
 - [ ] **4.9b** Embeddings
+
+Deliverables:
+- [ ] 2 recorded designs
+- [ ] Claude API client in Java with structured output
+- [ ] pgvector nearest-neighbor demo
+
+### February 2028 · Weeks 44–46
+
+**RAG, evals and AI in production.**
+
+| Goal | Target | Result |
+|---|---|---|
+| Blocks done | 28 of 32 | |
+| Month quiz, or the phase exam if the month has one | 8/10 | |
+| Explained with no lookup | all 2 | |
+| Deliverables | 2 of 3 | |
+| LeetCode solved | 5 | |
+| Solved alone | 65% | |
+
+Explain with no lookup:
 - [ ] **4.9c** The RAG pipeline
 - [ ] **4.9e** How to know an AI system got better
 
 Deliverables:
-- [ ] Claude API client in Java with structured output
-- [ ] pgvector nearest-neighbor demo
 - [ ] Chunk sizes compared
 - [ ] Eval run before and after a prompt change
+- [ ] Prompt injection test and fixes
 
-### September 2027 · Weeks 46–50
+### March 2028 · Weeks 47–49
 
-**Put AI in production safely and start interview prep.**
+**Build reliable agents and start interview prep.**
 
 | Goal | Target | Result |
 |---|---|---|
-| Blocks done | 30 of 35 | |
+| Blocks done | 27 of 31 | |
 | Month quiz, or the phase exam if the month has one | 8/10 | |
 | Explained with no lookup | all 2 | |
-| Deliverables | 3 of 4 | |
+| Deliverables | 2 of 2 | |
 | LeetCode solved | 5 | |
 | Solved alone | 70% | |
 
@@ -376,21 +490,19 @@ Explain with no lookup:
 - [ ] **SD3** Design a notification system out loud
 
 Deliverables:
-- [ ] Prompt injection test and fixes
 - [ ] Tool loop written by hand
 - [ ] CV and LinkedIn rewritten
-- [ ] 6 STAR stories told in English
 
-### October 2027 · Weeks 51–52
+### April 2028 · Weeks 50–52
 
 **Hit the gold-junior bar.**
 
 | Goal | Target | Result |
 |---|---|---|
-| Blocks done | 12 of 14 | |
+| Blocks done | 28 of 32 | |
 | Mock interviews passed | 3/4 | |
 | Explained with no lookup | all 1 | |
-| Deliverables | 4 of 4 | |
+| Deliverables | 5 of 5 | |
 | Interview problems solved | 4 | |
 | Solved alone | 70% | |
 
@@ -398,6 +510,7 @@ Explain with no lookup:
 - [ ] **DX** Full diagnostic with no lookup: 3 or more in every area except front-end
 
 Deliverables:
+- [ ] 6 STAR stories told in English
 - [ ] 45-minute mock interview in English
 - [ ] 5 applications sent
 - [ ] Full diagnostic retaken
@@ -405,7 +518,7 @@ Deliverables:
 
 ## The weekly blocks
 
-Every day is 1h of study here, then 1h of project.
+Every day is 1h of study here, then 1h of project. A plan week takes 10 or 11 of these days (see Pace at the top).
 
 | Day | Study (1h) | What |
 |---|---|---|
@@ -427,7 +540,7 @@ HUB: 25 minutes before the block, Monday to Friday, outside the 14 hours.
 
 > **HUB, 25 min/day:** literature review · write the questions for the professor: which event aligns the two clocks, what each machine exports
 
-#### Week 1 · Oct 18 – 24 · Java core
+#### Week 1 · Oct 18 – Nov 6 · Java core
 
 **Object contracts, hashing and memory**
 
@@ -438,7 +551,11 @@ HUB: 25 minutes before the block, Monday to Friday, outside the 14 hours.
 - **Weekly doc:** [weeks/week-01.md](weeks/week-01.md)
 - [ ] Week done
 
-#### Week 2 · Oct 25 – 31 · Java core
+### November 2026
+
+> **HUB, 25 min/day:** literature review and equipment training
+
+#### Week 2 · Nov 7 – 21 · Java core
 
 **Collections and their costs**
 
@@ -448,11 +565,7 @@ HUB: 25 minutes before the block, Monday to Friday, outside the 14 hours.
 - **LeetCode:** #49 Group Anagrams · #347 Top K Frequent Elements · #238 Product of Array Except Self
 - [ ] Week done
 
-### November 2026
-
-> **HUB, 25 min/day:** literature review and equipment training
-
-#### Week 3 · Nov 1 – 7 · Java core
+#### Week 3 · Nov 22 – Dec 1 · Java core
 
 **Generics**
 
@@ -463,7 +576,11 @@ HUB: 25 minutes before the block, Monday to Friday, outside the 14 hours.
 - **Carried from week 2 (Nov 10):** convert `DynamicArray` from `int[]` to `DynamicArray<T>` with an `Object[]` + `(T)` cast, tests on `DynamicArray<Integer>` and `DynamicArray<String>`. The why (no `new T[]`: arrays keep their type at runtime, `T` is erased) was covered on Nov 10
 - [ ] Week done
 
-#### Week 4 · Nov 8 – 14 · Java core
+### December 2026
+
+> **HUB, 25 min/day:** equipment training · data collection starts: remove patient names before anything else
+
+#### Week 4 · Dec 2 – 12 · Java core
 
 **Immutability, records and enums**
 
@@ -474,7 +591,7 @@ HUB: 25 minutes before the block, Monday to Friday, outside the 14 hours.
 - **LeetCode:** #125 Valid Palindrome · #167 Two Sum II · #15 3Sum
 - [ ] Week done
 
-#### Week 5 · Nov 15 – 21 · Java core
+#### Week 5 · Dec 13 – 19 and Jan 3 – 5 · Java core
 
 **Exceptions and Optional**
 
@@ -482,9 +599,36 @@ HUB: 25 minutes before the block, Monday to Friday, outside the 14 hours.
 - **Read:** Effective Java Items 55, 69–77
 - **Lab:** A domain exception hierarchy · null returns replaced with Optional · tests for every failure path
 - **LeetCode:** #11 Container With Most Water · #42 Trapping Rain Water · review #15
+- **Note:** Split by the holidays: Dec 13 – 19, then Jan 3 – 5 to finish it.
 - [ ] Week done
 
-#### Week 6 · Nov 22 – 28 · Java core · `Phase exam`
+#### Week 6 · Dec 20 – 26 · Holidays · `Holiday`
+
+**Christmas week**
+
+- **Topics:** No new topic
+- **Read:** None
+- **Lab:** Optional: finish anything left from weeks 3–5
+- **LeetCode:** Reviews only: every problem you didn't solve alone
+- **Blocks planned:** 2
+- [ ] Week done
+
+#### Week 7 · Dec 27 – Jan 2 · Holidays · `Holiday`
+
+**New Year week**
+
+- **Topics:** No new topic
+- **Read:** None
+- **Lab:** Blank page: explain generics, records and exceptions out loud, no notes
+- **LeetCode:** Reviews only
+- **Blocks planned:** 2
+- [ ] Week done
+
+### January 2027
+
+> **HUB, 25 min/day:** data collection: file readers for EMG (EDF/CSV) and ultrasound (DICOM/AVI)
+
+#### Week 8 · Jan 6 – 16 · Java core · `Phase exam`
 
 **Streams, lambdas and the JVM**
 
@@ -494,11 +638,7 @@ HUB: 25 minutes before the block, Monday to Friday, outside the 14 hours.
 - **LeetCode:** #121 Best Time to Buy and Sell Stock · #3 Longest Substring Without Repeating Characters · #424 Longest Repeating Character Replacement
 - [ ] Week done
 
-### December 2026
-
-> **HUB, 25 min/day:** equipment training · data collection starts: remove patient names before anything else
-
-#### Week 7 · Nov 29 – Dec 5 · Databases
+#### Week 9 · Jan 17 – 26 · Databases
 
 **SQL beyond the basics**
 
@@ -508,7 +648,7 @@ HUB: 25 minutes before the block, Monday to Friday, outside the 14 hours.
 - **LeetCode:** #567 Permutation in String · #76 Minimum Window Substring · review #3
 - [ ] Week done
 
-#### Week 8 · Dec 6 – 12 · Databases
+#### Week 10 · Jan 27 – Feb 6 · Databases
 
 **Data modeling**
 
@@ -518,7 +658,11 @@ HUB: 25 minutes before the block, Monday to Friday, outside the 14 hours.
 - **LeetCode:** #20 Valid Parentheses · #155 Min Stack · #150 Evaluate Reverse Polish Notation
 - [ ] Week done
 
-#### Week 9 · Dec 13 – 19 · Databases
+### February 2027
+
+> **HUB, 25 min/day:** data collection · sync routine v1 starts
+
+#### Week 11 · Feb 7 – 16 · Databases · `Carnival`
 
 **Indexes and query plans**
 
@@ -526,35 +670,10 @@ HUB: 25 minutes before the block, Monday to Friday, outside the 14 hours.
 - **Read:** Use The Index, Luke! chapters 1–3
 - **Lab:** Load 1M rows, time a query, add the right index, compare the two plans · a ranking query with RANK() OVER, EXPLAIN ANALYZE before and after its index
 - **LeetCode:** #22 Generate Parentheses · #739 Daily Temperatures · #853 Car Fleet
+- **Note:** Carnival is Monday and Tuesday (Feb 8 – 9, 2027): move those two study hours to other days of the plan week.
 - [ ] Week done
 
-#### Week 10 · Dec 20 – 26 · Holidays · `Holiday`
-
-**Christmas week**
-
-- **Topics:** No new topic
-- **Read:** None
-- **Lab:** Optional: finish anything left from weeks 7–9
-- **LeetCode:** Reviews only: every problem you didn't solve alone
-- **Blocks planned:** 2
-- [ ] Week done
-
-#### Week 11 · Dec 27 – Jan 2 · Holidays · `Holiday`
-
-**New Year week**
-
-- **Topics:** No new topic
-- **Read:** None
-- **Lab:** Blank page: explain indexes and window functions out loud, no notes
-- **LeetCode:** Reviews only
-- **Blocks planned:** 2
-- [ ] Week done
-
-### January 2027
-
-> **HUB, 25 min/day:** data collection: file readers for EMG (EDF/CSV) and ultrasound (DICOM/AVI)
-
-#### Week 12 · Jan 3 – 9 · Databases
+#### Week 12 · Feb 17 – 27 · Databases
 
 **Transactions and isolation**
 
@@ -564,7 +683,7 @@ HUB: 25 minutes before the block, Monday to Friday, outside the 14 hours.
 - **LeetCode:** #704 Binary Search · #74 Search a 2D Matrix · #875 Koko Eating Bananas
 - [ ] Week done
 
-#### Week 13 · Jan 10 – 16 · Databases · `Phase exam`
+#### Week 13 · Feb 28 – Mar 9 · Databases · `Phase exam`
 
 **Databases from Java**
 
@@ -574,7 +693,11 @@ HUB: 25 minutes before the block, Monday to Friday, outside the 14 hours.
 - **LeetCode:** #153 Find Minimum in Rotated Sorted Array · #33 Search in Rotated Sorted Array · #981 Time Based Key-Value Store
 - [ ] Week done
 
-#### Week 14 · Jan 17 – 23 · Spring and JPA
+### March 2027
+
+> **HUB, 25 min/day:** collection ends · sync routine v1 on real data
+
+#### Week 14 · Mar 10 – 20 · Spring and JPA
 
 **The IoC container**
 
@@ -584,7 +707,7 @@ HUB: 25 minutes before the block, Monday to Friday, outside the 14 hours.
 - **LeetCode:** #206 Reverse Linked List · #21 Merge Two Sorted Lists · #143 Reorder List
 - [ ] Week done
 
-#### Week 15 · Jan 24 – 30 · Spring and JPA
+#### Week 15 · Mar 21 – 30 · Spring and JPA
 
 **Proxies, AOP and transactions**
 
@@ -594,11 +717,7 @@ HUB: 25 minutes before the block, Monday to Friday, outside the 14 hours.
 - **LeetCode:** #19 Remove Nth Node From End of List · #141 Linked List Cycle · #2 Add Two Numbers
 - [ ] Week done
 
-### February 2027
-
-> **HUB, 25 min/day:** data collection · sync routine v1 starts
-
-#### Week 16 · Jan 31 – Feb 6 · Spring and JPA
+#### Week 16 · Mar 31 – Apr 10 · Spring and JPA
 
 **The request path and Spring Security**
 
@@ -608,7 +727,11 @@ HUB: 25 minutes before the block, Monday to Friday, outside the 14 hours.
 - **LeetCode:** #226 Invert Binary Tree · #104 Maximum Depth of Binary Tree · #100 Same Tree
 - [ ] Week done
 
-#### Week 17 · Feb 7 – 13 · Spring and JPA · `Phase exam` `Carnival`
+### April 2027
+
+> **HUB, 25 min/day:** data analysis
+
+#### Week 17 · Apr 11 – 20 · Spring and JPA · `Phase exam`
 
 **JPA and Hibernate**
 
@@ -616,10 +739,9 @@ HUB: 25 minutes before the block, Monday to Friday, outside the 14 hours.
 - **Read:** Hibernate ORM user guide: persistence context and fetching
 - **Lab:** Reproduce an N+1, count the queries, fix it · Spring quiz (8/10)
 - **LeetCode:** #572 Subtree of Another Tree · #543 Diameter of Binary Tree · #110 Balanced Binary Tree
-- **Note:** Carnival is Monday and Tuesday: move Monday's block to another day.
 - [ ] Week done
 
-#### Week 18 · Feb 14 – 20 · Operating systems
+#### Week 18 · Apr 21 – May 1 · Operating systems
 
 **Processes**
 
@@ -629,7 +751,11 @@ HUB: 25 minutes before the block, Monday to Friday, outside the 14 hours.
 - **LeetCode:** #102 Binary Tree Level Order Traversal · #199 Binary Tree Right Side View · #235 Lowest Common Ancestor of a BST
 - [ ] Week done
 
-#### Week 19 · Feb 21 – 27 · Operating systems
+### May 2027
+
+> **HUB, 25 min/day:** data analysis · product testing
+
+#### Week 19 · May 2 – 11 · Operating systems
 
 **Scheduling and OS threads**
 
@@ -639,11 +765,7 @@ HUB: 25 minutes before the block, Monday to Friday, outside the 14 hours.
 - **LeetCode:** #98 Validate Binary Search Tree · #230 Kth Smallest Element in a BST · #1448 Count Good Nodes in Binary Tree
 - [ ] Week done
 
-### March 2027
-
-> **HUB, 25 min/day:** collection ends · sync routine v1 on real data
-
-#### Week 20 · Feb 28 – Mar 6 · Operating systems · `Phase exam`
+#### Week 20 · May 12 – 22 · Operating systems · `Phase exam`
 
 **Memory and I/O**
 
@@ -653,7 +775,7 @@ HUB: 25 minutes before the block, Monday to Friday, outside the 14 hours.
 - **LeetCode:** #703 Kth Largest Element in a Stream · #1046 Last Stone Weight · #973 K Closest Points to Origin
 - [ ] Week done
 
-#### Week 21 · Mar 7 – 13 · Concurrency
+#### Week 21 · May 23 – Jun 1 · Concurrency
 
 **Thread safety**
 
@@ -663,7 +785,11 @@ HUB: 25 minutes before the block, Monday to Friday, outside the 14 hours.
 - **LeetCode:** #215 Kth Largest Element in an Array · #621 Task Scheduler · #355 Design Twitter
 - [ ] Week done
 
-#### Week 22 · Mar 14 – 20 · Concurrency
+### June 2027
+
+> **HUB, 25 min/day:** product testing
+
+#### Week 22 · Jun 2 – 12 · Concurrency
 
 **Locks and coordination**
 
@@ -673,7 +799,7 @@ HUB: 25 minutes before the block, Monday to Friday, outside the 14 hours.
 - **LeetCode:** #78 Subsets · #39 Combination Sum · #46 Permutations
 - [ ] Week done
 
-#### Week 23 · Mar 21 – 27 · Concurrency
+#### Week 23 · Jun 13 – 22 · Concurrency
 
 **Executors, async and virtual threads**
 
@@ -683,7 +809,7 @@ HUB: 25 minutes before the block, Monday to Friday, outside the 14 hours.
 - **LeetCode:** #90 Subsets II · #40 Combination Sum II · #79 Word Search
 - [ ] Week done
 
-#### Week 24 · Mar 28 – Apr 3 · Concurrency · `Phase exam`
+#### Week 24 · Jun 23 – Jul 3 · Concurrency · `Phase exam`
 
 **Concurrency in the database**
 
@@ -693,11 +819,11 @@ HUB: 25 minutes before the block, Monday to Friday, outside the 14 hours.
 - **LeetCode:** #208 Implement Trie · #211 Design Add and Search Words Data Structure · review #79
 - [ ] Week done
 
-### April 2027
+### July 2027
 
-> **HUB, 25 min/day:** data analysis
+> **HUB, 25 min/day:** write-up and innovation registration
 
-#### Week 25 · Apr 4 – 10 · Networks
+#### Week 25 · Jul 4 – 13 · Networks
 
 **Layers, TCP, UDP and DNS**
 
@@ -707,9 +833,9 @@ HUB: 25 minutes before the block, Monday to Friday, outside the 14 hours.
 - **LeetCode:** #200 Number of Islands · #695 Max Area of Island · #133 Clone Graph
 - [ ] Week done
 
-#### Week 26 · Apr 11 – 17 · Checkpoint · `Checkpoint`
+#### Week 26 · Jul 14 – 24 · Checkpoint · `Checkpoint`
 
-**6-month checkpoint**
+**Halfway checkpoint**
 
 - **Topics:** Retake diagnostic sections 4.1 to 4.6 with no lookup · target 2.5 or more in every area studied so far
 - **Read:** Your notes and blank pages from weeks 1–25
@@ -717,7 +843,7 @@ HUB: 25 minutes before the block, Monday to Friday, outside the 14 hours.
 - **LeetCode:** 1 mock interview · reviews of everything you didn't solve alone
 - [ ] Week done
 
-#### Week 27 · Apr 18 – 24 · Networks · `Phase exam`
+#### Week 27 · Jul 25 – Aug 3 · Networks · `Phase exam`
 
 **HTTP and TLS**
 
@@ -727,7 +853,11 @@ HUB: 25 minutes before the block, Monday to Friday, outside the 14 hours.
 - **LeetCode:** #994 Rotting Oranges · #207 Course Schedule · #210 Course Schedule II
 - [ ] Week done
 
-#### Week 28 · Apr 25 – May 1 · Docker, CI/CD, deploy
+### August 2027
+
+> **HUB, 25 min/day:** final report and SEMUNI (crunch: borrows the Friday LeetCode hour)
+
+#### Week 28 · Aug 4 – 14 · Docker, CI/CD, deploy
 
 **Containers from the inside**
 
@@ -737,11 +867,7 @@ HUB: 25 minutes before the block, Monday to Friday, outside the 14 hours.
 - **LeetCode:** #684 Redundant Connection · #127 Word Ladder · review #207
 - [ ] Week done
 
-### May 2027
-
-> **HUB, 25 min/day:** data analysis · product testing
-
-#### Week 29 · May 2 – 8 · Docker, CI/CD, deploy
+#### Week 29 · Aug 15 – 24 · Docker, CI/CD, deploy
 
 **Compose and Git beyond the basics**
 
@@ -751,7 +877,7 @@ HUB: 25 minutes before the block, Monday to Friday, outside the 14 hours.
 - **LeetCode:** #743 Network Delay Time · #1584 Min Cost to Connect All Points · #787 Cheapest Flights Within K Stops
 - [ ] Week done
 
-#### Week 30 · May 9 – 15 · Docker, CI/CD, deploy
+#### Week 30 · Aug 25 – Sep 4 · Docker, CI/CD, deploy
 
 **CI/CD**
 
@@ -761,7 +887,11 @@ HUB: 25 minutes before the block, Monday to Friday, outside the 14 hours.
 - **LeetCode:** #70 Climbing Stairs · #746 Min Cost Climbing Stairs · #198 House Robber
 - [ ] Week done
 
-#### Week 31 · May 16 – 22 · Docker, CI/CD, deploy · `Live` `Phase exam`
+### September 2027
+
+> **HUB, 25 min/day:** final report and SEMUNI · the scholarship ends Sep 30
+
+#### Week 31 · Sep 5 – 14 · Docker, CI/CD, deploy · `Live` `Phase exam`
 
 **Deploy to AWS**
 
@@ -771,7 +901,7 @@ HUB: 25 minutes before the block, Monday to Friday, outside the 14 hours.
 - **LeetCode:** #213 House Robber II · #5 Longest Palindromic Substring · #647 Palindromic Substrings
 - [ ] Week done
 
-#### Week 32 · May 23 – 29 · Design and architecture
+#### Week 32 · Sep 15 – 25 · Design and architecture
 
 **Cohesion, coupling and SOLID**
 
@@ -781,11 +911,7 @@ HUB: 25 minutes before the block, Monday to Friday, outside the 14 hours.
 - **LeetCode:** #91 Decode Ways · #322 Coin Change · #152 Maximum Product Subarray
 - [ ] Week done
 
-### June 2027
-
-> **HUB, 25 min/day:** product testing
-
-#### Week 33 · May 30 – Jun 5 · Design and architecture
+#### Week 33 · Sep 26 – Oct 5 · Design and architecture
 
 **Design patterns that matter**
 
@@ -795,7 +921,11 @@ HUB: 25 minutes before the block, Monday to Friday, outside the 14 hours.
 - **LeetCode:** #139 Word Break · #300 Longest Increasing Subsequence · #416 Partition Equal Subset Sum
 - [ ] Week done
 
-#### Week 34 · Jun 6 – 12 · Design and architecture
+### October 2027
+
+> **HUB, 25 min/day:** done
+
+#### Week 34 · Oct 6 – 16 · Design and architecture
 
 **Refactoring**
 
@@ -805,7 +935,7 @@ HUB: 25 minutes before the block, Monday to Friday, outside the 14 hours.
 - **LeetCode:** #62 Unique Paths · #1143 Longest Common Subsequence · #309 Best Time to Buy and Sell Stock with Cooldown
 - [ ] Week done
 
-#### Week 35 · Jun 13 – 19 · Design and architecture
+#### Week 35 · Oct 17 – 26 · Design and architecture
 
 **Hexagonal architecture**
 
@@ -815,7 +945,7 @@ HUB: 25 minutes before the block, Monday to Friday, outside the 14 hours.
 - **LeetCode:** #518 Coin Change II · #494 Target Sum · #72 Edit Distance
 - [ ] Week done
 
-#### Week 36 · Jun 20 – 26 · Design and architecture
+#### Week 36 · Oct 27 – Nov 6 · Design and architecture
 
 **DDD-lite and test strategy**
 
@@ -825,7 +955,9 @@ HUB: 25 minutes before the block, Monday to Friday, outside the 14 hours.
 - **LeetCode:** #53 Maximum Subarray · #55 Jump Game · #45 Jump Game II
 - [ ] Week done
 
-#### Week 37 · Jun 27 – Jul 3 · Design and architecture · `Phase exam`
+### November 2027
+
+#### Week 37 · Nov 7 – 16 · Design and architecture · `Phase exam`
 
 **Decisions and documentation**
 
@@ -835,11 +967,7 @@ HUB: 25 minutes before the block, Monday to Friday, outside the 14 hours.
 - **LeetCode:** #134 Gas Station · #763 Partition Labels · #678 Valid Parenthesis String
 - [ ] Week done
 
-### July 2027
-
-> **HUB, 25 min/day:** write-up and innovation registration
-
-#### Week 38 · Jul 4 – 10 · System design
+#### Week 38 · Nov 17 – 27 · System design
 
 **Scaling and estimation**
 
@@ -849,7 +977,7 @@ HUB: 25 minutes before the block, Monday to Friday, outside the 14 hours.
 - **LeetCode:** #57 Insert Interval · #56 Merge Intervals · #435 Non-overlapping Intervals
 - [ ] Week done
 
-#### Week 39 · Jul 11 – 17 · System design
+#### Week 39 · Nov 28 – Dec 7 · System design
 
 **Caching**
 
@@ -859,7 +987,9 @@ HUB: 25 minutes before the block, Monday to Friday, outside the 14 hours.
 - **LeetCode:** #136 Single Number · #191 Number of 1 Bits · #338 Counting Bits
 - [ ] Week done
 
-#### Week 40 · Jul 18 – 24 · System design
+### December 2027
+
+#### Week 40 · Dec 8 – 18 · System design
 
 **Queues and async messaging**
 
@@ -869,7 +999,11 @@ HUB: 25 minutes before the block, Monday to Friday, outside the 14 hours.
 - **LeetCode:** #268 Missing Number · #371 Sum of Two Integers · #48 Rotate Image
 - [ ] Week done
 
-#### Week 41 · Jul 25 – 31 · System design · `Phase exam`
+> **Holiday break · Dec 19, 2027 – Jan 1, 2028:** not a plan week. Keep it light: LeetCode reviews and the blank page only (house rule 9).
+
+### January 2028
+
+#### Week 41 · Jan 2 – 11 · System design · `Phase exam`
 
 **Data at scale and design interviews**
 
@@ -879,11 +1013,7 @@ HUB: 25 minutes before the block, Monday to Friday, outside the 14 hours.
 - **LeetCode:** 2 mixed mediums + reviews · 1 mock interview
 - [ ] Week done
 
-### August 2027
-
-> **HUB, 25 min/day:** final report and SEMUNI (crunch: borrows the Friday LeetCode hour)
-
-#### Week 42 · Aug 1 – 7 · Applied AI
+#### Week 42 · Jan 12 – 22 · Applied AI
 
 **LLM fundamentals**
 
@@ -893,7 +1023,7 @@ HUB: 25 minutes before the block, Monday to Friday, outside the 14 hours.
 - **LeetCode:** 2 mixed mediums + reviews
 - [ ] Week done
 
-#### Week 43 · Aug 8 – 14 · Applied AI
+#### Week 43 · Jan 23 – Feb 1 · Applied AI
 
 **Embeddings and vector search**
 
@@ -903,7 +1033,9 @@ HUB: 25 minutes before the block, Monday to Friday, outside the 14 hours.
 - **LeetCode:** 2 mixed mediums + reviews · 1 mock interview
 - [ ] Week done
 
-#### Week 44 · Aug 15 – 21 · Applied AI
+### February 2028
+
+#### Week 44 · Feb 2 – 12 · Applied AI
 
 **RAG**
 
@@ -913,7 +1045,7 @@ HUB: 25 minutes before the block, Monday to Friday, outside the 14 hours.
 - **LeetCode:** 2 mixed mediums + reviews
 - [ ] Week done
 
-#### Week 45 · Aug 22 – 28 · Applied AI
+#### Week 45 · Feb 13 – 22 · Applied AI
 
 **Evals**
 
@@ -923,11 +1055,7 @@ HUB: 25 minutes before the block, Monday to Friday, outside the 14 hours.
 - **LeetCode:** 2 mixed mediums + reviews · 1 mock interview
 - [ ] Week done
 
-### September 2027
-
-> **HUB, 25 min/day:** final report and SEMUNI · the scholarship ends Sep 30
-
-#### Week 46 · Aug 29 – Sep 4 · Applied AI · `Launch`
+#### Week 46 · Feb 23 – Mar 4 · Applied AI · `Launch` `Carnival`
 
 **AI in production**
 
@@ -935,9 +1063,12 @@ HUB: 25 minutes before the block, Monday to Friday, outside the 14 hours.
 - **Read:** AI Engineering chapter 5 (defensive prompt engineering) and chapter 10
 - **Lab:** Attack your own app with prompt injection and fix what gets through
 - **LeetCode:** 2 mixed mediums + reviews
+- **Note:** Carnival is Monday and Tuesday (Feb 28 – 29, 2028): move those two study hours to other days of the plan week.
 - [ ] Week done
 
-#### Week 47 · Sep 5 – 11 · Applied AI
+### March 2028
+
+#### Week 47 · Mar 5 – 14 · Applied AI
 
 **Tool calling and agents**
 
@@ -947,7 +1078,7 @@ HUB: 25 minutes before the block, Monday to Friday, outside the 14 hours.
 - **LeetCode:** 2 mixed mediums + reviews · 1 mock interview
 - [ ] Week done
 
-#### Week 48 · Sep 12 – 18 · Applied AI · `Phase exam`
+#### Week 48 · Mar 15 – 25 · Applied AI · `Phase exam`
 
 **Reliable agents**
 
@@ -957,7 +1088,7 @@ HUB: 25 minutes before the block, Monday to Friday, outside the 14 hours.
 - **LeetCode:** 2 mixed mediums + reviews
 - [ ] Week done
 
-#### Week 49 · Sep 19 – 25 · Interview sprint
+#### Week 49 · Mar 26 – Apr 4 · Interview sprint
 
 **System design interviews**
 
@@ -968,7 +1099,9 @@ HUB: 25 minutes before the block, Monday to Friday, outside the 14 hours.
 - **Career:** CV and LinkedIn rewritten around your projects and the HUB project
 - [ ] Week done
 
-#### Week 50 · Sep 26 – Oct 2 · Interview sprint
+### April 2028
+
+#### Week 50 · Apr 5 – 15 · Interview sprint
 
 **Stories from your projects**
 
@@ -979,11 +1112,7 @@ HUB: 25 minutes before the block, Monday to Friday, outside the 14 hours.
 - **Career:** Maintenance · project READMEs polished
 - [ ] Week done
 
-### October 2027
-
-> **HUB, 25 min/day:** done
-
-#### Week 51 · Oct 3 – 9 · Interview sprint
+#### Week 51 · Apr 16 – 25 · Interview sprint
 
 **Java and Spring deep-dive questions**
 
@@ -994,7 +1123,7 @@ HUB: 25 minutes before the block, Monday to Friday, outside the 14 hours.
 - **Career:** Start applying: 5 applications
 - [ ] Week done
 
-#### Week 52 · Oct 10 – 16 · Interview sprint · `Goal`
+#### Week 52 · Apr 26 – May 6 · Interview sprint · `Goal`
 
 **Final check**
 
@@ -1010,7 +1139,7 @@ HUB: 25 minutes before the block, Monday to Friday, outside the 14 hours.
 1. **AI in learning mode.** In study blocks, AI explains and corrects your explanations; it never writes the code.
 2. **LeetCode method.** 30 minutes with no help. If stuck, read the solution, close it, rewrite from scratch. Review on day 3 and day 10. Log every problem in `leetcode/TRACKER.md`.
 3. **Phase exam.** Weeks tagged `Phase exam` end a subject with a 10-question quiz, no lookup. 8 or more and you move on. Under 8, the next week repeats the gaps and the plan shifts by a week. In a month with a phase exam, it also counts as the month quiz.
-4. **Missed blocks.** A missed block moves to another day that week. A lost week shifts the plan by one week. No subject is skipped.
+4. **Missed blocks.** A missed block moves to another day of the same plan week. A lost week shifts the plan by one week. No subject is skipped.
 5. **FOMO.** New topics go to a parking-lot file and wait until the current subject ends.
 6. **HUB.** 25 minutes a weekday, outside the 14 hours. Only during the Aug–Sep 2027 crunch does it borrow the Friday LeetCode hour.
 7. **Front-end.** When the internship starts asking for React and TypeScript, it takes the project hour on two days a week until it settles.
@@ -1019,7 +1148,7 @@ HUB: 25 minutes before the block, Monday to Friday, outside the 14 hours.
 
 ## The goal
 
-**Gold junior on Oct 17, 2027:**
+**Gold junior on May 6, 2028** (it was Oct 17, 2027 before the plan was stretched to 1h of study a day):
 
 - Ships a feature alone: design, code, tests, deploy
 - 3 out of 4 in every diagnostic area, no lookup
@@ -1028,4 +1157,4 @@ HUB: 25 minutes before the block, Monday to Friday, outside the 14 hours.
 - Finds what's wrong in AI-written code
 - Holds a 45-minute interview in English
 
-Pleno is the next step, realistic around Oct 2028.
+Pleno is the next step, realistic about a year after the goal.
