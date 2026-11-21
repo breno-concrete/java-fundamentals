@@ -4,7 +4,7 @@
 
 The whole year in the order you learn it: the subject map, what each month covers, the monthly goals and the exact work for every week. Open it every Sunday to plan the week ahead.
 
-- **Load:** 14h a week (2h every day): 10h of study here + 4h of project days (Thu, Sat; you pick the project, planned in its own repo) + HUB 25 min each weekday
+- **Load:** 14h a week (2h every day): 1h of study here + 1h of project every day (7h + 7h; you pick the project, planned in its own repo) + HUB 25 min each weekday. Since Nov 20, 2026; before that it was 10h of study + 4h of project days (Thu, Sat)
 - **Checkpoints:** Apr 17, 2027 (6 months) · Oct 17, 2027 (the goal)
 - **Live version with trackers:** [Caminho das Pedras](https://claude.ai/artifact/KFTaScYYXn8mx3Tv4XRu3N)
 
@@ -45,7 +45,7 @@ flowchart LR
 | 4 | Operating systems | Feb 14 – Mar 6 · 3 wk | Java core (JVM memory) | Processes, syscalls, signals · scheduling, OS threads · virtual memory, paging · files, descriptors, I/O |
 | 5 | Concurrency | Mar 7 – Apr 3 · 4 wk | OS, Java core, Databases | Races, JMM, happens-before · locks, deadlock · executors, CompletableFuture, virtual threads · DB locking, idempotency |
 | 6 | Networks | Apr 4 – Apr 24 · 2 wk + checkpoint | OS (sockets, I/O) | TCP/IP, TCP vs UDP · DNS · HTTP/1.1, HTTP/2, REST · TLS, certificates |
-| 7 | Docker, CI/CD and deploy | Apr 25 – May 22 · 4 wk | OS, Networks | Namespaces, cgroups, layers · Dockerfile, Compose · Git beyond basics · CI pipelines · VPS, reverse proxy, HTTPS, backups |
+| 7 | Docker, CI/CD and deploy | Apr 25 – May 22 · 4 wk | OS, Networks | Namespaces, cgroups, layers · Dockerfile, Compose · Git beyond basics · CI pipelines · AWS deploy (ECS, RDS), HTTPS, backups |
 | 8 | Design and architecture | May 23 – Jul 3 · 6 wk | Java, Spring, code in production | SOLID · design patterns · refactoring · hexagonal · DDD-lite, test strategy · ADRs, C4 |
 | 9 | System design | Jul 4 – Jul 31 · 4 wk | DB, Concurrency, Networks, Design | Scaling, estimation · caching with Redis · queues, outbox · replication, partitioning |
 | 10 | Applied AI | Aug 1 – Sep 18 · 7 wk | Spring, DB (pgvector), System design | LLM basics, prompting · embeddings · RAG · evals · AI in production · tool calling, agents |
@@ -330,7 +330,7 @@ Explain with no lookup:
 Deliverables:
 - [ ] Back-of-the-envelope estimate for 10,000 groups
 - [ ] Cache measured with and without
-- [ ] RabbitMQ producer, consumer and outbox
+- [ ] Kafka producer, consumer and outbox; SQS dead-letter queue
 - [ ] 2 recorded designs
 
 ### August 2027 · Weeks 42–45
@@ -405,15 +405,19 @@ Deliverables:
 
 ## The weekly blocks
 
-| Day | Block | What |
+Every day is 1h of study here, then 1h of project.
+
+| Day | Study (1h) | What |
 |---|---|---|
-| Sun | Fundamentals 2h | Read the week's chapters. Notes by hand. |
-| Mon | Fundamentals 2h | Study the topics, start the lab. |
-| Tue | LeetCode 2h | 2 new problems, 30 min each. |
-| Wed | Fundamentals 2h | Finish the lab, explain it to an AI tutor. |
-| Thu | Project day 2h | You pick the project. Planned and tracked in its own repo. |
-| Fri | LeetCode 1h + Blank page 1h | 1 new problem and reviews. Rewrite the lab from memory, then record 5 min explaining it in English. |
-| Sat | Project day 2h | You pick the project. Planned and tracked in its own repo. |
+| Sun | Fundamentals | Read the week's chapters. Notes by hand. |
+| Mon | Fundamentals | Study the topics, start the lab. |
+| Tue | LeetCode | 1 new problem (30 min) and the due reviews. |
+| Wed | Fundamentals | Go on with the lab. |
+| Thu | Fundamentals | Finish the lab, explain it to an AI tutor. |
+| Fri | LeetCode | 1 new problem (30 min) and the due reviews. |
+| Sat | Blank page | Rewrite the lab from memory, then record 5 min explaining it in English. |
+
+**Project (1h, every day):** you pick the project. Planned and tracked in its own repo.
 
 HUB: 25 minutes before the block, Monday to Friday, outside the 14 hours.
 
@@ -759,11 +763,11 @@ HUB: 25 minutes before the block, Monday to Friday, outside the 14 hours.
 
 #### Week 31 · May 16 – 22 · Docker, CI/CD, deploy · `Live` `Phase exam`
 
-**Deploy to a real server**
+**Deploy to AWS**
 
-- **Topics:** Linux server basics: SSH keys, users, firewall · domain and DNS records · reverse proxy with automatic HTTPS (Caddy) · backups with pg_dump · healthchecks and uptime monitoring
-- **Read:** Caddy docs: reverse proxy quick-start · PostgreSQL docs: pg_dump
-- **Lab:** Restore a backup into a fresh database to prove it works · deploy quiz (8/10)
+- **Topics:** AWS basics: regions, IAM users and roles, a billing alert before anything else · VPC and security groups · Postgres on RDS · the app's container on ECS Fargate, with the image in ECR · load balancer, HTTPS (ACM certificate) and DNS records · RDS snapshots, CloudWatch logs and healthchecks
+- **Read:** AWS docs: getting started with ECS on Fargate · getting started with RDS for PostgreSQL · AWS Budgets
+- **Lab:** Deploy a Spring + Postgres app with ECS and RDS · restore a snapshot into a fresh database to prove the backup works · deploy quiz (8/10)
 - **LeetCode:** #213 House Robber II · #5 Longest Palindromic Substring · #647 Palindromic Substrings
 - [ ] Week done
 
@@ -859,9 +863,9 @@ HUB: 25 minutes before the block, Monday to Friday, outside the 14 hours.
 
 **Queues and async messaging**
 
-- **Topics:** Queues vs pub/sub · at-least-once delivery and idempotent consumers · the outbox pattern · RabbitMQ basics
-- **Read:** RabbitMQ tutorials 1–3 · Designing Data-Intensive Applications (1st ed.) chapter 11, first part
-- **Lab:** Producer and consumer with RabbitMQ in Compose · an outbox table with a poller
+- **Topics:** Queue vs log: SQS vs Kafka · Kafka topics, partitions, consumer groups and offsets · SQS visibility timeout and dead-letter queues · at-least-once delivery and idempotent consumers · the outbox pattern
+- **Read:** Kafka docs: Introduction and Quickstart · Amazon SQS developer guide: how queues work, dead-letter queues · Designing Data-Intensive Applications (1st ed.) chapter 11, first part
+- **Lab:** Producer and consumer with Kafka in Compose · an outbox table with a poller · on SQS (LocalStack), a message that keeps failing until it lands in the dead-letter queue
 - **LeetCode:** #268 Missing Number · #371 Sum of Two Integers · #48 Rotate Image
 - [ ] Week done
 
@@ -1009,7 +1013,7 @@ HUB: 25 minutes before the block, Monday to Friday, outside the 14 hours.
 4. **Missed blocks.** A missed block moves to another day that week. A lost week shifts the plan by one week. No subject is skipped.
 5. **FOMO.** New topics go to a parking-lot file and wait until the current subject ends.
 6. **HUB.** 25 minutes a weekday, outside the 14 hours. Only during the Aug–Sep 2027 crunch does it borrow the Friday LeetCode hour.
-7. **Front-end.** When the internship starts asking for React and TypeScript, it takes the Thursday project day until it settles.
+7. **Front-end.** When the internship starts asking for React and TypeScript, it takes the project hour on two days a week until it settles.
 8. **University exams.** A UnB exam week becomes a light week, like the holidays: LeetCode reviews and the blank page only. The plan shifts by one week.
 9. **Recovery.** The holiday weeks and the checkpoint week are your rest. Keep them light. Sleep never pays for a missed block.
 

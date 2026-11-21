@@ -78,7 +78,7 @@ By Sunday, Nov 15 you have written all of this by hand, with no AI writing the c
 
 ### Day 7 · Friday, Nov 13 → Sunday, Nov 15 → after day 6 · Project day 2h
 
-- [ ] Project day (2h)
+- [ ] ~~Project day (2h)~~ *Dropped on Nov 20: from now on every day is 1h of study + 1h of project, so there are no separate project days. Nov 18 and 19 had no study. Day 6 ends on Fri, Nov 20 (#49 day-3 review, `HashSet` out loud; see `docs/days/2026-11-20.md`) and Sat, Nov 21 (#242 day-10 review, the `DynamicArray` blank page). Week 3 starts Sun, Nov 22.*
 
 *Item 14 + `Comparator` (carried from day 4) moves to the start of week 3, day 1. Item 14 (PDF pages 88–95) was read on Nov 16. Still left: `Comparable` vs `Comparator` in one sentence each, a test-first `Comparator` chain on `Person` (age, then name, then `reversed()`) with one test per tie-break, and the `TreeSet` prediction. Phase 3 of `docs/days/2026-11-12.md` has the details.*
 
