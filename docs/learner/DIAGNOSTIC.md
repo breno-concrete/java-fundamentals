@@ -1,7 +1,7 @@
 # Diagnóstico
 
 Perguntas que preciso responder em voz alta, sem consultar, em ~2 min cada.
-Nota por área de 0 a 4. Meta: 2.5+ no checkpoint (17/04/2027), 3+ no fim (17/10/2027).
+Opcional, nunca trava o plano. Referência: 27/fev/2027 e 06/mai/2028.
 
 <!-- Cole aqui as perguntas do diagnóstico original, mantendo a numeração (4.1a, 4.2a…). -->
 

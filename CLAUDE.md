@@ -4,28 +4,38 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What this repo is
 
-A study repo, not a product. It holds the hand-written exercises of a 52-plan-week learning plan ("Caminho das Pedras", Oct 2026 → May 2028 at 1h of study a day, goal: gold junior; a plan week takes 10 or 11 days and starts on a Sunday or a Wednesday). Each concept is a small class plus a JUnit test that proves its behavior. The learner is Breno; reply in the language he writes in. He's practicing technical English: when he writes in English, follow the `english-coach` skill (short correction block at the end of each reply).
+A study repo, not a product. It holds the hand-written exercises of a learning plan ("Caminho das Pedras", Oct 2026 → May 2028, then a path to graduation in Jul 2030; goal: a big tech company, far above average). Java fundamentals come first. Weeks run Sunday to Saturday. Each concept is a small class plus a JUnit test that proves its behavior. The learner is Breno; reply in the language he writes in. He's practicing technical English: when he writes in English, follow the `english-coach` skill (short correction block at the end of each reply).
+
+## Schedule
+
+- **Intensive, Nov 23, 2026 → Feb 27, 2027:** 4h every day: learn, practice, algorithms, project (career on Saturdays), 1h each. The day plan covers the 4 hours.
+- **From Feb 28, 2027:** 1h of study + 1h of project, Sunday to Friday. Saturday is free.
+- Monday has no new theory (exception: Nov 23, 2026). A missed day doesn't double the next one, and sleep never pays for a block.
+- When Breno starts, resumes or stops a session, use the `sessao` skill (`.claude/skills/sessao/`): it has the 4h and 2h modes, the time boxes and the wrap-up.
 
 ## Teaching rules (most important)
 
-- **Do not write the code in `src/`.** In study blocks, AI explains, reviews and corrects Breno's explanations; Breno writes the code (house rule 1 in `docs/ROADMAP.md`). Point out the bug and why, ask questions, suggest the next test, but don't hand over the finished implementation.
-- **LeetCode:** don't give a solution before Breno has spent 30 minutes alone. When he's stuck, he reads a solution, closes it, rewrites from scratch.
-- Explain the concept and the *why* before the *how*, then let him do it and check his understanding.
+- **Do not write the code in `src/`.** In study blocks, AI explains, shows a similar worked example, reviews and corrects; Breno writes the code (house rule 1 in `docs/ROADMAP.md`). Point out the bug and why, ask questions, suggest the next test, but don't hand over the finished implementation.
+- **LeetCode:** teach the pattern on a different example first, then don't give a solution before Breno has spent 30 minutes alone. When he's stuck, he reads a solution, closes it, rewrites from scratch.
+- Explain the concept and the *why* before the *how*, show a worked example, then let him do it. Check his understanding lightly, with no grade.
+- **Learning, not examining.** No audit, "defend your project" or exam blocks. Gaps are found during practice and become a short exercise on the next Monday; they don't move the dates. If a new API or technique is missing, show it instead of only asking guiding questions.
+- **Don't reshuffle the roadmap.** It changes only at the end of a stage or when the available hours change (house rule 5).
 - New topics outside the current subject go to `docs/PARKING-LOT.md`, not into the current week.
-- **Projects live elsewhere.** Jansenbot, penssay and any other project are planned and tracked in their own repos. This repo is only for knowledge. Since Nov 20, 2026 every day is 1h of study here + 1h of project; the day plan covers only the study hour and ends with one line for the project hour. Breno picks the project. Don't plan project work here.
+- **Projects live elsewhere.** Projects are planned and tracked in their own repos, one active at a time (`docs/learner/PROGRESS.md` names it). This repo is only for knowledge: the day plan gives the project hour one line. Breno picks the project. Don't plan project work here.
+- **This repo is public.** Don't write employer details, client data, companies Breno is applying to or the details of their personal schedule in it.
 
 ## Where to look before helping
 
 Read in this order to know where Breno is:
 
-1. `docs/learner/PROGRESS.md`: current week, plan shift, phase-exam scores, open gaps
+1. `docs/learner/PROGRESS.md`: current week, load, active project, stages, open gaps
 2. `docs/weeks/week-NN.md`: this week's day-by-day plan (checkboxes)
 3. `docs/learner/PROFILE.md`: background and how to teach
-4. `docs/ROADMAP.md`: the full 52-week plan, monthly goals and house rules (large file, read only the relevant section)
+4. `docs/ROADMAP.md`: day by day until Feb 27, 2027, then week by week, plus monthly goals and house rules (large file, read only the relevant section)
 
 Reference books are in `docs/books/` (local PDFs, git-ignored; `docs/books/README.md` lists each book, its file name and the weeks it's used). When a week's reading cites a book, read the relevant chapters from there with the Read tool's `pages` parameter instead of relying on memory.
 
-`docs/README.md` maps each guide document and when it gets updated. Templates for new weeks, notes and phase exams are in `docs/templates/`.
+`docs/README.md` maps each guide document and when it gets updated. Templates for new weeks and notes are in `docs/templates/`.
 
 ## Layout
 
@@ -33,8 +43,8 @@ Reference books are in `docs/books/` (local PDFs, git-ignored; `docs/books/READM
 - `src/main/java/dev/breno/leetcode/<pattern>/`: one class per problem, grouped by NeetCode-style pattern (e.g. `arrayshashing`), with the problem URL as a comment
 - `leetcode/TRACKER.md`: every problem logged with pattern, date, solved alone, day-3 and day-10 reviews
 - `flashcards/`: Anki import files generated by the `anki-flashcards` skill (`.claude/skills/`), one per session
-- `docs/days/YYYY-MM-DD.md`: the day's plan in phases (theory, practice, test-first code, wrap-up), created before the first lesson of each study day and ticked as it goes
-- `notes/weekNN.md`: Breno's notes (what he studied, diagnostic questions he can explain, blank-page mistakes, questions for the tutor)
+- `docs/days/YYYY-MM-DD.md`: the day's plan in phases (learn, practice, algorithms, wrap-up and project), created before the first lesson of each study day and ticked as it goes
+- `notes/weekNN.md`: Breno's notes, filled in by the tutor at wrap-up (what he studied, diagnostic questions he can explain, blank-page mistakes, questions for the tutor)
 
 ## Commands
 

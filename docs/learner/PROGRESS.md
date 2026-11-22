@@ -1,11 +1,13 @@
 # Progresso
 
 ## Agora
-- **Semana:** 2 de 52 (sáb 07/nov – sex 13/nov, andando 2 dias: seg 09/nov – dom 15/nov; o dia 6 foi em 16–17/nov e fecha em 20–21/nov) · Java core: Collections and their costs. Plano em `docs/weeks/week-02.md`
-- **Nova carga (20/nov):** todo dia é 1h de estudo aqui + 1h de projeto (7h + 7h por semana; antes eram 10h de estudo + qui/sáb de projeto). O estudo caiu de 10h para 7h por semana. **Decidido em 21/nov (o Breno pediu a melhor opção para aprender): esticar o plano (opção B), sem cortar conteúdo.** Ritmo: 2 semanas do plano a cada 3 semanas de calendário (21h = 12h de Fundamentos + 6h de LeetCode + 3h de página em branco, ou seja, as 2 semanas do plano e 1h de folga). Semana 3: dom 22/nov – ter 01/dez · semana 4: qua 02/dez – sáb 12/dez · semana 5: dom 13/dez – sáb 19/dez e dom 03/jan – ter 05/jan · festas = semanas 6 e 7 (20/dez – 02/jan) · semana 8 (Streams + prova de fase do Java core): qua 06/jan – sáb 16/jan. **Renumeração (21/nov):** as semanas de festas (eram 10 e 11) foram para o Natal e viraram 6 e 7, e as antigas 6–9 viraram 8–11; da 12 em diante o número não mudou. O Natal de 2027 é uma pausa entre as semanas 40 e 41. Checkpoint da metade (semana 26): 14–24/jul/2027; meta: **06/mai/2028** (era 17/out/2027). Prova de fase abaixo de 8 ainda repete as lacunas (regra 3). Se sobrar tempo (férias da UnB, fim do HUB em set/2027), a hora extra vai para o plano e a data volta. `ROADMAP.md` e versão ao vivo redatados em 21/nov. Cada semana do plano começa num domingo ou numa quarta, e o `week-NN.md` é criado no primeiro dia dela. Novo modelo da semana em `docs/ROADMAP.md` ("The weekly blocks"). Novo projeto (fora deste repo) escolhido a partir do YC Requests for Startups.
-- **Deslocamento do plano:** ~3 semanas até 21/nov (qua 18 e qui 19/nov sem estudo). O calendário novo da opção B parte de 22/nov, então o atraso zera aí. Antes disso, ~2 semanas e 4 dias. A semana 1 do ROADMAP (18–24/out) perdeu 19–26/out (regra 4) e o Fundamentos dela foi até 06/nov (passou 2 a 3 dias do previsto). Sáb 07 e dom 08/nov sem estudo: o dia 1 da semana 2 foi em 09/nov e os dias seguintes andaram um dia. Sáb 14 e dom 15/nov sem estudo: o dia 6 foi em 16–17/nov, e o dia 7 (projeto) vem depois.
+- **Semana:** 3 (23–28/nov/2026), Java: referências, coleções e generics. Plano em `docs/weeks/week-03.md`, 1º dia em `docs/days/2026-11-23.md`.
+- **Carga (decidida pelo Breno em 22/nov):** **4h por dia, todos os dias, de 23/nov/2026 a 27/fev/2027**: aprender, praticar, algoritmos, projeto ou carreira (1h cada). O plano do dia cobre as 4h. Depois volta a 1h de estudo + 1h de projeto, de domingo a sexta. Substitui a opção B de 21/nov.
+- **Marcos:** Java 26/dez · banco 16/jan · Spring 30/jan · AWS 13/fev · IA 27/fev. Sem prova como trava.
+- **Projeto ativo (decidido em 22/nov):** Probation, até o teste de 06/dez, no repo `../probation`. Os outros projetos pessoais ficam congelados.
+- **Atraso:** zerado para o início em 23/nov. As linhas abaixo com semanas e datas antigas são histórico.
 - **Google Calendar (10/nov):** os eventos "Season · Sem N" (semanas de dom a sáb) andaram 1 semana para frente: Sem 2 em 08–14/nov, Sem 3 *Generics* a partir de 15/nov, Sem 6 (prova de fase) em 06–12/dez, Sem 52 em 24–30/out/2027. Sem 1 estendida até 07/nov. Breno estuda nos feriados, então as semanas de festas também andaram (Sem 9 virou "New Year week", Sem 10 "Catch-up week"; o aviso do Carnaval passou para a Sem 15 e o lançamento do penssay da Sem 46 para 18/set).
-- **Última atualização:** 2026-11-21
+- **Última atualização:** 2026-11-22
 - **20/nov (dia 6 da semana 2, fim):** plano em `docs/days/2026-11-20.md` (1h): #49 D+3 com `HashMap` e `HashSet` por dentro. **Sáb 21/nov:** #242 D+10 e a página em branco do `DynamicArray`; fecha a semana 2. O dia 7 (projeto) deixa de existir: a hora de projeto agora é diária. A semana 3 começa dom 22/nov. **ROADMAP (20/nov),** a partir do doc de preparação para Mercado Livre, Nubank, iFood e PicPay: o deploy da semana 31 saiu da VPS com Caddy e foi para a AWS (ECS, RDS, ECR); a fila da semana 40 trocou o RabbitMQ por Kafka e SQS. Kotlin foi para o `PARKING-LOT.md`.
 - **17/nov (dia 6 da semana 2, continuação):** `c - 'a'` certo na ideia (faltou "códigos seguidos"); `int[26]`: O(n) e O(1) sozinho, e "muda a constante, não o Big-O". #49: `normalize` certo sozinho (escrito primeiro em `src/main`, movido para o teste); 30 min sozinho, força bruta com o `isAnagram` do #242, vermelho com 2 bugs (remover enquanto anda por índice; `strs[i]` vs `copy.get(i)`); verde 2/2 com ajuda, ~20 min além. O 1º verde foi sorte: o 2º teste (exemplo 1 do LeetCode) pegou o `i++`. Tempo chutado O(n · k), é O(n² · k). Breno saiu no começo da página em branco. **Retomar ainda hoje (17/nov):** página em branco do `DynamicArray` (~30 min), `HashSet` por dentro (5 min), fechamento. Plano em `docs/days/2026-11-17.md`.
 - **16/nov (dia 6 da semana 2, esta máquina; commitado em 17/nov):** plano em `docs/days/2026-11-16.md`. Feito: amortizado O(1) fechado (contou cópias: 15 vs 120 para 16 adds; as vagas livres do resize pagam os adds seguintes), `HashSet` por dentro com ajuda, #242 D+3 do zero (2 bugs: `put` substitui em vez de somar, `char - 1` é número; o teste `"aab"` / `"abb"` pegou; espaço chutado O(n) de novo, corrigido sozinho para O(1)), `int[26]` escrito por ele depois de perguntas-guia (a ideia veio do tutor), Item 14 (resumo do tutor, o PDF não estava neste PC), `Comparable` vs `Comparator` e `HashSet` vs `TreeSet` com `1.0`/`1.00`. Parou perto da meia-noite antes do teste do `Comparator`.
@@ -23,20 +25,15 @@
 - **Movido para a semana 4 do ROADMAP** (*Immutability, records and enums*, que já lê o Item 17): leitura do Item 17, versão `record` da chave com teste, previsão do `record` com `List<String>` + construtor compacto, e por que com `record` a chave não se perde. Decidido em 06/nov para não estudar duas vezes; anotado na semana 4 do `ROADMAP.md`.
 - **Cortado:** teste extra com `containsKey` / `entrySet()` da chave mutável (só reforçava o teste principal).
 
-## Provas de fase
+## Etapas do intensivo
 
-| # | Matéria | Semana prevista | Data | Nota (/10) | Passou? | Arquivo |
-|---|---|---|---|---|---|---|
-| 1 | Java core | 6 | | | | |
-| 2 | Databases | 13 | | | | |
-| 3 | Spring + JPA | 17 | | | | |
-| 4 | Operating systems | 20 | | | | |
-| 5 | Concurrency | 24 | | | | |
-| 6 | Networks | 27 | | | | |
-| 7 | Docker, CI/CD, deploy | 31 | | | | |
-| 8 | Design + architecture | 37 | | | | |
-| 9 | System design | 41 | | | | |
-| 10 | Applied AI | 48 | | | | |
+| # | Etapa | Semanas | Fim previsto | Fechada em |
+|---|---|---|---|---|
+| 1 | Java | 3–7 | 26/dez | |
+| 2 | Banco | 8–10 | 16/jan | |
+| 3 | Spring | 11–12 | 30/jan | |
+| 4 | Docker, CI, AWS | 13–14 | 13/fev | |
+| 5 | IA aplicada | 15–16 | 27/fev | |
 
 ## Lacunas abertas
 <!-- O que errei na página em branco / prova e ainda não fechei. Remova quando fechar. -->
