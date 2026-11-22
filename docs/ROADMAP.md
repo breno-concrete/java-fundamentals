@@ -6,7 +6,7 @@
 - **Depois, até 06/mai/2028:** 1h de estudo + 1h de projeto, de domingo a sexta
 - **Fora dessas horas:** faculdade, estágio e HUB
 - **Semanas:** de domingo a sábado. As semanas 1 e 2 já foram
-- **Plano anterior:** `git show 2cb1c48:docs/ROADMAP.md` (a versão ao vivo publicada ainda é a dele)
+- **Plano anterior:** `git show 036e8ee:docs/ROADMAP.md` (a versão ao vivo publicada ainda é a dele)
 
 ## Contents
 
