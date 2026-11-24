@@ -18,14 +18,16 @@
 
 ### seg 23/nov
 
+Sem estudo. Referências e o #49 com `Map` vão para o sábado 28/nov (house rule 4).
+
 - [ ] Aprender + praticar (2h): Referências: o que `a = b` copia
 - [ ] Algoritmos (1h): #49 de novo, agora com `Map`
 - [ ] Projeto ou carreira (1h): Probation, no repo dele
 
 ### ter 24/nov
 
-- [ ] Aprender + praticar (2h): `Comparable` e `Comparator` com desempate (idade, nome, `reversed`)
-- [ ] Algoritmos (1h): #36
+- [x] Aprender + praticar (2h): `Comparable` e `Comparator` com desempate (idade, nome, `reversed`). `PersonComparatorTest` 4/4; `Comparable` à mão (`Version`) não foi feito.
+- [x] Algoritmos (1h): #36. Caixas sozinho, linhas e colunas com ajuda, 4/4. D+3 em 27/nov.
 - [ ] Projeto ou carreira (1h): Probation, no repo dele
 
 ### qua 25/nov
